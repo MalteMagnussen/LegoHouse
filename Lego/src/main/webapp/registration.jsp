@@ -11,27 +11,27 @@
             <h1 class="h3 mb-3 font-weight-normal">Create User</h1>
         </div>
 
-        <!-- USERNAME -->
+        <!-- EMAIL -->
         <div class="form-label-group">
-            <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="username" required autofocus>
-            <label for="inputEmail">Username</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
+            <label for="inputEmail">Email</label>
         </div>
 
-        <!-- PASSWORD -->
+        <!-- PASSWORD1 -->
         <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password1" required>
             <label for="inputPassword">Password</label>
         </div>
         
-        <!-- EMAIL -->
+        <!-- PASSWORD2 -->
         <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required>
-            <label for="inputPassword">Email</label>
+            <input type="password" id="inputEmail" class="form-control" placeholder="Password" name="password2" required>
+            <label for="inputPassword">Retype Password</label>
         </div>
 
         <!-- Button to register the user into the SQL Database. -->
         <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-        <p class="mt-5 mb-3 text-muted text-center"> Malte - Benjamin - Mikkel - Nikolaj</p>
+        <p class="mt-5 mb-3 text-muted text-center"> Malte </p>
     </form>
     
 <jsp:include page='/jsp/footer.jsp'></jsp:include>

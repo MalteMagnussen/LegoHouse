@@ -3,7 +3,7 @@
 
 <!--  Below is the form for logging in. -->
 <form class="form-signin" action="FrontController?command=Login" method="post" id="sitemenus" style="margin: auto; display: table; width: 20%" >
-    <!-- Hidden parameter so LoginCommand knows what method to use -->
+    <!-- Hidden parameter so Login knows what method to use -->
     <input type="hidden" name="origin" value="login">
     <div class="text-center mb-4">
         <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -11,10 +11,10 @@
         <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
     </div>
 
-    <!-- USERNAME -->
+    <!-- EMAIL -->
     <div class="form-label-group">
-        <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="username" required autofocus>
-        <label for="inputEmail">Username</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
+        <label for="inputEmail">Email</label>
     </div>
 
     <!-- PASSWORD -->
@@ -25,7 +25,7 @@
 
     <!-- BUTTON TO LOGIN -->
     <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-    <p class="mt-5 mb-3 text-muted text-center"> Malte - Benjamin - Mikkel - Nikolaj</p>
+    <p class="mt-5 mb-3 text-muted text-center"> Malte </p>
 </form>
 
 <jsp:include page='/jsp/footer.jsp'></jsp:include>
