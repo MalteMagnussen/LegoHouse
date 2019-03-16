@@ -7,11 +7,6 @@ import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.LoginSampleException;
 import malte.FunctionLayer.User;
 
-/**
- The purpose of Login is to...
-
- @author kasper
- */
 public class Login extends Command {
 
     @Override

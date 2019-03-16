@@ -8,11 +8,6 @@ import java.sql.Statement;
 import malte.FunctionLayer.LoginSampleException;
 import malte.FunctionLayer.User;
 
-/**
- The purpose of UserMapper is to...
-
- @author kasper
- */
 public class UserMapper {
 
     public static void createUser( User user ) throws LoginSampleException {
