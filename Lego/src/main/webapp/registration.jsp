@@ -34,4 +34,4 @@
         <p class="mt-5 mb-3 text-muted text-center"> Malte </p>
     </form>
     
-<jsp:include page='/jsp/footer.jsp'></jsp:include>
+<jsp:include page='footer.jsp'></jsp:include>
