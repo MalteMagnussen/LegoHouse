@@ -25,11 +25,11 @@
         <tbody>
             <tr>
                 <!-- Length -->
-                <td><input type="number" name="qty" placeholder="quantity" id="qtyInput"></td>
+                <td><input type="number" name="length" placeholder="Length" id="qtyInput"></td>
                 <!-- Width -->
-                <td><input type="number" name="qty" placeholder="quantity" id="qtyInput"></td>
+                <td><input type="number" name="width" placeholder="Width" id="qtyInput"></td>
                 <!-- Height -->
-                <td><input type="number" name="qty" placeholder="quantity" id="qtyInput"></td>
+                <td><input type="number" name="height" placeholder="Height" id="qtyInput"></td>
                 <!-- Add to cart button -->
                 <td><input type="submit" name="submit" value="Add to cart"></td>
             </tr>
