@@ -1,5 +1,5 @@
 <jsp:include page='/header.jsp'></jsp:include>
-
+<!-- Author: Malte -->
     <h1 style="margin: auto; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
         Logged in as: <%=request.getParameter("email")%> </h1>
 
