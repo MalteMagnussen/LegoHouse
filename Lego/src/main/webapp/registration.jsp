@@ -1,4 +1,4 @@
-<jsp:include page='/jsp/header.jsp'></jsp:include>
+<jsp:include page='header.jsp'></jsp:include>
 <!-- Author: Malte -->
 
     <!--  Below is the form for Registering a user in the SQL database.  -->
