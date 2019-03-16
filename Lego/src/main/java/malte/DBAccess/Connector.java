@@ -34,6 +34,7 @@ public class Connector {
             props.put("useLegacyDatetimeCode", false);
             props.put("serverTimezone", "CET");
             singleton = DriverManager.getConnection(URL, props);
+            Connector.setConnection(singleton);
         }
         return singleton;
     }
