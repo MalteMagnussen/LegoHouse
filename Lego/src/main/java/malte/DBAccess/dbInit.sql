@@ -2,7 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `useradmin`;
 
 USE `useradmin`;
 
+DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(90) NOT NULL,
@@ -12,6 +14,18 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
+CREATE TABLE `useradmin`.`orders` (
+  `idorders` INT NOT NULL,
+  `sent` BOOLEAN NOT NULL DEFAULT FALSE,
+  `length` INT NOT NULL DEFAULT 0,
+  `width` INT NOT NULL DEFAULT 0,
+  `height` INT NOT NULL DEFAULT 0,
+  CONSTRAINT `idorders`
+    FOREIGN KEY (`idorders`)
+    REFERENCES `useradmin`.`users` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+    
 LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES 
 (1,'jens@somewhere.com','jensen','customer'),
