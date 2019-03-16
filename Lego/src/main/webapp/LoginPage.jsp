@@ -2,9 +2,10 @@
 <!-- Author: Malte -->
 
 <!--  Below is the form for logging in. -->
-<form class="form-signin" action="FrontController?command=Login" method="post" id="sitemenus" style="margin: auto; display: table; width: 20%" >
+<form class="form-signin" action="FrontController" name="login" method="post" id="sitemenus" style="margin: auto; display: table; width: 20%" >
     <!-- Hidden parameter so Login knows what method to use -->
     <input type="hidden" name="origin" value="login">
+    <input type="hidden" name="command" value="Login">
     <div class="text-center mb-4">
         <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <!-- Headline: Log in -->

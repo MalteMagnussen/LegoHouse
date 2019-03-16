@@ -2,9 +2,10 @@
 <!-- Author: Malte -->
 
     <!--  Below is the form for Registering a user in the SQL database.  -->
-    <form class="form-signin" action="FrontController?command=Login" method="post" id="sitemenus" style="margin: auto; display: table; width: 20%" >
+    <form class="form-signin" action="FrontController" name="register" method="post" id="sitemenus" style="margin: auto; display: table; width: 20%" >
         <!-- Hidden parameter so LoginCommand knows what method to use -->
         <input type="hidden" name="origin" value="registration">
+        <input type="hidden" name="command" value="Login">
         <div class="text-center mb-4">
             <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
             <!-- Headline: Create User -->
