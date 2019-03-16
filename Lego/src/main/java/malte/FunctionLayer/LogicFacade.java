@@ -1,6 +1,6 @@
 package malte.FunctionLayer;
 
-import DBAccess.UserMapper;
+import malte.DBAccess.UserMapper;
 
 /**
  * The purpose of LogicFacade is to...

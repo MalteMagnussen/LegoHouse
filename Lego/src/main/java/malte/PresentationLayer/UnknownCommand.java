@@ -1,8 +1,8 @@
 package malte.PresentationLayer;
 
-import FunctionLayer.LoginSampleException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import malte.FunctionLayer.LoginSampleException;
 
 /**
  The purpose of UnknownCommand is to...

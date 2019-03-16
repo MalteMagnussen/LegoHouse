@@ -1,11 +1,11 @@
 package malte.PresentationLayer;
 
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import malte.FunctionLayer.LogicFacade;
+import malte.FunctionLayer.LoginSampleException;
+import malte.FunctionLayer.User;
 
 /**
  The purpose of Login is to...
