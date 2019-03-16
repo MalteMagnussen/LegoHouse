@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import malte.FunctionLayer.LoginSampleException;
-import malte.FunctionLayer.User;
+import malte.entities.User;
 
 public class UserMapper {
 

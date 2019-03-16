@@ -1,4 +1,4 @@
-package malte.FunctionLayer;
+package malte.entities;
 
 /**
  * The purpose of User is to...

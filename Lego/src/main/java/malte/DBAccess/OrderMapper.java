@@ -5,14 +5,13 @@
  */
 package malte.DBAccess;
 
-import malte.FunctionLayer.Order;
+import com.mysql.cj.x.protobuf.MysqlxCrud.Order;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import malte.FunctionLayer.LoginSampleException;
-import malte.FunctionLayer.User;
 
 /**
  *
@@ -23,16 +22,16 @@ public class OrderMapper {
     public static void createOrder( Order order ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
+            String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
-            ps.setString( 1, user.getEmail() );
-            ps.setString( 2, user.getPassword() );
-            ps.setString( 3, user.getRole() );
-            ps.executeUpdate();
-            ResultSet ids = ps.getGeneratedKeys();
-            ids.next();
-            int id = ids.getInt( 1 );
-            user.setId( id );
+//            ps.setString( 1, order.getEmail() );
+//            ps.setString( 2, order.getPassword() );
+//            ps.setString( 3, user.getRole() );
+//            ps.executeUpdate();
+//            ResultSet ids = ps.getGeneratedKeys();
+//            ids.next();
+//            int id = ids.getInt( 1 );
+//            user.setId( id );
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }

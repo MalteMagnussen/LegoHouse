@@ -1,5 +1,6 @@
 package malte.FunctionLayer;
 
+import malte.entities.User;
 import malte.DBAccess.UserMapper;
 
 /**

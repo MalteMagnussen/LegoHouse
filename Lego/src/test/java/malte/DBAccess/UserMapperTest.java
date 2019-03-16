@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 import malte.FunctionLayer.LoginSampleException;
-import malte.FunctionLayer.User;
+import malte.entities.User;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;

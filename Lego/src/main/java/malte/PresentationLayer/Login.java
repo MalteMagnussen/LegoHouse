@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.LoginSampleException;
-import malte.FunctionLayer.User;
+import malte.entities.User;
 
 public class Login extends Command {
 
