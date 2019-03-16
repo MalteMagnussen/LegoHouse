@@ -33,6 +33,17 @@ public class UserMapper {
         }
     }
 
+    /**
+     * Login Method.
+     * 
+     * Pulls a User entity from the SQL if the User input correct info into the form.
+     * Else throws an exception and returns User to the index page.
+     * 
+     * @param email Users email
+     * @param password Users password
+     * @return User entity
+     * @throws LoginSampleException 
+     */
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
