@@ -3,7 +3,7 @@
 
 <% String error = (String) request.getAttribute("error");
     if (error != null) {
-        out.println("<H2>Error!!</h2>");
+        out.println("<H2>Error: </h2>");
         out.println(error);
     }
 %>
@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-sm-6">
         <!--  Below is the form for logging in. -->
-        <form class="form-signin" action="FrontController" name="login" method="post" id="sitemenus" style="margin: auto; display: table; width: 20%" >
+        <form class="form-signin" action="FrontController" name="login" method="post" id="sitemenus" style="margin: auto; display: table; width: 60%" >
             <!-- Hidden parameter so Login knows what method to use -->
             <input type="hidden" name="origin" value="login">
             <input type="hidden" name="command" value="Login">
@@ -40,7 +40,7 @@
     </div><div class="col-sm-6">
 
         <!--  Below is the form for Registering a user in the SQL database.  -->
-        <form class="form-signin" action="FrontController" name="register" method="post" id="sitemenus" style="margin: auto; display: table; width: 20%" >
+        <form class="form-signin" action="FrontController" name="register" method="post" id="sitemenus" style="margin: auto; display: table; width: 60%" >
             <!-- Hidden parameter so LoginCommand knows what method to use -->
             <input type="hidden" name="origin" value="registration">
             <input type="hidden" name="command" value="Login">
