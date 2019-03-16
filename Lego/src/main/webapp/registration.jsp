@@ -1,4 +1,4 @@
-<jsp:include page='/jsp/siteheader.jsp'></jsp:include>
+<jsp:include page='/jsp/header.jsp'></jsp:include>
 <!-- Author: Malte -->
 
     <!--  Below is the form for Registering a user in the SQL database.  -->
@@ -34,4 +34,4 @@
         <p class="mt-5 mb-3 text-muted text-center"> Malte - Benjamin - Mikkel - Nikolaj</p>
     </form>
     
-<jsp:include page='/jsp/sitefooter.jsp'></jsp:include>
+<jsp:include page='/jsp/footer.jsp'></jsp:include>
