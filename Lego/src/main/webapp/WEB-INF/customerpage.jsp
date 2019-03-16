@@ -4,7 +4,7 @@
         Logged in as: <%=request.getParameter("email")%> </h1>
 
 <!-- Form start -->
-<form action="Controller" method="post" id="sitemenus" style="margin: auto; display: table; width: 60%">
+<form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 60%">
     <input type="hidden" name="command" value="Product">
     <!-- Hidden input: &origin=addProduct -->
     <input type="hidden" name="origin" value="addProduct">
@@ -25,11 +25,11 @@
         <tbody>
             <tr>
                 <!-- Length -->
-                <td><input type="text" name="qty" placeholder="quantity" id="qtyInput"></td>
+                <td><input type="number" name="qty" placeholder="quantity" id="qtyInput"></td>
                 <!-- Width -->
-                <td><input type="text" name="qty" placeholder="quantity" id="qtyInput"></td>
+                <td><input type="number" name="qty" placeholder="quantity" id="qtyInput"></td>
                 <!-- Height -->
-                <td><input type="text" name="qty" placeholder="quantity" id="qtyInput"></td>
+                <td><input type="number" name="qty" placeholder="quantity" id="qtyInput"></td>
                 <!-- Add to cart button -->
                 <td><input type="submit" name="submit" value="Add to cart"></td>
             </tr>
