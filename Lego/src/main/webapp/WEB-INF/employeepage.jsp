@@ -2,30 +2,33 @@
 <%@page import="java.util.List"%>
 <%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
-<!-- Author: Malte -->
+    <!-- Author: Malte -->
     <h1> All invoices </h1>
     <div class="row">
         <div class="col-sm-6">
 
         <%
             // List of All invoices in the system.
-            
+
             List<User> users = (List<User>) session.getAttribute("users");
-            /* For all users in the system print every order */
-            for (User user : users) {
-                String username = user.getEmail();
-                out.println("<br>");
-                out.println("<h5> Invoices for: " + username + "</h5>");
-                List<Order> orders = user.getOrders();
-                for (Order order : orders) {
-                    int id = order.getId();
-                    out.println("<form method=\"post\" action=\"FrontController\">\n"
-                            + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
-                            + "            <input type=\"hidden\" name=\"origin\" value=\"employeeorders\">\n"
-                            + "            <input type=\"hidden\" name=\"orderid\" value=\"" + id + "\">\n"
-                            + "            <input type=\"hidden\" name=\"user\" value=\"" + username + "\">\n"
-                            + "            <input type=\"submit\" value=\"Id of order: " + id + "\"/>\n"
-                            + "        </form>");
+
+            if (users != null && !users.isEmpty()) {
+                /* For all users in the system print every order */
+                for (User user : users) {
+                    String username = user.getEmail();
+                    out.println("<br>");
+                    out.println("<h5> Invoices for: " + username + "</h5>");
+                    List<Order> orders = user.getOrders();
+                    for (Order order : orders) {
+                        int id = order.getId();
+                        out.println("<form method=\"post\" action=\"FrontController\">\n"
+                                + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
+                                + "            <input type=\"hidden\" name=\"origin\" value=\"employeeorders\">\n"
+                                + "            <input type=\"hidden\" name=\"orderid\" value=\"" + id + "\">\n"
+                                + "            <input type=\"hidden\" name=\"user\" value=\"" + username + "\">\n"
+                                + "            <input type=\"submit\" value=\"Id of order: " + id + "\"/>\n"
+                                + "        </form>");
+                    }
                 }
             }
         %>
@@ -60,15 +63,15 @@
             </thead>
             <tbody>
                 <%
-                        out.println("<tr>");
+                    out.println("<tr>");
 
-                        out.println("<td>" + order.isSent() + "</td>");
-                        out.println("<td>" + order.getLength() + "</td>");
-                        out.println("<td>" + order.getWidth() + "$</td>");
-                        out.println("<td>" + order.getHeight() + "</td>");
-                        out.println("<td>" + order.getId() + "</td>");
+                    out.println("<td>" + order.isSent() + "</td>");
+                    out.println("<td>" + order.getLength() + "</td>");
+                    out.println("<td>" + order.getWidth() + "$</td>");
+                    out.println("<td>" + order.getHeight() + "</td>");
+                    out.println("<td>" + order.getId() + "</td>");
 
-                        out.println("</tr>");
+                    out.println("</tr>");
                 %>
             </tbody>
         </table>
