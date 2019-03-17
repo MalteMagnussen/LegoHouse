@@ -62,7 +62,7 @@
                 <input type="hidden" name="command" value="Redirect">
                 <input type="submit" value="Shop"/>
             </form>
-            
+
             <a href="index.jsp">Index</a>
         </div>
         <%

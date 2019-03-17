@@ -1,8 +1,6 @@
 package malte.FunctionLayer;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import malte.DBAccess.OrderMapper;
 import malte.entities.User;
 import malte.DBAccess.UserMapper;
@@ -73,10 +71,10 @@ public class LogicFacade {
     }
 
     /**
-     * 
+     *
      * @param user
      * @return
-     * @throws CustomException 
+     * @throws CustomException
      */
     public static List<User> getUsers(User user) throws CustomException {
         if (user.getRole().equals("employee")) {

@@ -5,7 +5,6 @@
  */
 package malte.PresentationLayer;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,7 +40,7 @@ public class Product extends Command {
             case "sendOrder": {
                 return sendOrder(request);
             }
-            
+
         }
         throw new CustomException("Something went wrong in Product.java");
 
@@ -49,84 +48,86 @@ public class Product extends Command {
 
     /**
      * Adds an Order to the SQL.
+     *
      * @param request
      * @return
-     * @throws CustomException 
+     * @throws CustomException
      */
     private String addProduct(HttpServletRequest request) throws CustomException {
         String tempid = (String) request.getParameter("id");
         int id = Integer.parseInt(tempid);
-        
+
         String tempLength = (String) request.getParameter("length");
         int length = Integer.parseInt(tempLength);
-        
+
         String tempWidth = (String) request.getParameter("width");
         int width = Integer.parseInt(tempWidth);
-        
+
         String tempHeight = (String) request.getParameter("height");
         int height = Integer.parseInt(tempHeight);
-        
+
         HttpSession session = request.getSession();
-        
+
         Order order = LogicFacade.createOrder(id, length, width, height);
-        
+
         User user = (User) session.getAttribute("user");
-        
+
         List<Order> orders = user.getOrders();
-        
+
         orders.add(order);
-        
+
         user.setOrders(orders);
-        
+
         session.setAttribute("orders", orders);
-        
+
         return user.getRole() + "page";
     }
 
     /**
      * Get one Order.
+     *
      * @param request
-     * @return 
+     * @return
      */
     private String order(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        
+
         String tempid = (String) request.getParameter("id");
         int id = Integer.parseInt(tempid);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
-        
-        for (Order order: orders){
-            if (order.getId() == id){
+
+        for (Order order : orders) {
+            if (order.getId() == id) {
                 session.setAttribute("order", order);
             }
         }
-        
+
         return user.getRole() + "page";
     }
 
     private String employeeorder(HttpServletRequest request) throws CustomException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        
-        int id = Integer.parseInt( (String) request.getParameter("id"));
-        
+
+        int id = Integer.parseInt((String) request.getParameter("id"));
+
         Order order = LogicFacade.getOrder(id);
-        
+
         session.setAttribute("order", order);
-        
+
         return user.getRole() + "page";
     }
 
     private String sendOrder(HttpServletRequest request) throws CustomException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        
-        int id = Integer.parseInt( (String) request.getParameter("id"));
-        
+
+        int id = Integer.parseInt((String) request.getParameter("id"));
+
         LogicFacade.sendOrder(id);
-        
+
         return user.getRole() + "page";
     }
-    
+
 }

@@ -3,10 +3,10 @@
 <%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
-    <% User user = (User) session.getAttribute("user"); 
-        int userid = user.getId();  %>
-    <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-        Logged in as: <%= user.getEmail() %> </h1>
+<% User user = (User) session.getAttribute("user");
+        int userid = user.getId();%>
+<h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    Logged in as: <%= user.getEmail()%> </h1>
 
 <!-- Form start -->
 <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
@@ -47,22 +47,22 @@
     </table>
     <!-- Form end -->
 </form>
-    
+
 <div class="row">
     <div class="col-sm-6">
         <%
             /**
-             * List of all orders from a user.
-             * Puts selected order in session as "order".
+             * List of all orders from a user. Puts selected order in session as
+             * "order".
              */
             List<Order> orders = user.getOrders();
             if (orders != null && !orders.isEmpty()) {
                 for (Order order : orders) {
                     int id = order.getId();
                     out.println("<form method=\"post\" action=\"FrontController\">\n"
-                                                                    /* Where to in the Command map */ 
+                            /* Where to in the Command map */
                             + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
-                                                                    /* Where to in the Product switch */
+                            /* Where to in the Product switch */
                             + "            <input type=\"hidden\" name=\"origin\" value=\"order\">\n"
                             + "            <input type=\"hidden\" name=\"id\" value=\"" + id + "\">\n"
                             + "            <input type=\"submit\" value=\"Lego: " + id + "\"/>\n"
@@ -100,15 +100,15 @@
             </thead>
             <tbody>
                 <%
-                        out.println("<tr>");
+                    out.println("<tr>");
 
-                        out.println("<td>" + order.isSent() + "</td>");
-                        out.println("<td>" + order.getLength() + "</td>");
-                        out.println("<td>" + order.getWidth() + "$</td>");
-                        out.println("<td>" + order.getHeight() + "</td>");
-                        out.println("<td>" + order.getId() + "</td>");
+                    out.println("<td>" + order.isSent() + "</td>");
+                    out.println("<td>" + order.getLength() + "</td>");
+                    out.println("<td>" + order.getWidth() + "$</td>");
+                    out.println("<td>" + order.getHeight() + "</td>");
+                    out.println("<td>" + order.getId() + "</td>");
 
-                        out.println("</tr>");
+                    out.println("</tr>");
                 %>
             </tbody>
         </table>

@@ -37,7 +37,7 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             <p class="mt-5 mb-3 text-muted text-center"> Malte </p>
         </form>
-        
+
     </div><div class="col-sm-6">
 
         <!--  Below is the form for Registering a user in the SQL database.  -->

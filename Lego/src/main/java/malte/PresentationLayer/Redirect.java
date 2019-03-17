@@ -17,12 +17,11 @@ import malte.entities.User;
  */
 public class Redirect extends Command {
 
-
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
         HttpSession session = request.getSession();
-            User user = (User) session.getAttribute("user");
-            return user.getRole() + "page";
+        User user = (User) session.getAttribute("user");
+        return user.getRole() + "page";
     }
-    
+
 }

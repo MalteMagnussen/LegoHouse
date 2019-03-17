@@ -11,20 +11,20 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put( "Login", new Login() );
-        commands.put( "Product", new Product() );
-        commands.put( "Redirect", new Redirect() );
+        commands.put("Login", new Login());
+        commands.put("Product", new Product());
+        commands.put("Redirect", new Redirect());
     }
 
-    static Command from( HttpServletRequest request ) {
-        String commandName = request.getParameter( "command" );
-        if ( commands == null ) {
+    static Command from(HttpServletRequest request) {
+        String commandName = request.getParameter("command");
+        if (commands == null) {
             initCommands();
         }
-        return commands.getOrDefault(commandName, new UnknownCommand() );
+        return commands.getOrDefault(commandName, new UnknownCommand());
     }
 
-    abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    abstract String execute(HttpServletRequest request, HttpServletResponse response)
             throws CustomException;
 
 }

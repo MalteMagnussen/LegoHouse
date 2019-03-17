@@ -1,12 +1,10 @@
 package malte.PresentationLayer;
 
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.CustomException;
-import malte.entities.Order;
 import malte.entities.User;
 
 /**
@@ -14,12 +12,12 @@ import malte.entities.User;
  * @author Malte
  */
 public class Login extends Command {
-    
+
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-        
+
         String origin = (String) request.getParameter("origin");
-        
+
         switch (origin) {
             // Login an existing User
             case "login": {
@@ -33,10 +31,10 @@ public class Login extends Command {
             case "logout": {
                 return Logout(request);
             }
-            
+
         }
         return null;
-        
+
     }
 
     /**
@@ -53,13 +51,13 @@ public class Login extends Command {
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
-        if (user.getRole().equals("employee")){
+        if (user.getRole().equals("employee")) {
             session.setAttribute("users", LogicFacade.getUsers(user));
             return user.getRole() + "page";
         } else {
             return user.getRole() + "page";
         }
-        
+
     }
 
     /**
@@ -96,5 +94,5 @@ public class Login extends Command {
         session.invalidate();
         throw new CustomException("Logged out");
     }
-    
+
 }
