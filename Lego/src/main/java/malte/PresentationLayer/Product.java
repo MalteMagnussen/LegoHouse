@@ -79,7 +79,7 @@ public class Product extends Command {
         List<Order> orders = (List<Order>) session.getAttribute("orders");
         
         for (Order order: orders){
-            if (order.getID().equals(id)){
+            if (order.getId() == id){
                 session.setAttribute("order", order);
             }
         }
