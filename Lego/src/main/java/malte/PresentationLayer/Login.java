@@ -1,10 +1,12 @@
 package malte.PresentationLayer;
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.CustomException;
+import malte.entities.Order;
 import malte.entities.User;
 
 /**
@@ -44,7 +46,9 @@ public class Login extends Command {
         String email = (String) request.getParameter("email");
         String password = (String) request.getParameter("password");
         User user = LogicFacade.login(email, password);
+        List<Order> orders = LogicFacade.getOrders(user);
         HttpSession session = request.getSession();
+        session.setAttribute("orders", orders);
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
         return user.getRole() + "page";
