@@ -50,9 +50,10 @@ public class OrderMapper {
 
     /**
      * Called from LogicFacade getOrders Method.
+     *
      * @param user
      * @return List of Orders.
-     * @throws CustomException 
+     * @throws CustomException
      */
     public static List<Order> getOrders(User user) throws CustomException {
         List<Order> orders = new ArrayList<>();
