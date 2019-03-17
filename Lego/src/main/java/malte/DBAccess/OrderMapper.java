@@ -61,7 +61,7 @@ public class OrderMapper {
             String SQL = "SELECT `orders`.`sent`,\n"
                     + "    `orders`.`length`,\n"
                     + "    `orders`.`width`,\n"
-                    + "    `orders`.`height`\n"
+                    + "    `orders`.`height`,\n"
                     + "    `orders`.`date`\n"
                     + "FROM `useradmin`.`orders`\n"
                     + "WHERE `orders`.`idorders` = ?;";
