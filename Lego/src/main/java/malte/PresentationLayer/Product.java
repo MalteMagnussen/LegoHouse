@@ -5,6 +5,7 @@
  */
 package malte.PresentationLayer;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -58,9 +59,21 @@ public class Product extends Command {
         String tempHeight = (String) request.getParameter("height");
         int height = Integer.parseInt(tempHeight);
         
-        Order order = LogicFacade.createOrder(id, length, width, height);
         HttpSession session = request.getSession();
-        session.setAttribute("order", order);
+        
+        Order order = LogicFacade.createOrder(id, length, width, height);
+        
+        List<Order> orders = (List<Order>) session.getAttribute("orders");
+        
+        if (orders != null && !orders.isEmpty()){
+            orders.add(order);
+        } else {
+            orders = new ArrayList<>();
+            orders.add(order);
+        }
+        
+        
+        
         User user = (User) session.getAttribute("user");
         return user.getRole() + "page";
     }
