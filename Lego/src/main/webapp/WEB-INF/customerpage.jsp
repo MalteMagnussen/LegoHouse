@@ -57,7 +57,6 @@
              */
             List<Order> orders = (List<Order>) session.getAttribute("orders");
             if (orders != null && !orders.isEmpty()) {
-        
                 for (Order order : orders) {
                     int id = order.getId();
                     out.println("<form method=\"post\" action=\"FrontController\">\n"
@@ -69,7 +68,6 @@
                             + "            <input type=\"submit\" value=\"Lego: " + id + "\"/>\n"
                             + "        </form>");
                 }
-        
             }
         %>
     </div>
