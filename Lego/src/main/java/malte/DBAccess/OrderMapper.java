@@ -36,12 +36,16 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement(SQL);
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setInt(1, order.getIdorders());
             ps.setInt(2, order.getLength());
             ps.setInt(3, order.getWidth());
             ps.setInt(4, order.getHeight());
             ps.executeUpdate();
+            ResultSet ids = ps.getGeneratedKeys();
+            ids.next();
+            int id = ids.getInt( 1 );
+            order.setId( id );
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         }

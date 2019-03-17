@@ -87,7 +87,7 @@ public class Product extends Command {
         HttpSession session = request.getSession();
         
         String tempid = (String) request.getParameter("id");
-        int id = Integer.getInteger(tempid);
+        int id = Integer.parseInt(tempid);
         
         List<Order> orders = (List<Order>) session.getAttribute("orders");
         

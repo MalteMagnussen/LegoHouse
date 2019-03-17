@@ -3,7 +3,8 @@
 <%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
-    <% User user = (User) session.getAttribute("user"); %>
+    <% User user = (User) session.getAttribute("user"); 
+        int userid = user.getId();  %>
     <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
         Logged in as: <%= user.getEmail() %> </h1>
 
@@ -14,7 +15,7 @@
     <!-- Hidden input: &origin=addProduct -->
     <input type="hidden" name="origin" value="addProduct">
     <!-- Hidden input: &id=User.getID() -->
-    <input type="hidden" name="id" value="<% out.print(user.getId());%>">
+    <input type="hidden" name="id" value="<% out.print(userid); %>">
     <!-- Table start. Table makes sure it's all organized neatly -->
     <table class="table table-striped">
 
