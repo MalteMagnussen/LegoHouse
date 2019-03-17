@@ -26,7 +26,6 @@ public class Order implements Serializable {
     private int length, width, height, idorders, id;
     private boolean sent;
 
-    private int id;
 
     /**
      * Get the value of id
