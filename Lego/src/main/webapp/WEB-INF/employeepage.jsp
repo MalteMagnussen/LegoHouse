@@ -1,3 +1,4 @@
+<%@page import="malte.entities.Order"%>
 <%@page import="java.util.List"%>
 <%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
@@ -15,14 +16,15 @@
                 String username = user.getEmail();
                 out.println("<br>");
                 out.println("<h5> Invoices for: " + username + "</h5>");
-                List<Order> carts = session.getInvoices(user);
-                for (ShoppingCart cart : carts) {
-                    String date = cart.getDate();
-                    out.println("<form method=\"post\" action=\"/Cupcake/Controller?command=Product\">\n"
-                            + "            <input type=\"hidden\" name=\"origin\" value=\"admininvoice\">\n"
-                            + "            <input type=\"hidden\" name=\"date\" value=\"" + date + "\">\n"
+                List<Order> orders = user.getOrders();
+                for (Order order : orders) {
+                    int id = order.getId();
+                    out.println("<form method=\"post\" action=\"FrontController\">\n"
+                            + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
+                            + "            <input type=\"hidden\" name=\"origin\" value=\"employeeorders\">\n"
+                            + "            <input type=\"hidden\" name=\"orderid\" value=\"" + id + "\">\n"
                             + "            <input type=\"hidden\" name=\"user\" value=\"" + username + "\">\n"
-                            + "            <input type=\"submit\" value=\"Invoice of: " + date + "\"/>\n"
+                            + "            <input type=\"submit\" value=\"Id of order: " + id + "\"/>\n"
                             + "        </form>");
                 }
             }
