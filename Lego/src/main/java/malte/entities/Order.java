@@ -17,8 +17,10 @@ class Order implements Serializable {
     public Order() {
     }
 
+    /**
+     * Fields.
+     */
     private int length, width, height, idorders;
-
     private boolean sent;
 
     /**
