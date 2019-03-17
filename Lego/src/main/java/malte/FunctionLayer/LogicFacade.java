@@ -89,4 +89,8 @@ public class LogicFacade {
     public static Order getOrder(int id) throws CustomException {
         return OrderMapper.getOrder(id);
     }
+
+    public static void sendOrder(int id) {
+        OrderMapper.sendOrder(id);
+    }
 }

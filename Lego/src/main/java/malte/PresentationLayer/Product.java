@@ -119,7 +119,14 @@ public class Product extends Command {
     }
 
     private String sendOrder(HttpServletRequest request) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        
+        int id = Integer.parseInt( (String) request.getParameter("id"));
+        
+        LogicFacade.sendOrder(id);
+        
+        return user.getRole() + "page";
     }
     
 }

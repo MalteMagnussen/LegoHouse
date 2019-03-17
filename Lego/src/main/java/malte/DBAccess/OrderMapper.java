@@ -130,4 +130,16 @@ public class OrderMapper {
         return order;
     }
 
+    public static void sendOrder(int id) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE useradmin.orders set sent = true WHERE id = ?;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(OrderMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
