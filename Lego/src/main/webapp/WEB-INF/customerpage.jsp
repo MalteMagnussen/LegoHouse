@@ -6,8 +6,7 @@
 
 <% User user = (User) session.getAttribute("user"); %>
 
-<div class="row">
-    <div class="col-sm-6">
+
         <!-- Form start -->
         <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
             <!-- Hidden input: &command=Product -->
@@ -48,11 +47,7 @@
             <!-- Form end -->
         </form>
 
-    </div><div class="col-sm-6">
-
-        
-        
-    </div>
-</div>
+       <!--     <div class="row"></div>
+       <div class="col-sm-6"></div> -->
 
 <jsp:include page='/footer.jsp'></jsp:include>
