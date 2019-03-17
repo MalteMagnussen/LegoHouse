@@ -76,6 +76,11 @@ public class UserMapper {
         }
     }
 
+    /**
+     * Get all Users
+     * @return List of all Users.
+     * @throws CustomException 
+     */
     public static List<User> getUsers() throws CustomException {
         List<User> users = new ArrayList<>();
         try {

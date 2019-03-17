@@ -71,4 +71,12 @@ public class LogicFacade {
     public static List<Order> getOrders(User user) throws CustomException {
         return OrderMapper.getOrders(user);
     }
+
+    public static List<User> getUsers(User user) throws CustomException {
+        if (user.getRole().equals("employee")) {
+            return UserMapper.getUsers();
+        } else {
+            throw new CustomException("Can't do this. You're not an employee.");
+        }
+    }
 }
