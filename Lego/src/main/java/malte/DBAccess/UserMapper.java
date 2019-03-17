@@ -62,11 +62,11 @@ public class UserMapper {
                 String role = rs.getString("role");
                 int id = rs.getInt("id");
                 User user = new User(email, password, role);
+                user.setId(id);
                 List<Order> orders = OrderMapper.getOrders(user);
                 if (orders != null && !orders.isEmpty()) {
                     user.setOrders(orders);
                 }
-                user.setId(id);
                 return user;
             } else {
                 throw new CustomException("Could not validate user");

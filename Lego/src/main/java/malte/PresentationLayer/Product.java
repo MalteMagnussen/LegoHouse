@@ -63,18 +63,16 @@ public class Product extends Command {
         
         Order order = LogicFacade.createOrder(id, length, width, height);
         
-        List<Order> orders = (List<Order>) session.getAttribute("orders");
+        User user = (User) session.getAttribute("user");
         
-        if (orders != null && !orders.isEmpty()){
-            orders.add(order);
-        } else {
-            orders = new ArrayList<>();
-            orders.add(order);
-        }
+        List<Order> orders = user.getOrders();
+        
+        orders.add(order);
+        
+        user.setOrders(orders);
         
         session.setAttribute("orders", orders);
         
-        User user = (User) session.getAttribute("user");
         return user.getRole() + "page";
     }
 
