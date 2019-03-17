@@ -7,9 +7,11 @@ package malte.PresentationLayer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.CustomException;
 import malte.entities.Order;
+import malte.entities.User;
 
 /**
  *
@@ -52,10 +54,10 @@ public class Product extends Command {
         int height = Integer.parseInt(tempHeight);
         
         Order order = LogicFacade.createOrder(id, length, width, height);
-        request.getSession().setAttribute("order", order);
-        
-        // TO DO - Return proper String for where you want user to go now.
-        return null;
+        HttpSession session = request.getSession();
+        session.setAttribute("order", order);
+        User user = (User) session.getAttribute("user");
+        return user.getRole() + "page";
     }
     
 }
