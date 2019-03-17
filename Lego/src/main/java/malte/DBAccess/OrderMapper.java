@@ -10,8 +10,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import malte.FunctionLayer.CustomException;
 import malte.entities.Order;
+import malte.entities.User;
 
 /**
  *
@@ -42,6 +45,14 @@ public class OrderMapper {
         }
     }
     
-    
+    public static List<Order> getOrders(User user) throws CustomException {
+        List<Order> orders = new ArrayList<>();
+        
+        
+        
+        
+        return orders;
+        
+    }
 
 }
