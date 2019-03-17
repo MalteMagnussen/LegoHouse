@@ -1,10 +1,12 @@
 package malte.entities;
 
+import java.io.Serializable;
+
 /**
  * User Entity Class.
  * @author Malte
  */
-public class User {
+public class User implements Serializable {
 
     /**
      * Fields

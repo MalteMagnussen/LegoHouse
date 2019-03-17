@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import malte.FunctionLayer.LoginSampleException;
 
-
+/**
+ * Front Controller.
+ * @author Malte
+ */
 @WebServlet( name = "FrontController", urlPatterns = { "/FrontController" } )
 public class FrontController extends HttpServlet {
 

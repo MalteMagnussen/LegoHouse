@@ -7,6 +7,10 @@ import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.LoginSampleException;
 import malte.entities.User;
 
+/**
+ * 
+ * @author Malte
+ */
 public class Login extends Command {
 
     @Override
