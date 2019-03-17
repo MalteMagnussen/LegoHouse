@@ -5,7 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import malte.FunctionLayer.CustomException;
 import malte.entities.Order;
 import malte.entities.User;
@@ -73,4 +76,31 @@ public class UserMapper {
         }
     }
 
+    public static List<User> getUsers() throws CustomException {
+        List<User> users = new ArrayList<>();
+        try {
+
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM useradmin.users;";
+            ResultSet rs = con.prepareStatement(SQL).executeQuery();
+            
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                String role = rs.getString("role");
+                
+                User user = new User(email, password, role);
+                user.setId(id);
+                user.setOrders(OrderMapper.getOrders(user));
+                
+                users.add(user);                
+                
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(UserMapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return users;
+    }
 }
