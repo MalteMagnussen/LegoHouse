@@ -33,16 +33,4 @@ INSERT INTO `userstest` VALUES
 (2,'ken@somewhere.com','kensen','customer'),
 (3,'robin@somewhere.com','batman','employee');
 
-LOCK TABLES `orderstest` WRITE;
-INSERT INTO `useradmintest`.`orderstest`
-(`idorders`,
-`length`,
-`width`,
-`height`)
-VALUES
-(1,
-10,
-10,
-10);
-
 UNLOCK TABLES;

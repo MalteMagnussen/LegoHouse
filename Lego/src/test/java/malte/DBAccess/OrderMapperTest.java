@@ -87,11 +87,10 @@ public class OrderMapperTest {
         assertNotNull(testConnection);
     }
     
-    @Test
+    @Test (expected = CustomException.class)
     public void testGetOrders() throws CustomException {
         User user = UserMapper.login("jens@somewhere.com", "jensen");
-        List<Order> orders = LogicFacade.getOrders(user);
-        assertTrue(orders != null && !orders.isEmpty());
+        LogicFacade.getOrders(user);
     }
     
 }
