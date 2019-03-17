@@ -20,6 +20,7 @@ CREATE TABLE `useradmin`.`orders` (
   `length` INT NOT NULL DEFAULT 0,
   `width` INT NOT NULL DEFAULT 0,
   `height` INT NOT NULL DEFAULT 0,
+  `date` DATETIME NOT NULL DEFAULT current_timestamp,
   CONSTRAINT `idorders`
     FOREIGN KEY (`idorders`)
     REFERENCES `useradmin`.`users` (`id`)
