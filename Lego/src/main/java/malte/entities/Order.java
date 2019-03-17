@@ -16,8 +16,64 @@ class Order implements Serializable {
 
     public Order() {
     }
-    
-    private int length, width;
+
+    private int length, width, height, idorders;
+
+    private boolean sent;
+
+    /**
+     * Get the value of sent
+     *
+     * @return the value of sent
+     */
+    public boolean isSent() {
+        return sent;
+    }
+
+    /**
+     * Set the value of sent
+     *
+     * @param sent new value of sent
+     */
+    public void setSent(boolean sent) {
+        this.sent = sent;
+    }
+
+    /**
+     * Get the value of idorders
+     *
+     * @return the value of idorders
+     */
+    public int getIdorders() {
+        return idorders;
+    }
+
+    /**
+     * Set the value of idorders
+     *
+     * @param idorders new value of idorders
+     */
+    public void setIdorders(int idorders) {
+        this.idorders = idorders;
+    }
+
+    /**
+     * Get the value of height
+     *
+     * @return the value of height
+     */
+    public int getHeight() {
+        return height;
+    }
+
+    /**
+     * Set the value of height
+     *
+     * @param height new value of height
+     */
+    public void setHeight(int height) {
+        this.height = height;
+    }
 
     /**
      * Get the value of length
