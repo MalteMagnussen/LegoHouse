@@ -50,25 +50,49 @@
 </form>
 <div class="row">
     <div class="col-sm-6">
-
-
+        <%
+            /**
+             * List of all orders from a user.
+             * Puts selected order in session as "order".
+             */
+            List<Order> orders = (List<Order>) session.getAttribute("orders");
+            if (orders != null && !orders.isEmpty()) {
+        
+                for (Order order : orders) {
+                    String date = order.getDate();
+                    out.println("<form method=\"post\" action=\"FrontController\">\n"
+                                                                    /* Where to in the Command map */ 
+                            + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
+                                                                    /* Where to in the Product switch */
+                            + "            <input type=\"hidden\" name=\"origin\" value=\"order\">\n"
+                            + "            <input type=\"hidden\" name=\"date\" value=\"" + date + "\">\n"
+                            + "            <input type=\"submit\" value=\"List of: " + date + "\"/>\n"
+                            + "        </form>");
+                }
+        
+            }
+        %>
+        
 
     </div>
     <div class="col-sm-6">
 
         <%
-            List<Order> orders = (List<Order>) session.getAttribute("orders");
-            if (orders != null && !orders.isEmpty()) {
+            /**
+             * Shows selected Order.
+             */
+            Order order = (Order) session.getAttribute("order");
+            if (order != null) {
         %>
         <!--  Below is the Script for Sorting.   -->
         <script>
             $(document).ready(function () {
-                $('#list').DataTable();
+                $('#order').DataTable();
             });
         </script>
 
         <!--  Below is the Table for an Invoice  -->
-        <table border="3" width="2" cellspacing="2" cellpadding="2" id="list" class="display">
+        <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
             <thead>
                 <tr>
                     <th>Sent</th>
@@ -80,7 +104,6 @@
             </thead>
             <tbody>
                 <%
-                    for (Order order : orders) {
                         out.println("<tr>");
 
                         out.println("<td>" + order.isSent() + "</td>");
@@ -90,7 +113,6 @@
                         out.println("<td>" + order.getDate() + "$</td>");
 
                         out.println("</tr>");
-                    }
                 %>
             </tbody>
         </table>
