@@ -136,7 +136,7 @@ public class OrderMapper {
             String SQL = "UPDATE useradmin.orders set sent = true WHERE id = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
-            ps.executeQuery();
+            ps.executeUpdate();
         } catch (ClassNotFoundException | SQLException ex) {
             throw new CustomException(ex.getMessage());
         }
