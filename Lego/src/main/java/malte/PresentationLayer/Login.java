@@ -54,7 +54,7 @@ public class Login extends Command {
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
         if (user.getRole().equals("employee")){
-            
+            session.setAttribute("users", LogicFacade.getUsers(user));
             return user.getRole() + "page";
         } else {
             return user.getRole() + "page";
