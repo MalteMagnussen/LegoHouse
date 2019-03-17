@@ -36,7 +36,7 @@ public class Product extends Command {
             }
             
         }
-        return null;
+        throw new CustomException("Something went wrong in Product.java");
 
     }
 
