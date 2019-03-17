@@ -32,6 +32,13 @@ public class Login extends Command {
         
     }
 
+    /**
+     * Login Method.
+     * Called from Facade. Uses DataMapper.
+     * @param request
+     * @return View String.
+     * @throws LoginSampleException 
+     */
     private String Login(HttpServletRequest request) throws LoginSampleException {
         String email = (String) request.getParameter( "email" );
         String password = (String) request.getParameter( "password" );
@@ -42,6 +49,13 @@ public class Login extends Command {
         return user.getRole() + "page";
     }
 
+    /**
+     * Registration method.
+     * Called from Facade. Uses DataMapper.
+     * @param request
+     * @return View String.
+     * @throws LoginSampleException 
+     */
     private String Registration(HttpServletRequest request) throws LoginSampleException {
         String email = (String) request.getParameter( "email" );
         String password1 = (String) request.getParameter( "password1" );
