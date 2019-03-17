@@ -51,11 +51,16 @@
             User user = (User) session.getAttribute("user");
             if (user != null) {
         %>
-                <form method="post" action="FrontController" style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-                    <input type="hidden" name="command" value="Login">
-                    <input type="hidden" name="origin" value="logout">
-                    <input type="submit" value="Log Out"/>
-                </form>
+        <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+            <form method="post" action="FrontController" >
+                <input type="hidden" name="command" value="Login">
+                <input type="hidden" name="origin" value="logout">
+                <input type="submit" value="Log Out"/>
+            </form>
+
+            <a href="WEB-INF/customerpage.jsp">Customer Page</a>
+            <a href="index.jsp">Index</a>
+        </div>
         <%
             }
         %>
