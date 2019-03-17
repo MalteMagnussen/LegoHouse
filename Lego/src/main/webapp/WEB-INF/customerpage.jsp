@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="malte.entities.Order"%>
 <%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
@@ -46,8 +48,57 @@
     </table>
     <!-- Form end -->
 </form>
+<div class="row">
+    <div class="col-sm-6">
 
-<!--     <div class="row"></div>
-<div class="col-sm-6"></div> -->
+
+
+    </div>
+    <div class="col-sm-6">
+
+        <%
+            List<Order> orders = (List<Order>) session.getAttribute("orders");
+            if (orders != null && !orders.isEmpty()) {
+        %>
+        <!--  Below is the Script for Sorting.   -->
+        <script>
+            $(document).ready(function () {
+                $('#list').DataTable();
+            });
+        </script>
+
+        <!--  Below is the Table for an Invoice  -->
+        <table border="3" width="2" cellspacing="2" cellpadding="2" id="list" class="display">
+            <thead>
+                <tr>
+                    <th>Sent</th>
+                    <th>length</th>
+                    <th>width</th>
+                    <th>height</th>
+                    <th>date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    for (Order order : orders) {
+                        out.println("<tr>");
+
+                        out.println("<td>" + order.isSent() + "</td>");
+                        out.println("<td>" + order.getLength() + "</td>");
+                        out.println("<td>" + order.getWidth() + "$</td>");
+                        out.println("<td>" + order.getHeight() + "</td>");
+                        out.println("<td>" + order.getDate() + "$</td>");
+
+                        out.println("</tr>");
+                    }
+                %>
+            </tbody>
+        </table>
+
+        <%
+            }
+        %>
+    </div>
+</div>
 
 <jsp:include page='/footer.jsp'></jsp:include>
