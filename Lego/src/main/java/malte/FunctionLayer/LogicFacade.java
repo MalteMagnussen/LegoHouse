@@ -90,7 +90,7 @@ public class LogicFacade {
         return OrderMapper.getOrder(id);
     }
 
-    public static void sendOrder(int id) {
+    public static void sendOrder(int id) throws CustomException {
         OrderMapper.sendOrder(id);
     }
 }

@@ -118,7 +118,7 @@ public class Product extends Command {
         return user.getRole() + "page";
     }
 
-    private String sendOrder(HttpServletRequest request) {
+    private String sendOrder(HttpServletRequest request) throws CustomException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         
