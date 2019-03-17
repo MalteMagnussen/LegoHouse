@@ -3,7 +3,9 @@
 <!-- Author: Malte -->
     <h1 style="margin: auto; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
         Logged in as: <%=request.getParameter("email")%> </h1>
+
 <% User user = (User) session.getAttribute("user"); %>
+
 <!-- Form start -->
 <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 60%">
     <!-- Hidden input: &command=Product -->
