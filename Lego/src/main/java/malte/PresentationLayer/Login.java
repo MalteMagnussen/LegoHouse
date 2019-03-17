@@ -14,12 +14,12 @@ import malte.entities.User;
  * @author Malte
  */
 public class Login extends Command {
-
+    
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-
+        
         String origin = (String) request.getParameter("origin");
-
+        
         switch (origin) {
             // Login an existing User
             case "login": {
@@ -33,10 +33,10 @@ public class Login extends Command {
             case "logout": {
                 return Logout(request);
             }
-
+            
         }
         return null;
-
+        
     }
 
     /**
@@ -50,9 +50,13 @@ public class Login extends Command {
         String email = (String) request.getParameter("email");
         String password = (String) request.getParameter("password");
         User user = LogicFacade.login(email, password);
-        List<Order> orders = LogicFacade.getOrders(user);
         HttpSession session = request.getSession();
-        session.setAttribute("orders", orders);
+        try {
+            List<Order> orders = LogicFacade.getOrders(user);
+            session.setAttribute("orders", orders);
+        } catch (CustomException ex) {
+            session.setAttribute("message", ex);
+        }
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
         return user.getRole() + "page";
@@ -92,5 +96,5 @@ public class Login extends Command {
         session.invalidate();
         throw new CustomException("Logged out");
     }
-
+    
 }
