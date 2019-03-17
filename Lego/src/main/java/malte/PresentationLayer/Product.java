@@ -102,13 +102,15 @@ public class Product extends Command {
         return user.getRole() + "page";
     }
 
-    private String employeeorder(HttpServletRequest request) {
+    private String employeeorder(HttpServletRequest request) throws CustomException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         
         int id = Integer.parseInt( (String) request.getParameter("id"));
         
         Order order = LogicFacade.getOrder(id);
+        
+        session.setAttribute("order", order);
         
         return user.getRole() + "page";
     }
