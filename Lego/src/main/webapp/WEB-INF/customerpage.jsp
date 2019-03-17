@@ -58,7 +58,7 @@
             if (orders != null && !orders.isEmpty()) {
         
                 for (Order order : orders) {
-                    int id = order.getID();
+                    int id = order.getId();
                     out.println("<form method=\"post\" action=\"FrontController\">\n"
                                                                     /* Where to in the Command map */ 
                             + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
@@ -96,7 +96,7 @@
                     <th>length</th>
                     <th>width</th>
                     <th>height</th>
-                    <th>date</th>
+                    <th>id/<th>
                 </tr>
             </thead>
             <tbody>
@@ -107,7 +107,7 @@
                         out.println("<td>" + order.getLength() + "</td>");
                         out.println("<td>" + order.getWidth() + "$</td>");
                         out.println("<td>" + order.getHeight() + "</td>");
-                        out.println("<td>" + order.getDate() + "$</td>");
+                        out.println("<td>" + order.getId() + "$</td>");
 
                         out.println("</tr>");
                 %>
