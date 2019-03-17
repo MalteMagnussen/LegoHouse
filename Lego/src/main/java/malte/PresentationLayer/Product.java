@@ -88,8 +88,8 @@ public class Product extends Command {
         
         String tempid = (String) request.getParameter("id");
         int id = Integer.parseInt(tempid);
-        
-        List<Order> orders = (List<Order>) session.getAttribute("orders");
+        User user = (User) session.getAttribute("user");
+        List<Order> orders = user.getOrders();
         
         for (Order order: orders){
             if (order.getId() == id){
@@ -97,7 +97,6 @@ public class Product extends Command {
             }
         }
         
-        User user = (User) session.getAttribute("user");
         return user.getRole() + "page";
     }
     

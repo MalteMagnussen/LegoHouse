@@ -55,7 +55,7 @@
              * List of all orders from a user.
              * Puts selected order in session as "order".
              */
-            List<Order> orders = (List<Order>) session.getAttribute("orders");
+            List<Order> orders = user.getOrders();
             if (orders != null && !orders.isEmpty()) {
                 for (Order order : orders) {
                     int id = order.getId();

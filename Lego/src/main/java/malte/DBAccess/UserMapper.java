@@ -60,6 +60,7 @@ public class UserMapper {
                 String role = rs.getString( "role" );
                 int id = rs.getInt( "id" );
                 User user = new User( email, password, role );
+                user.setOrders(OrderMapper.getOrders(user));
                 user.setId( id );
                 return user;
             } else {
