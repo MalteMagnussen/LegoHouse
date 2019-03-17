@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import malte.FunctionLayer.LoginSampleException;
+import malte.FunctionLayer.CustomException;
 import malte.entities.Order;
 
 /**
@@ -19,7 +19,7 @@ import malte.entities.Order;
  */
 public class OrderMapper {
     
-    public static void createOrder( Order order ) throws LoginSampleException {
+    public static void createOrder( Order order ) throws CustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
@@ -33,7 +33,7 @@ public class OrderMapper {
 //            int id = ids.getInt( 1 );
 //            user.setId( id );
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+            throw new CustomException( ex.getMessage() );
         }
     }
 

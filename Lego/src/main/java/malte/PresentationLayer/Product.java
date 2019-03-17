@@ -8,7 +8,7 @@ package malte.PresentationLayer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import malte.FunctionLayer.LogicFacade;
-import malte.FunctionLayer.LoginSampleException;
+import malte.FunctionLayer.CustomException;
 import malte.entities.Order;
 
 /**
@@ -18,7 +18,7 @@ import malte.entities.Order;
 public class Product extends Command {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
         String origin = (String) request.getParameter("origin");
 
         switch (origin) {
@@ -32,7 +32,7 @@ public class Product extends Command {
 
     }
 
-    private String addProduct(HttpServletRequest request) {
+    private String addProduct(HttpServletRequest request) throws CustomException {
         String tempid = (String) request.getParameter("id");
         int id = Integer.parseInt(tempid);
         

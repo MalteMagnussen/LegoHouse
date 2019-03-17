@@ -16,9 +16,9 @@ public class LogicFacade {
      * @param email Users email.
      * @param password Users password.
      * @return User entity.
-     * @throws LoginSampleException 
+     * @throws CustomException 
      */
-    public static User login( String email, String password ) throws LoginSampleException {
+    public static User login( String email, String password ) throws CustomException {
         return UserMapper.login( email, password );
     } 
 
@@ -27,15 +27,15 @@ public class LogicFacade {
      * @param email Users email.
      * @param password Users password.
      * @return User entity.
-     * @throws LoginSampleException 
+     * @throws CustomException 
      */
-    public static User createUser( String email, String password ) throws LoginSampleException {
+    public static User createUser( String email, String password ) throws CustomException {
         User user = new User(email, password, "customer");
         UserMapper.createUser( user );
         return user;
     }
     
-    public static Order createOrder(int id, int length, int width, int height) {
+    public static Order createOrder(int id, int length, int width, int height) throws CustomException {
         
         Order order = new Order();
         order.setIdorders(id);

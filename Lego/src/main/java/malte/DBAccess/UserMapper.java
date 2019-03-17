@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import malte.FunctionLayer.LoginSampleException;
+import malte.FunctionLayer.CustomException;
 import malte.entities.User;
 
 public class UserMapper {
@@ -16,9 +16,9 @@ public class UserMapper {
      * Inputs a User into the SQL database.
      * 
      * @param user Entity
-     * @throws LoginSampleException 
+     * @throws CustomException 
      */
-    public static void createUser( User user ) throws LoginSampleException {
+    public static void createUser( User user ) throws CustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
@@ -32,7 +32,7 @@ public class UserMapper {
             int id = ids.getInt( 1 );
             user.setId( id );
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+            throw new CustomException( ex.getMessage() );
         }
     }
 
@@ -45,9 +45,9 @@ public class UserMapper {
      * @param email Users email
      * @param password Users password
      * @return User entity
-     * @throws LoginSampleException 
+     * @throws CustomException 
      */
-    public static User login( String email, String password ) throws LoginSampleException {
+    public static User login( String email, String password ) throws CustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT id, role FROM Users "
@@ -63,10 +63,10 @@ public class UserMapper {
                 user.setId( id );
                 return user;
             } else {
-                throw new LoginSampleException( "Could not validate user" );
+                throw new CustomException( "Could not validate user" );
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
-            throw new LoginSampleException(ex.getMessage());
+            throw new CustomException(ex.getMessage());
         }
     }
 

@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import malte.FunctionLayer.LogicFacade;
-import malte.FunctionLayer.LoginSampleException;
+import malte.FunctionLayer.CustomException;
 import malte.entities.User;
 
 /**
@@ -14,7 +14,7 @@ import malte.entities.User;
 public class Login extends Command {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
 
         String origin = (String) request.getParameter("origin");
 
@@ -36,9 +36,9 @@ public class Login extends Command {
      *
      * @param request
      * @return View String.
-     * @throws LoginSampleException
+     * @throws CustomException
      */
-    private String Login(HttpServletRequest request) throws LoginSampleException {
+    private String Login(HttpServletRequest request) throws CustomException {
         String email = (String) request.getParameter("email");
         String password = (String) request.getParameter("password");
         User user = LogicFacade.login(email, password);
@@ -53,9 +53,9 @@ public class Login extends Command {
      *
      * @param request
      * @return View String.
-     * @throws LoginSampleException
+     * @throws CustomException
      */
-    private String Registration(HttpServletRequest request) throws LoginSampleException {
+    private String Registration(HttpServletRequest request) throws CustomException {
         String email = (String) request.getParameter("email");
         String password1 = (String) request.getParameter("password1");
         String password2 = (String) request.getParameter("password2");
@@ -66,7 +66,7 @@ public class Login extends Command {
             session.setAttribute("role", user.getRole());
             return user.getRole() + "page";
         } else {
-            throw new LoginSampleException("the two passwords did not match");
+            throw new CustomException("the two passwords did not match");
         }
     }
 

@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.FunctionLayer.LoginSampleException;
+import malte.FunctionLayer.CustomException;
 
 /**
  * Front Controller.
@@ -26,7 +26,7 @@ public class FrontController extends HttpServlet {
             Command action = Command.from( request );
             String view = action.execute( request, response );
             request.getRequestDispatcher( "/WEB-INF/" + view + ".jsp" ).forward( request, response );
-        } catch ( LoginSampleException ex ) {
+        } catch ( CustomException ex ) {
             request.setAttribute( "error", ex.getMessage() );
             request.getRequestDispatcher( "index.jsp" ).forward( request, response );
         }

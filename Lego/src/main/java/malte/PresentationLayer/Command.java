@@ -3,7 +3,7 @@ package malte.PresentationLayer;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.FunctionLayer.LoginSampleException;
+import malte.FunctionLayer.CustomException;
 
 abstract class Command {
 
@@ -24,6 +24,6 @@ abstract class Command {
     }
 
     abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
-            throws LoginSampleException;
+            throws CustomException;
 
 }
