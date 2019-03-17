@@ -8,14 +8,14 @@ import malte.FunctionLayer.LoginSampleException;
 import malte.entities.User;
 
 /**
- * 
+ *
  * @author Malte
  */
 public class Login extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
-        
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+
         String origin = (String) request.getParameter("origin");
 
         switch (origin) {
@@ -25,49 +25,48 @@ public class Login extends Command {
             case "registration": {
                 return Registration(request);
             }
-            
+
         }
-        
         return null;
-        
+
     }
 
     /**
-     * Login Method.
-     * Called from Facade. Uses DataMapper.
+     * Login Method. Called from Facade. Uses DataMapper.
+     *
      * @param request
      * @return View String.
-     * @throws LoginSampleException 
+     * @throws LoginSampleException
      */
     private String Login(HttpServletRequest request) throws LoginSampleException {
-        String email = (String) request.getParameter( "email" );
-        String password = (String) request.getParameter( "password" );
-        User user = LogicFacade.login( email, password );
+        String email = (String) request.getParameter("email");
+        String password = (String) request.getParameter("password");
+        User user = LogicFacade.login(email, password);
         HttpSession session = request.getSession();
-        session.setAttribute( "user", user );
-        session.setAttribute( "role", user.getRole() );
+        session.setAttribute("user", user);
+        session.setAttribute("role", user.getRole());
         return user.getRole() + "page";
     }
 
     /**
-     * Registration method.
-     * Called from Facade. Uses DataMapper.
+     * Registration method. Called from Facade. Uses DataMapper.
+     *
      * @param request
      * @return View String.
-     * @throws LoginSampleException 
+     * @throws LoginSampleException
      */
     private String Registration(HttpServletRequest request) throws LoginSampleException {
-        String email = (String) request.getParameter( "email" );
-        String password1 = (String) request.getParameter( "password1" );
-        String password2 = (String) request.getParameter( "password2" );
-        if ( password1.equals( password2 ) ) {
-            User user = LogicFacade.createUser( email, password1 );
+        String email = (String) request.getParameter("email");
+        String password1 = (String) request.getParameter("password1");
+        String password2 = (String) request.getParameter("password2");
+        if (password1.equals(password2)) {
+            User user = LogicFacade.createUser(email, password1);
             HttpSession session = request.getSession();
-            session.setAttribute( "user", user );
-            session.setAttribute( "role", user.getRole() );
+            session.setAttribute("user", user);
+            session.setAttribute("role", user.getRole());
             return user.getRole() + "page";
         } else {
-            throw new LoginSampleException( "the two passwords did not match" );
+            throw new LoginSampleException("the two passwords did not match");
         }
     }
 
