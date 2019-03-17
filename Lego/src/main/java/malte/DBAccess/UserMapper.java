@@ -10,6 +10,14 @@ import malte.entities.User;
 
 public class UserMapper {
 
+    /**
+     * Create User Method.
+     * 
+     * Inputs a User into the SQL database.
+     * 
+     * @param user Entity
+     * @throws LoginSampleException 
+     */
     public static void createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();

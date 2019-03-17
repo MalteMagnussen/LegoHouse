@@ -3,10 +3,7 @@ package malte.FunctionLayer;
 import malte.entities.User;
 import malte.DBAccess.UserMapper;
 
-/**
- * The purpose of LogicFacade is to...
- * @author kasper
- */
+
 public class LogicFacade {
 
     public static User login( String email, String password ) throws LoginSampleException {
