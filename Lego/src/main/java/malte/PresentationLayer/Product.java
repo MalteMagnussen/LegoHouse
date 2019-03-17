@@ -73,12 +73,13 @@ public class Product extends Command {
     private String order(HttpServletRequest request) {
         HttpSession session = request.getSession();
         
-        String date = (String) request.getParameter("date");
+        String tempid = (String) request.getParameter("id");
+        int id = Integer.getInteger(tempid);
         
         List<Order> orders = (List<Order>) session.getAttribute("orders");
         
         for (Order order: orders){
-            if (order.getDate().equals(date)){
+            if (order.getID().equals(id)){
                 session.setAttribute("order", order);
             }
         }

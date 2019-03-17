@@ -3,7 +3,7 @@
 
 <% String error = (String) request.getAttribute("error");
     if (error != null) {
-        out.println("<H2>Error: </h2>");
+        out.println("<H2>Message: </h2>");
         out.println(error);
     }
 %>

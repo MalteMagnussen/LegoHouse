@@ -3,10 +3,9 @@
 <%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
+    <% User user = (User) session.getAttribute("user"); %>
     <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-        Logged in as: <%=request.getParameter("email")%> </h1>
-
-<% User user = (User) session.getAttribute("user"); %>
+        Logged in as: <%= user.getEmail() %> </h1>
 
 <!-- Form start -->
 <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
@@ -59,14 +58,14 @@
             if (orders != null && !orders.isEmpty()) {
         
                 for (Order order : orders) {
-                    String date = order.getDate();
+                    int id = order.getID();
                     out.println("<form method=\"post\" action=\"FrontController\">\n"
                                                                     /* Where to in the Command map */ 
                             + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
                                                                     /* Where to in the Product switch */
                             + "            <input type=\"hidden\" name=\"origin\" value=\"order\">\n"
-                            + "            <input type=\"hidden\" name=\"date\" value=\"" + date + "\">\n"
-                            + "            <input type=\"submit\" value=\"List of: " + date + "\"/>\n"
+                            + "            <input type=\"hidden\" name=\"id\" value=\"" + id + "\">\n"
+                            + "            <input type=\"submit\" value=\"Lego: " + id + "\"/>\n"
                             + "        </form>");
                 }
         

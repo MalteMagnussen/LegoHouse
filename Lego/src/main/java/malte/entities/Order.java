@@ -23,26 +23,27 @@ public class Order implements Serializable {
     /**
      * Fields.
      */
-    private int length, width, height, idorders;
+    private int length, width, height, idorders, id;
     private boolean sent;
-    private String date;
+
+    private int id;
 
     /**
-     * Get the value of date
+     * Get the value of id
      *
-     * @return the value of date
+     * @return the value of id
      */
-    public String getDate() {
-        return date;
+    public int getId() {
+        return id;
     }
 
     /**
-     * Set the value of date
+     * Set the value of id
      *
-     * @param date new value of date
+     * @param id new value of id
      */
-    public void setDate(String date) {
-        this.date = date;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
