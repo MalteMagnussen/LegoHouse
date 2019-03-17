@@ -7,7 +7,9 @@ package malte.PresentationLayer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.LoginSampleException;
+import malte.entities.Order;
 
 /**
  *
@@ -15,12 +17,39 @@ import malte.FunctionLayer.LoginSampleException;
  */
 public class Product extends Command {
 
-    public Product() {
-    }
-
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String origin = (String) request.getParameter("origin");
+
+        switch (origin) {
+            case "addProduct": {
+                return addProduct(request);
+            }
+            
+
+        }
+        return null;
+
+    }
+
+    private String addProduct(HttpServletRequest request) {
+        String tempid = (String) request.getParameter("id");
+        int id = Integer.parseInt(tempid);
+        
+        String tempLength = (String) request.getParameter("length");
+        int length = Integer.parseInt(tempLength);
+        
+        String tempWidth = (String) request.getParameter("width");
+        int width = Integer.parseInt(tempWidth);
+        
+        String tempHeight = (String) request.getParameter("height");
+        int height = Integer.parseInt(tempHeight);
+        
+        Order order = LogicFacade.createOrder(id, length, width, height);
+        
+        
+        
+        return null;
     }
     
 }

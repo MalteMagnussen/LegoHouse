@@ -12,8 +12,11 @@ import java.io.Serializable;
  *
  * @author Malte
  */
-class Order implements Serializable {
+public class Order implements Serializable {
 
+    /**
+     * Constructor.
+     */
     public Order() {
     }
 

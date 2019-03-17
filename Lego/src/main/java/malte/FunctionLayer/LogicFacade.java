@@ -2,6 +2,7 @@ package malte.FunctionLayer;
 
 import malte.entities.User;
 import malte.DBAccess.UserMapper;
+import malte.entities.Order;
 
 /**
  * Facade Class.
@@ -31,6 +32,13 @@ public class LogicFacade {
         User user = new User(email, password, "customer");
         UserMapper.createUser( user );
         return user;
+    }
+    
+    public static Order createOrder(int id, int length, int width, int height) {
+        
+        
+        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

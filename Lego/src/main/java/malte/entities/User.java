@@ -28,7 +28,7 @@ public class User implements Serializable {
     }
 
     /**
-     * JavaBean
+     * JavaBean.
      */
     public User() {
     }
