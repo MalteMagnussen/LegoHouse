@@ -7,47 +7,47 @@
 <% User user = (User) session.getAttribute("user"); %>
 
 
-        <!-- Form start -->
-        <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
-            <!-- Hidden input: &command=Product -->
-            <input type="hidden" name="command" value="Product">
-            <!-- Hidden input: &origin=addProduct -->
-            <input type="hidden" name="origin" value="addProduct">
-            <!-- Hidden input: &id=User.getID() -->
-            <input type="hidden" name="id" value="<% out.print(user.getId()); %>">
-            <!-- Table start. Table makes sure it's all organized neatly -->
-            <table class="table table-striped">
+<!-- Form start -->
+<form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
+    <!-- Hidden input: &command=Product -->
+    <input type="hidden" name="command" value="Product">
+    <!-- Hidden input: &origin=addProduct -->
+    <input type="hidden" name="origin" value="addProduct">
+    <!-- Hidden input: &id=User.getID() -->
+    <input type="hidden" name="id" value="<% out.print(user.getId());%>">
+    <!-- Table start. Table makes sure it's all organized neatly -->
+    <table class="table table-striped">
 
-                <!-- Headers of the table -->
-                <thead>
-                    <tr>
-                        <th>Length</th>
-                        <th>Width</th>
-                        <th>Height</th>
-                        <th></th>
-                    </tr>
-                </thead>
+        <!-- Headers of the table -->
+        <thead>
+            <tr>
+                <th>Length</th>
+                <th>Width</th>
+                <th>Height</th>
+                <th></th>
+            </tr>
+        </thead>
 
-                <!-- Table body start -->
-                <tbody>
-                    <tr>
-                        <!-- Length -->
-                        <td><input type="number" name="length" placeholder="Length" id="qtyInput"></td>
-                        <!-- Width -->
-                        <td><input type="number" name="width" placeholder="Width" id="qtyInput"></td>
-                        <!-- Height -->
-                        <td><input type="number" name="height" placeholder="Height" id="qtyInput"></td>
-                        <!-- Add to cart button -->
-                        <td><input type="submit" name="submit" value="Add to cart"></td>
-                    </tr>
-                    <!-- Table Body end -->
-                </tbody>
-                <!-- Table end -->    
-            </table>
-            <!-- Form end -->
-        </form>
+        <!-- Table body start -->
+        <tbody>
+            <tr>
+                <!-- Length -->
+                <td><input type="number" name="length" placeholder="Length" id="qtyInput"></td>
+                <!-- Width -->
+                <td><input type="number" name="width" placeholder="Width" id="qtyInput"></td>
+                <!-- Height -->
+                <td><input type="number" name="height" placeholder="Height" id="qtyInput"></td>
+                <!-- Add to cart button -->
+                <td><input type="submit" name="submit" value="Add to cart"></td>
+            </tr>
+            <!-- Table Body end -->
+        </tbody>
+        <!-- Table end -->    
+    </table>
+    <!-- Form end -->
+</form>
 
-       <!--     <div class="row"></div>
-       <div class="col-sm-6"></div> -->
+<!--     <div class="row"></div>
+<div class="col-sm-6"></div> -->
 
 <jsp:include page='/footer.jsp'></jsp:include>
