@@ -85,4 +85,8 @@ public class LogicFacade {
             throw new CustomException("Can't do this. You're not an employee.");
         }
     }
+
+    public static Order getOrder(int id) {
+        return OrderMapper.getOrder(id);
+    }
 }

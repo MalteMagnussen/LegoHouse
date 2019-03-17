@@ -106,8 +106,9 @@ public class Product extends Command {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         
+        int id = Integer.parseInt( (String) request.getParameter("id"));
         
-        
+        Order order = LogicFacade.getOrder(id);
         
         return user.getRole() + "page";
     }

@@ -93,4 +93,41 @@ public class OrderMapper {
         return orders;
     }
 
+    /**
+     * Get a single Order from its ID.
+     *
+     * @param id
+     * @return
+     * @throws CustomException
+     */
+    public static Order getOrder(int id) throws CustomException {
+        Order order = new Order();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT `orders`.`sent`,\n"
+                    + "    `orders`.`length`,\n"
+                    + "    `orders`.`width`,\n"
+                    + "    `orders`.`height`\n"
+                    + "FROM `useradmin`.`orders`\n"
+                    + "WHERE `orders`.`idorders` = ?;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                boolean sent = rs.getBoolean("sent");
+                int length = rs.getInt("length");
+                int width = rs.getInt("width");
+                int height = rs.getInt("height");
+                order.setHeight(height);
+                order.setLength(length);
+                order.setWidth(width);
+                order.setSent(sent);
+                order.setId(id);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new CustomException(ex.getMessage());
+        }
+        return order;
+    }
+
 }
