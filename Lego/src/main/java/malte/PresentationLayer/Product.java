@@ -64,6 +64,11 @@ public class Product extends Command {
         return user.getRole() + "page";
     }
 
+    /**
+     * Get one Order.
+     * @param request
+     * @return 
+     */
     private String order(HttpServletRequest request) {
         HttpSession session = request.getSession();
         
