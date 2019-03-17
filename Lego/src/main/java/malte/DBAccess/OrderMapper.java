@@ -18,30 +18,32 @@ import malte.entities.Order;
  * @author Malte
  */
 public class OrderMapper {
-    
+
     /**
      * Called from LogicFacade createOrder Method.
+     *
      * @see malte.FunctionLayer.LogicFacade
      * @see malte.entities.Order
      * @param order
-     * @throws CustomException 
+     * @throws CustomException
      */
-    public static void createOrder( Order order ) throws CustomException {
+    public static void createOrder(Order order) throws CustomException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
-            ps.setInt( 1, order.getIdorders() );
-            ps.setInt( 2, order.getLength() );
-            ps.setInt( 3, order.getWidth() );
-            ps.setInt( 4, order.getHeight() );
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, order.getIdorders());
+            ps.setInt(2, order.getLength());
+            ps.setInt(3, order.getWidth());
+            ps.setInt(4, order.getHeight());
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();
-            ids.next();
-            boolean sent = ids.getBoolean( 1 );
-            order.setSent(sent);
-        } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new CustomException( ex.getMessage() );
+            if (ids.next()) {
+                boolean sent = ids.getBoolean(1);
+                order.setSent(sent);
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new CustomException(ex.getMessage());
         }
     }
 

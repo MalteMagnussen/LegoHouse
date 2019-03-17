@@ -1,10 +1,11 @@
 <%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
-    <h1 style="margin: auto; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
         Logged in as: <%=request.getParameter("email")%> </h1>
 
-<% User user = (User) session.getAttribute("user"); %>
+<% User user = (User) session.getAttribute("user"); 
+    int id = user.getId();%>
 
 <div class="row">
     <div class="col-sm-6">
@@ -15,7 +16,7 @@
             <!-- Hidden input: &origin=addProduct -->
             <input type="hidden" name="origin" value="addProduct">
             <!-- Hidden input: &id=User.getID() -->
-            <input type="hidden" name="id" value="<% user.getId();%>">
+            <input type="hidden" name="id" value="<% out.print(id); %>">
             <!-- Table start. Table makes sure it's all organized neatly -->
             <table class="table table-striped">
 
