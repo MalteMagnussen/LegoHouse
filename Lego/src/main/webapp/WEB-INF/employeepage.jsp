@@ -41,6 +41,14 @@
              */
             Order order = (Order) session.getAttribute("order");
             if (order != null) {
+                if (order.isSent() == false) {
+                    out.println("<form method=\"post\" action=\"FrontController\">\n"
+                            + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
+                            + "            <input type=\"hidden\" name=\"origin\" value=\"sendOrder\">\n"
+                            + "            <input type=\"hidden\" name=\"id\" value=\"" + order.getId() + "\">\n"
+                            + "            <input type=\"submit\" value=\"Send order\"/>\n"
+                            + "        </form>");
+                }
         %>
         <!--  Below is the Script for Sorting.   -->
         <script>

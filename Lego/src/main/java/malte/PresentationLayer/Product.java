@@ -38,6 +38,9 @@ public class Product extends Command {
             case "employeeorders": {
                 return employeeorder(request);
             }
+            case "sendOrder": {
+                return sendOrder(request);
+            }
             
         }
         throw new CustomException("Something went wrong in Product.java");
@@ -113,6 +116,10 @@ public class Product extends Command {
         session.setAttribute("order", order);
         
         return user.getRole() + "page";
+    }
+
+    private String sendOrder(HttpServletRequest request) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
