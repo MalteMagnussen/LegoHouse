@@ -46,7 +46,7 @@ public class OrderMapperTest {
     @Before
     public void setUp() {
         try {
-            // awoid making a new connection for each test
+            // avoid making a new connection for each test
             if (testConnection == null) {
                 String url = String.format("jdbc:mysql://%s:3306/%s", HOST, DBNAME);
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -79,30 +79,10 @@ public class OrderMapperTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of createOrder method, of class OrderMapper.
-     */
     @Test
-    public void testCreateOrder() throws Exception {
-        System.out.println("createOrder");
-        Order order = null;
-        OrderMapper.createOrder(order);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getOrders method, of class OrderMapper.
-     */
-    @Test
-    public void testGetOrders() throws Exception {
-        System.out.println("getOrders");
-        User user = null;
-        List<Order> expResult = null;
-        List<Order> result = OrderMapper.getOrders(user);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testSetUpOK() {
+        // Just check that we have a connection.
+        assertNotNull(testConnection);
     }
     
 }

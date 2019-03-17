@@ -28,7 +28,7 @@ public class UserMapperTest {
     @Before
     public void setUp() {
         try {
-            // awoid making a new connection for each test
+            // avoid making a new connection for each test
             if (testConnection == null) {
                 String url = String.format("jdbc:mysql://%s:3306/%s", HOST, DBNAME);
                 Class.forName("com.mysql.cj.jdbc.Driver");
