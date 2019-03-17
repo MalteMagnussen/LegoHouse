@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-sm-6">
         <!-- Form start -->
-        <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 60%">
+        <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
             <!-- Hidden input: &command=Product -->
             <input type="hidden" name="command" value="Product">
             <!-- Hidden input: &origin=addProduct -->
