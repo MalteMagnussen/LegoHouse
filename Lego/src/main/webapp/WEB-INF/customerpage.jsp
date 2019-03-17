@@ -38,7 +38,7 @@
                 <!-- Height -->
                 <td><input type="number" name="height" placeholder="Height" id="qtyInput"></td>
                 <!-- Add to cart button -->
-                <td><input type="submit" name="submit" value="Add to cart"></td>
+                <td><input type="submit" name="submit" value="Order"></td>
             </tr>
             <!-- Table Body end -->
         </tbody>
@@ -107,7 +107,7 @@
                         out.println("<td>" + order.getLength() + "</td>");
                         out.println("<td>" + order.getWidth() + "$</td>");
                         out.println("<td>" + order.getHeight() + "</td>");
-                        out.println("<td>" + order.getId() + "$</td>");
+                        out.println("<td>" + order.getId() + "</td>");
 
                         out.println("</tr>");
                 %>

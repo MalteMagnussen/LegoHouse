@@ -27,7 +27,7 @@ CREATE TABLE `useradmin`.`orders` (
     REFERENCES `useradmin`.`users` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-    ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+    ENGINE=InnoDB DEFAULT CHARSET=latin1;
     
 LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES 

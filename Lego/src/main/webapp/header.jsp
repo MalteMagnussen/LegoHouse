@@ -58,7 +58,11 @@
                 <input type="submit" value="Log Out"/>
             </form>
 
-            <a href="WEB-INF/customerpage.jsp">Customer Page</a>
+            <form method="post" action="FrontController" >
+                <input type="hidden" name="command" value="Redirect">
+                <input type="submit" value="Shop"/>
+            </form>
+            
             <a href="index.jsp">Index</a>
         </div>
         <%
