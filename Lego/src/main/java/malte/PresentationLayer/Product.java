@@ -72,7 +72,7 @@ public class Product extends Command {
             orders.add(order);
         }
         
-        
+        session.setAttribute("orders", orders);
         
         User user = (User) session.getAttribute("user");
         return user.getRole() + "page";
