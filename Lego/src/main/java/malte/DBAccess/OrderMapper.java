@@ -62,11 +62,16 @@ public class OrderMapper {
             ps.setInt(1, user.getId());
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                String role = rs.getString("role");
-                int id = rs.getInt("id");
+                boolean sent = rs.getBoolean("sent");
+                int length = rs.getInt("length");
+                int width = rs.getInt("width");
+                int height = rs.getInt("height");
                 Order order = new Order();
-                user.setId(id);
-
+                order.setHeight(height);
+                order.setLength(length);
+                order.setWidth(width);
+                order.setSent(sent);
+                orders.add(order);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new CustomException(ex.getMessage());
