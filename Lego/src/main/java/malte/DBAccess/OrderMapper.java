@@ -5,13 +5,13 @@
  */
 package malte.DBAccess;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud.Order;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import malte.FunctionLayer.LoginSampleException;
+import malte.entities.Order;
 
 /**
  *
@@ -36,4 +36,5 @@ public class OrderMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
+
 }

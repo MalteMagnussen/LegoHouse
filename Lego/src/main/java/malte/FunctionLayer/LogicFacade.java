@@ -1,5 +1,6 @@
 package malte.FunctionLayer;
 
+import malte.DBAccess.OrderMapper;
 import malte.entities.User;
 import malte.DBAccess.UserMapper;
 import malte.entities.Order;
@@ -36,9 +37,15 @@ public class LogicFacade {
     
     public static Order createOrder(int id, int length, int width, int height) {
         
+        Order order = new Order();
+        order.setIdorders(id);
+        order.setLength(length);
+        order.setWidth(width);
+        order.setHeight(height);
         
+        OrderMapper.createOrder(order);
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return order;
     }
 
 }
