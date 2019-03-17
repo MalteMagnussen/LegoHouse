@@ -72,6 +72,12 @@ public class LogicFacade {
         return OrderMapper.getOrders(user);
     }
 
+    /**
+     * 
+     * @param user
+     * @return
+     * @throws CustomException 
+     */
     public static List<User> getUsers(User user) throws CustomException {
         if (user.getRole().equals("employee")) {
             return UserMapper.getUsers();
