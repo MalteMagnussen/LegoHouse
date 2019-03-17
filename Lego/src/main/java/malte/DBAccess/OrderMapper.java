@@ -35,13 +35,12 @@ public class OrderMapper {
     public static void createOrder(Order order) throws CustomException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO orders (idorders, length, width, height, `date`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, order.getIdorders());
             ps.setInt(2, order.getLength());
             ps.setInt(3, order.getWidth());
             ps.setInt(4, order.getHeight());
-            ps.setString(5, order.getDate());
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
@@ -63,7 +62,7 @@ public class OrderMapper {
                     + "    `orders`.`length`,\n"
                     + "    `orders`.`width`,\n"
                     + "    `orders`.`height`,\n"
-                    + "    `orders`.`date`\n"
+                    + "    `orders`.`id`\n"
                     + "FROM `useradmin`.`orders`\n"
                     + "WHERE `orders`.`idorders` = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
@@ -74,13 +73,13 @@ public class OrderMapper {
                 int length = rs.getInt("length");
                 int width = rs.getInt("width");
                 int height = rs.getInt("height");
-                String date = rs.getString("date");
+                int id = rs.getInt("id");
                 Order order = new Order();
                 order.setHeight(height);
                 order.setLength(length);
                 order.setWidth(width);
                 order.setSent(sent);
-                order.setDate(date);
+                order.setId(id);
                 orders.add(order);
             }
         } catch (ClassNotFoundException | SQLException ex) {
