@@ -22,6 +22,7 @@ public class Product extends Command {
         String origin = (String) request.getParameter("origin");
 
         switch (origin) {
+            // Adds an Order to the SQL.
             case "addProduct": {
                 return addProduct(request);
             }
@@ -32,6 +33,12 @@ public class Product extends Command {
 
     }
 
+    /**
+     * Adds an Order to the SQL.
+     * @param request
+     * @return
+     * @throws CustomException 
+     */
     private String addProduct(HttpServletRequest request) throws CustomException {
         String tempid = (String) request.getParameter("id");
         int id = Integer.parseInt(tempid);
@@ -46,9 +53,9 @@ public class Product extends Command {
         int height = Integer.parseInt(tempHeight);
         
         Order order = LogicFacade.createOrder(id, length, width, height);
+        request.getSession().setAttribute("order", order);
         
-        
-        
+        // TO DO - Return proper String for where you want user to go now.
         return null;
     }
     
