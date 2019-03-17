@@ -20,17 +20,18 @@ CREATE TABLE `useradmintest`.`orderstest` (
   `length` INT NOT NULL DEFAULT 0,
   `width` INT NOT NULL DEFAULT 0,
   `height` INT NOT NULL DEFAULT 0,
-  `date` DATETIME NOT NULL DEFAULT current_timestamp,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`),
   CONSTRAINT `idorders`
     FOREIGN KEY (`idorders`)
-    REFERENCES `useradmintest`.`userstest` (`id`)
+    REFERENCES `useradmin`.`users` (`id`)
     ON DELETE CASCADE
-    ON UPDATE CASCADE);
+    ON UPDATE CASCADE)
+    ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
     
 LOCK TABLES `userstest` WRITE;
 INSERT INTO `userstest` VALUES 
 (1,'jens@somewhere.com','jensen','customer'),
 (2,'ken@somewhere.com','kensen','customer'),
 (3,'robin@somewhere.com','batman','employee');
-
 UNLOCK TABLES;
