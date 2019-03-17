@@ -19,9 +19,11 @@ public class Login extends Command {
         String origin = (String) request.getParameter("origin");
 
         switch (origin) {
+            // Login an existing User
             case "login": {
                 return Login(request);
             }
+            // Register a new User
             case "registration": {
                 return Registration(request);
             }
