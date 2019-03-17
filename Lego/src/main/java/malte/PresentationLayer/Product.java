@@ -34,6 +34,10 @@ public class Product extends Command {
             case "order": {
                 return order(request);
             }
+            // Get one order - From employeepage.jsp
+            case "employeeorder": {
+                return employeeorder(request);
+            }
             
         }
         throw new CustomException("Something went wrong in Product.java");
@@ -94,6 +98,16 @@ public class Product extends Command {
                 session.setAttribute("order", order);
             }
         }
+        
+        return user.getRole() + "page";
+    }
+
+    private String employeeorder(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        
+        
+        
         
         return user.getRole() + "page";
     }

@@ -24,8 +24,7 @@
                         out.println("<form method=\"post\" action=\"FrontController\">\n"
                                 + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
                                 + "            <input type=\"hidden\" name=\"origin\" value=\"employeeorders\">\n"
-                                + "            <input type=\"hidden\" name=\"orderid\" value=\"" + id + "\">\n"
-                                + "            <input type=\"hidden\" name=\"user\" value=\"" + username + "\">\n"
+                                + "            <input type=\"hidden\" name=\"id\" value=\"" + id + "\">\n"
                                 + "            <input type=\"submit\" value=\"Id of order: " + id + "\"/>\n"
                                 + "        </form>");
                     }
