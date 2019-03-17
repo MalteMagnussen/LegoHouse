@@ -35,16 +35,22 @@ public class LogicFacade {
         return user;
     }
     
+    /**
+     * Create Order Facade.
+     * @param id Users ID
+     * @param length LegoHouse Length
+     * @param width LegoHouse Width
+     * @param height LegoHouse Height
+     * @return Order entity.
+     * @throws CustomException
+     */
     public static Order createOrder(int id, int length, int width, int height) throws CustomException {
-        
         Order order = new Order();
         order.setIdorders(id);
         order.setLength(length);
         order.setWidth(width);
         order.setHeight(height);
-        
         OrderMapper.createOrder(order);
-        
         return order;
     }
 
