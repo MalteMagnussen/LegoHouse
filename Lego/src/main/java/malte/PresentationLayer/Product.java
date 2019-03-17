@@ -35,7 +35,7 @@ public class Product extends Command {
                 return order(request);
             }
             // Get one order - From employeepage.jsp
-            case "employeeorder": {
+            case "employeeorders": {
                 return employeeorder(request);
             }
             

@@ -109,7 +109,7 @@ public class OrderMapper {
                     + "    `orders`.`width`,\n"
                     + "    `orders`.`height`\n"
                     + "FROM `useradmin`.`orders`\n"
-                    + "WHERE `orders`.`idorders` = ?;";
+                    + "WHERE `orders`.`id` = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
