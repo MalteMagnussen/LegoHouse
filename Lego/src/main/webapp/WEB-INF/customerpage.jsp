@@ -8,7 +8,6 @@
 
 <% User user = (User) session.getAttribute("user"); %>
 
-
 <!-- Form start -->
 <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
     <!-- Hidden input: &command=Product -->

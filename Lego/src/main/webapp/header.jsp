@@ -1,3 +1,4 @@
+<%@page import="malte.entities.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!-- Author: Malte -->
@@ -46,9 +47,15 @@
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     </head>
     <body>
-        
-        <form method="post" action="FrontController">
-            <input type="hidden" name="command" value="Login">
-            <input type="hidden" name="origin" value="logout">
-            <input type="submit" value="Log Out"/>
-        </form>
+        <%
+            User user = (User) session.getAttribute("user");
+            if (user != null) {
+        %>
+                <form method="post" action="FrontController">
+                    <input type="hidden" name="command" value="Login">
+                    <input type="hidden" name="origin" value="logout">
+                    <input type="submit" value="Log Out"/>
+                </form>
+        <%
+            }
+        %>
