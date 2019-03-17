@@ -25,6 +25,25 @@ public class Order implements Serializable {
      */
     private int length, width, height, idorders;
     private boolean sent;
+    private String date;
+
+    /**
+     * Get the value of date
+     *
+     * @return the value of date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
+     * Set the value of date
+     *
+     * @param date new value of date
+     */
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     /**
      * Get the value of sent
