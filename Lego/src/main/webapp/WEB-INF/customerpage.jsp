@@ -1,13 +1,17 @@
+<%@page import="malte.entities.User"%>
 <jsp:include page='/header.jsp'></jsp:include>
 <!-- Author: Malte -->
     <h1 style="margin: auto; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
         Logged in as: <%=request.getParameter("email")%> </h1>
-
+<% User user = (User) session.getAttribute("user"); %>
 <!-- Form start -->
 <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 60%">
+    <!-- Hidden input: &command=Product -->
     <input type="hidden" name="command" value="Product">
     <!-- Hidden input: &origin=addProduct -->
     <input type="hidden" name="origin" value="addProduct">
+    <!-- Hidden input: &id=User.getID() -->
+    <input type="hidden" name="id" value="<% user.getId(); %>">
     <!-- Table start. Table makes sure it's all organized neatly -->
     <table class="table table-striped">
 
