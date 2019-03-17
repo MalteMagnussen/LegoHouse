@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import java.util.Properties;
+import malte.FunctionLayer.CustomException;
+import malte.FunctionLayer.LogicFacade;
 import malte.entities.Order;
 import malte.entities.User;
 import org.junit.After;
@@ -29,7 +31,7 @@ public class OrderMapperTest {
     private static Connection testConnection;
     private static String USER = "root";
     private static String USERPW = "root";
-    private static String DBNAME = "useradminTest";
+    private static String DBNAME = "useradmintest";
     private static String HOST = "localhost";
     
     public OrderMapperTest() {
@@ -83,6 +85,13 @@ public class OrderMapperTest {
     public void testSetUpOK() {
         // Just check that we have a connection.
         assertNotNull(testConnection);
+    }
+    
+    @Test
+    public void testGetOrders() throws CustomException {
+        User user = UserMapper.login("jens@somewhere.com", "jensen");
+        List<Order> orders = LogicFacade.getOrders(user);
+        assertTrue(orders != null && !orders.isEmpty());
     }
     
 }
