@@ -29,6 +29,7 @@ public class Product extends Command {
             case "addProduct": {
                 return addProduct(request);
             }
+            // Get one order.
             case "order": {
                 return order(request);
             }

@@ -29,6 +29,10 @@ public class Login extends Command {
             case "registration": {
                 return Registration(request);
             }
+            // Log Out
+            case "logout": {
+                return Logout(request);
+            }
 
         }
         return null;
@@ -74,6 +78,19 @@ public class Login extends Command {
         } else {
             throw new CustomException("the two passwords did not match");
         }
+    }
+
+    /**
+     * Log Out method.
+     *
+     * @param request
+     * @return
+     * @throws CustomException
+     */
+    private String Logout(HttpServletRequest request) throws CustomException {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        throw new CustomException("Logged out");
     }
 
 }
