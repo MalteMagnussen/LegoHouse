@@ -1,10 +1,12 @@
 package malte.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * User Entity Class.
+ *
  * @author Malte
  */
 public class User implements Serializable {
@@ -14,6 +16,7 @@ public class User implements Serializable {
      */
     private String password, email, role;
     private int id;
+    private List<Order> orders;
 
     /**
      * Constructor.
@@ -32,6 +35,24 @@ public class User implements Serializable {
      * JavaBean.
      */
     public User() {
+    }
+
+    /**
+     * Get the Orders of this User
+     *
+     * @return List of Orders
+     */
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    /**
+     * Set the List of Orders
+     *
+     * @param orders List of Orders
+     */
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     /**
