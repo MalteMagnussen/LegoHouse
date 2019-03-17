@@ -34,44 +34,44 @@
     <div class="col-sm-6">
 
         <%
-            ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-            if (cart != null && !cart.isEmpty()) {
+            /**
+             * Shows selected Order.
+             */
+            Order order = (Order) session.getAttribute("order");
+            if (order != null) {
         %>
         <!--  Below is the Script for Sorting.   -->
         <script>
             $(document).ready(function () {
-                $('#invoice').DataTable();
+                $('#order').DataTable();
             });
         </script>
 
         <!--  Below is the Table for an Invoice  -->
-        <table border="3" width="2" cellspacing="2" cellpadding="2" id="invoice" class="display">
+        <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
             <thead>
                 <tr>
-                    <th>Bottom</th>
-                    <th>Topping</th>
-                    <th>Price_for_one</th>
-                    <th>Quantity</th>
-                    <th>Total_Price</th>
+                    <th>Sent</th>
+                    <th>length</th>
+                    <th>width</th>
+                    <th>height</th>
+                    <th>id/<th>
                 </tr>
             </thead>
             <tbody>
                 <%
-                    for (LineItem item : cart.getLineItems()) {
                         out.println("<tr>");
 
-                        out.println("<td>" + item.getBottom() + "</td>");
-                        out.println("<td>" + item.getTop() + "</td>");
-                        out.println("<td>" + item.getPriceForOne() + "$</td>");
-                        out.println("<td>" + item.getQuantity() + "</td>");
-                        out.println("<td>" + item.getTotalPrice() + "$</td>");
+                        out.println("<td>" + order.isSent() + "</td>");
+                        out.println("<td>" + order.getLength() + "</td>");
+                        out.println("<td>" + order.getWidth() + "$</td>");
+                        out.println("<td>" + order.getHeight() + "</td>");
+                        out.println("<td>" + order.getId() + "</td>");
 
                         out.println("</tr>");
-                    }
                 %>
             </tbody>
         </table>
-
 
         <%
             }
