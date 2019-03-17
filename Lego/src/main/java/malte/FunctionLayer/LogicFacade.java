@@ -1,5 +1,6 @@
 package malte.FunctionLayer;
 
+import java.util.List;
 import malte.DBAccess.OrderMapper;
 import malte.entities.User;
 import malte.DBAccess.UserMapper;
@@ -54,4 +55,13 @@ public class LogicFacade {
         return order;
     }
 
+    /**
+     * Get a List of all Orders for one User.
+     * @param user
+     * @return 
+     * @throws CustomException 
+     */
+    public static List<Order> getOrders(User user) throws CustomException{
+        return OrderMapper.getOrders(user);
+    }
 }
