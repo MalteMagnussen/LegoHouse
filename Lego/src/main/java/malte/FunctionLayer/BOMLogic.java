@@ -56,42 +56,67 @@ public class BOMLogic
         side.setHeight(height);
         side.setDoor(hasDoor);
         side.setWindow(hasWindow);
-        for (int i = 3; i < height+3; i++)
+        // We need to add as many rows as there is height to a side.
+        for (int i = 3; i < height + 3; i++)
         {
-            if (!hasDoor && !hasWindow)
+            if (!hasDoor && !hasWindow) // If its the wide side
             {
-                Row row;
-                if (i % 2 == 1)
-                {
-                    row = getRow(length - 4);
-                } else
-                {
-                    row = getRow(length);
-                }
-                side.add(row);
+                normalrow(i, length, side);
 
-            } else if (hasDoor)
+            } else if (hasDoor) // If its the Door-side
             {
-                if (i <= 3)
+                if (i <= 5) // If we're at the door part.
                 {
-                    int doorlength = length / 2;
-                    if (i % 2 == 1)
-                    {
-                        doorlength = doorlength - 2;
-
-                    } else
-                    {
-                        doorlength = doorlength - 4;
-                    }
-                    Row row = getRow(doorlength);
-                    side.add(row);
+                    doorOrWindowRow(length, i, side);
+                } else // If we're above the door
+                {
+                    normalrow(i, length, side);
                 }
+
             } else if (hasWindow)
             {
-
+                if (i == 4 || i == 5)
+                {
+                    doorOrWindowRow(length, i, side);
+                } else // If we're above or below the window.
+                {
+                    normalrow(i, length, side);
+                }
             }
         }
         return side;
+    }
+
+    private void doorOrWindowRow(int length, int i, Side side)
+    {
+        for (int y = 0; y < 2; y++) // We need bricks on both side of the element.
+        {
+            int doorlength = length / 2;
+            if (i % 2 == 1) // If its an uneven row
+            {
+                doorlength = doorlength - 2;
+
+            } else // It its an even row.
+            {
+                doorlength = doorlength - 4;
+            }
+            Row row = getRow(doorlength);
+            side.add(row);
+        }
+    }
+
+    private void normalrow(int i, int length, Side side)
+    {
+        Row row;
+        // If its an uneven row.
+        if (i % 2 == 1)
+        {
+            row = getRow(length - 4);
+        } else // If its an even row.
+        {
+            row = getRow(length);
+        }
+        side.add(row);
     }
 
     public BOMLogic()
