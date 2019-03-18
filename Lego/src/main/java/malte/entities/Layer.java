@@ -9,7 +9,12 @@ package malte.entities;
  *
  * @author Malte
  */
-public class BOM
+public class Layer
 {
+
+    private Side side1;
+    private Side side2;
+    private Side side3;
+    private Side side4;
 
 }
