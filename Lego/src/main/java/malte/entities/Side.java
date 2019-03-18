@@ -18,6 +18,28 @@ public class Side
     private boolean window;
     private boolean door;
 
+    private int height;
+
+    /**
+     * Get the value of height
+     *
+     * @return the value of height
+     */
+    public int getHeight()
+    {
+        return height;
+    }
+
+    /**
+     * Set the value of height
+     *
+     * @param height new value of height
+     */
+    public void setHeight(int height)
+    {
+        this.height = height;
+    }
+
     /**
      * Get the value of door
      *
