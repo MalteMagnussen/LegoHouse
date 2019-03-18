@@ -94,4 +94,9 @@ public class Side
         this.rows = rows;
     }
 
+    public void add(Row row)
+    {
+        this.rows.add(row);
+    }
+
 }
