@@ -11,12 +11,24 @@ package malte.entities;
  */
 public class Side
 {
+
     private int four;
     private int two;
     private int one;
+    private int length;
 
     public Side()
     {
+    }
+
+    public int getLength()
+    {
+        return length;
+    }
+
+    public void setLength(int length)
+    {
+        this.length = length;
     }
 
     public int getFour()
@@ -48,8 +60,5 @@ public class Side
     {
         this.one = one;
     }
-    
-    
-    
-    
+
 }
