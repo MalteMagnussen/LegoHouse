@@ -2,7 +2,8 @@
     <!-- Author: Malte -->
 
 <% String error = (String) request.getAttribute("error");
-    if (error != null) {
+    if (error != null)
+    {
         out.println("<H2>Message: </h2>");
         out.println(error);
     }

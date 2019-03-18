@@ -8,30 +8,34 @@ import malte.FunctionLayer.CustomException;
 import malte.entities.User;
 
 /**
- * Login Class.
- * Contains Login methods.
- * Login, Register, Logout.
- * 
+ * Login Class. Contains Login methods. Login, Register, Logout.
+ *
  * @author Malte
  */
-public class Login extends Command {
+public class Login extends Command
+{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    {
 
-        String origin = (String) request.getParameter("origin");
+        String origin = request.getParameter("origin");
 
-        switch (origin) {
+        switch (origin)
+        {
             // Login an existing User
-            case "login": {
+            case "login":
+            {
                 return Login(request);
             }
             // Register a new User
-            case "registration": {
+            case "registration":
+            {
                 return Registration(request);
             }
             // Log Out
-            case "logout": {
+            case "logout":
+            {
                 return Logout(request);
             }
 
@@ -47,17 +51,20 @@ public class Login extends Command {
      * @return View String.
      * @throws CustomException
      */
-    private String Login(HttpServletRequest request) throws CustomException {
-        String email = (String) request.getParameter("email");
-        String password = (String) request.getParameter("password");
+    private String Login(HttpServletRequest request) throws CustomException
+    {
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
         User user = LogicFacade.login(email, password);
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
-        if (user.getRole().equals("employee")) {
+        if (user.getRole().equals("employee"))
+        {
             session.setAttribute("users", LogicFacade.getUsers(user));
             return user.getRole() + "page";
-        } else {
+        } else
+        {
             return user.getRole() + "page";
         }
 
@@ -70,17 +77,20 @@ public class Login extends Command {
      * @return View String.
      * @throws CustomException
      */
-    private String Registration(HttpServletRequest request) throws CustomException {
-        String email = (String) request.getParameter("email");
-        String password1 = (String) request.getParameter("password1");
-        String password2 = (String) request.getParameter("password2");
-        if (password1.equals(password2)) {
+    private String Registration(HttpServletRequest request) throws CustomException
+    {
+        String email = request.getParameter("email");
+        String password1 = request.getParameter("password1");
+        String password2 = request.getParameter("password2");
+        if (password1.equals(password2))
+        {
             User user = LogicFacade.createUser(email, password1);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());
             return user.getRole() + "page";
-        } else {
+        } else
+        {
             throw new CustomException("the two passwords did not match");
         }
     }
@@ -92,7 +102,8 @@ public class Login extends Command {
      * @return
      * @throws CustomException
      */
-    private String Logout(HttpServletRequest request) throws CustomException {
+    private String Logout(HttpServletRequest request) throws CustomException
+    {
         HttpSession session = request.getSession();
         session.invalidate();
         throw new CustomException("Logged out");

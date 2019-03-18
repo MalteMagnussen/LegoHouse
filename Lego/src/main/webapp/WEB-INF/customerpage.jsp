@@ -4,7 +4,7 @@
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
 <% User user = (User) session.getAttribute("user");
-        int userid = user.getId();%>
+    int userid = user.getId();%>
 <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
     Logged in as: <%= user.getEmail()%> </h1>
 
@@ -56,8 +56,10 @@
              * "order".
              */
             List<Order> orders = user.getOrders();
-            if (orders != null && !orders.isEmpty()) {
-                for (Order order : orders) {
+            if (orders != null && !orders.isEmpty())
+            {
+                for (Order order : orders)
+                {
                     int id = order.getId();
                     out.println("<form method=\"post\" action=\"FrontController\">\n"
                             /* Where to in the Command map */
@@ -78,7 +80,8 @@
              * Shows selected Order.
              */
             Order order = (Order) session.getAttribute("order");
-            if (order != null) {
+            if (order != null)
+            {
         %>
         <!--  Below is the Script for Sorting.   -->
         <script>

@@ -5,9 +5,13 @@ package malte.FunctionLayer;
  *
  * @author Malte
  */
-public class CustomException extends Exception {
+public class CustomException extends Exception
+{
 
-    public CustomException(String msg) {
+    private static final long serialVersionUID = 1L;
+
+    public CustomException(String msg)
+    {
         super(msg);
     }
 

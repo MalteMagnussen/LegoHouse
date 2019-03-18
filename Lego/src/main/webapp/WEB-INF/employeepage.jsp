@@ -12,14 +12,17 @@
 
             List<User> users = (List<User>) session.getAttribute("users");
 
-            if (users != null && !users.isEmpty()) {
+            if (users != null && !users.isEmpty())
+            {
                 /* For all users in the system print every order */
-                for (User user : users) {
+                for (User user : users)
+                {
                     String username = user.getEmail();
                     out.println("<br>");
                     out.println("<h5> Invoices for: " + username + "</h5>");
                     List<Order> orders = user.getOrders();
-                    for (Order order : orders) {
+                    for (Order order : orders)
+                    {
                         int id = order.getId();
                         out.println("<form method=\"post\" action=\"FrontController\">\n"
                                 + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
@@ -40,8 +43,10 @@
              * Shows selected Order.
              */
             Order order = (Order) session.getAttribute("order");
-            if (order != null) {
-                if (order.isSent() == false) {
+            if (order != null)
+            {
+                if (order.isSent() == false)
+                {
                     out.println("<form method=\"post\" action=\"FrontController\">\n"
                             + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
                             + "            <input type=\"hidden\" name=\"origin\" value=\"sendOrder\">\n"

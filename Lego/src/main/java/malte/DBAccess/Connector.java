@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class Connector {
+public class Connector
+{
 
     private static final String URL = "jdbc:mysql://localhost:3306/useradmin";
     private static final String USERNAME = "root";
@@ -13,12 +14,15 @@ public class Connector {
 
     private static Connection singleton;
 
-    public static void setConnection(Connection con) {
+    public static void setConnection(Connection con)
+    {
         singleton = con;
     }
 
-    public static Connection connection() throws ClassNotFoundException, SQLException {
-        if (singleton == null) {
+    public static Connection connection() throws ClassNotFoundException, SQLException
+    {
+        if (singleton == null)
+        {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Properties props = new Properties();
             props.put("user", USERNAME);

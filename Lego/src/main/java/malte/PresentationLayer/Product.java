@@ -15,32 +15,38 @@ import malte.entities.Order;
 import malte.entities.User;
 
 /**
- * Product class.
- * Contains methods to do with the orders.
- * Add Product, Order, Show all orders, Send an order.
- * 
+ * Product class. Contains methods to do with the orders. Add Product, Order,
+ * Show all orders, Send an order.
+ *
  * @author Malte
  */
-public class Product extends Command {
+public class Product extends Command
+{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    {
         String origin = (String) request.getParameter("origin");
 
-        switch (origin) {
+        switch (origin)
+        {
             // Adds an Order to the SQL.
-            case "addProduct": {
+            case "addProduct":
+            {
                 return addProduct(request);
             }
             // Get one order.
-            case "order": {
+            case "order":
+            {
                 return order(request);
             }
             // Get one order - From employeepage.jsp
-            case "employeeorders": {
+            case "employeeorders":
+            {
                 return employeeorder(request);
             }
-            case "sendOrder": {
+            case "sendOrder":
+            {
                 return sendOrder(request);
             }
 
@@ -56,17 +62,18 @@ public class Product extends Command {
      * @return
      * @throws CustomException
      */
-    private String addProduct(HttpServletRequest request) throws CustomException {
-        String tempid = (String) request.getParameter("id");
+    private String addProduct(HttpServletRequest request) throws CustomException
+    {
+        String tempid = request.getParameter("id");
         int id = Integer.parseInt(tempid);
 
-        String tempLength = (String) request.getParameter("length");
+        String tempLength = request.getParameter("length");
         int length = Integer.parseInt(tempLength);
 
-        String tempWidth = (String) request.getParameter("width");
+        String tempWidth = request.getParameter("width");
         int width = Integer.parseInt(tempWidth);
 
-        String tempHeight = (String) request.getParameter("height");
+        String tempHeight = request.getParameter("height");
         int height = Integer.parseInt(tempHeight);
 
         HttpSession session = request.getSession();
@@ -92,16 +99,19 @@ public class Product extends Command {
      * @param request
      * @return
      */
-    private String order(HttpServletRequest request) {
+    private String order(HttpServletRequest request)
+    {
         HttpSession session = request.getSession();
 
-        String tempid = (String) request.getParameter("id");
+        String tempid = request.getParameter("id");
         int id = Integer.parseInt(tempid);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
 
-        for (Order order : orders) {
-            if (order.getId() == id) {
+        for (Order order : orders)
+        {
+            if (order.getId() == id)
+            {
                 session.setAttribute("order", order);
             }
         }
@@ -109,11 +119,19 @@ public class Product extends Command {
         return user.getRole() + "page";
     }
 
-    private String employeeorder(HttpServletRequest request) throws CustomException {
+    /**
+     * Used by a logged in Employee to get an order.
+     *
+     * @param request
+     * @return
+     * @throws CustomException
+     */
+    private String employeeorder(HttpServletRequest request) throws CustomException
+    {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
-        int id = Integer.parseInt((String) request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
         Order order = LogicFacade.getOrder(id);
 
@@ -122,11 +140,20 @@ public class Product extends Command {
         return user.getRole() + "page";
     }
 
-    private String sendOrder(HttpServletRequest request) throws CustomException {
+    /**
+     * Sends an order to the customer. Used by Employee to mark an order as
+     * sent.
+     *
+     * @param request
+     * @return
+     * @throws CustomException
+     */
+    private String sendOrder(HttpServletRequest request) throws CustomException
+    {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
-        int id = Integer.parseInt((String) request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
         LogicFacade.sendOrder(id);
 

@@ -12,7 +12,8 @@ import java.util.logging.Logger;
 import malte.FunctionLayer.CustomException;
 import malte.entities.User;
 
-public class UserMapper {
+public class UserMapper
+{
 
     /**
      * Create User Method.
@@ -22,8 +23,10 @@ public class UserMapper {
      * @param user Entity
      * @throws CustomException
      */
-    public static void createUser(User user) throws CustomException {
-        try {
+    public static void createUser(User user) throws CustomException
+    {
+        try
+        {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -35,7 +38,8 @@ public class UserMapper {
             ids.next();
             int id = ids.getInt(1);
             user.setId(id);
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex)
+        {
             throw new CustomException(ex.getMessage());
         }
     }
@@ -51,8 +55,10 @@ public class UserMapper {
      * @return User entity
      * @throws CustomException
      */
-    public static User login(String email, String password) throws CustomException {
-        try {
+    public static User login(String email, String password) throws CustomException
+    {
+        try
+        {
             Connection con = Connector.connection();
             String SQL = "SELECT id, role FROM Users "
                     + "WHERE email=? AND password=?";
@@ -60,17 +66,20 @@ public class UserMapper {
             ps.setString(1, email);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
+            if (rs.next())
+            {
                 String role = rs.getString("role");
                 int id = rs.getInt("id");
                 User user = new User(email, password, role);
                 user.setId(id);
                 user.setOrders(OrderMapper.getOrders(user));
                 return user;
-            } else {
+            } else
+            {
                 throw new CustomException("Could not validate user");
             }
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex)
+        {
             throw new CustomException(ex.getMessage());
         }
     }
@@ -81,15 +90,18 @@ public class UserMapper {
      * @return List of all Users.
      * @throws CustomException
      */
-    public static List<User> getUsers() throws CustomException {
+    public static List<User> getUsers() throws CustomException
+    {
         List<User> users = new ArrayList<>();
-        try {
+        try
+        {
 
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM useradmin.users;";
             ResultSet rs = con.prepareStatement(SQL).executeQuery();
 
-            while (rs.next()) {
+            while (rs.next())
+            {
                 int id = rs.getInt("id");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
@@ -103,7 +115,8 @@ public class UserMapper {
 
             }
 
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex)
+        {
             Logger.getLogger(UserMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
         return users;

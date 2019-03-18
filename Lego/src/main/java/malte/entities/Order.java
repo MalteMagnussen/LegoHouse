@@ -12,12 +12,14 @@ import java.io.Serializable;
  *
  * @author Malte
  */
-public class Order implements Serializable {
+public class Order implements Serializable
+{
 
     /**
      * Constructor.
      */
-    public Order() {
+    public Order()
+    {
     }
 
     /**
@@ -31,7 +33,8 @@ public class Order implements Serializable {
      *
      * @return the value of id
      */
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
@@ -40,7 +43,8 @@ public class Order implements Serializable {
      *
      * @param id new value of id
      */
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
@@ -49,7 +53,8 @@ public class Order implements Serializable {
      *
      * @return the value of sent
      */
-    public boolean isSent() {
+    public boolean isSent()
+    {
         return sent;
     }
 
@@ -58,7 +63,8 @@ public class Order implements Serializable {
      *
      * @param sent new value of sent
      */
-    public void setSent(boolean sent) {
+    public void setSent(boolean sent)
+    {
         this.sent = sent;
     }
 
@@ -67,7 +73,8 @@ public class Order implements Serializable {
      *
      * @return the value of idorders
      */
-    public int getIdorders() {
+    public int getIdorders()
+    {
         return idorders;
     }
 
@@ -76,7 +83,8 @@ public class Order implements Serializable {
      *
      * @param idorders new value of idorders
      */
-    public void setIdorders(int idorders) {
+    public void setIdorders(int idorders)
+    {
         this.idorders = idorders;
     }
 
@@ -85,7 +93,8 @@ public class Order implements Serializable {
      *
      * @return the value of height
      */
-    public int getHeight() {
+    public int getHeight()
+    {
         return height;
     }
 
@@ -94,7 +103,8 @@ public class Order implements Serializable {
      *
      * @param height new value of height
      */
-    public void setHeight(int height) {
+    public void setHeight(int height)
+    {
         this.height = height;
     }
 
@@ -103,7 +113,8 @@ public class Order implements Serializable {
      *
      * @return the value of length
      */
-    public int getLength() {
+    public int getLength()
+    {
         return length;
     }
 
@@ -112,7 +123,8 @@ public class Order implements Serializable {
      *
      * @param length new value of length
      */
-    public void setLength(int length) {
+    public void setLength(int length)
+    {
         this.length = length;
     }
 
@@ -121,7 +133,8 @@ public class Order implements Serializable {
      *
      * @return the value of width
      */
-    public int getWidth() {
+    public int getWidth()
+    {
         return width;
     }
 
@@ -130,7 +143,8 @@ public class Order implements Serializable {
      *
      * @param width new value of width
      */
-    public void setWidth(int width) {
+    public void setWidth(int width)
+    {
         this.width = width;
     }
 

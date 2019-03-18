@@ -11,7 +11,8 @@ import malte.entities.Order;
  *
  * @author Malte
  */
-public class LogicFacade {
+public class LogicFacade
+{
 
     /**
      * User Login Facade.
@@ -21,7 +22,8 @@ public class LogicFacade {
      * @return User entity.
      * @throws CustomException
      */
-    public static User login(String email, String password) throws CustomException {
+    public static User login(String email, String password) throws CustomException
+    {
         return UserMapper.login(email, password);
     }
 
@@ -33,7 +35,8 @@ public class LogicFacade {
      * @return User entity.
      * @throws CustomException
      */
-    public static User createUser(String email, String password) throws CustomException {
+    public static User createUser(String email, String password) throws CustomException
+    {
         User user = new User(email, password, "customer");
         UserMapper.createUser(user);
         return user;
@@ -49,7 +52,8 @@ public class LogicFacade {
      * @return Order entity.
      * @throws CustomException
      */
-    public static Order createOrder(int id, int length, int width, int height) throws CustomException {
+    public static Order createOrder(int id, int length, int width, int height) throws CustomException
+    {
         Order order = new Order();
         order.setIdorders(id);
         order.setLength(length);
@@ -66,46 +70,50 @@ public class LogicFacade {
      * @return
      * @throws CustomException
      */
-    public static List<Order> getOrders(User user) throws CustomException {
+    public static List<Order> getOrders(User user) throws CustomException
+    {
         return OrderMapper.getOrders(user);
     }
 
     /**
-     * Get all the users. 
-     * Used by an employee.
-     * 
-     * @param user The User who is logged in. 
-     * Requires an Employee User for it to work.
+     * Get all the users. Used by an employee.
+     *
+     * @param user The User who is logged in. Requires an Employee User for it
+     * to work.
      * @return
      * @throws CustomException
      */
-    public static List<User> getUsers(User user) throws CustomException {
-        if (user.getRole().equals("employee")) {
+    public static List<User> getUsers(User user) throws CustomException
+    {
+        if (user.getRole().equals("employee"))
+        {
             return UserMapper.getUsers();
-        } else {
+        } else
+        {
             throw new CustomException("Can't do this. You're not an employee.");
         }
     }
 
     /**
      * Get an Order by its ID.
-     * 
+     *
      * @param id of the order.
      * @return
      * @throws CustomException
      */
-    public static Order getOrder(int id) throws CustomException {
+    public static Order getOrder(int id) throws CustomException
+    {
         return OrderMapper.getOrder(id);
     }
 
     /**
-     * Send an order to the customer by its ID.
-     * Used by an employee.
-     * 
+     * Send an order to the customer by its ID. Used by an employee.
+     *
      * @param id of the order.
      * @throws CustomException
      */
-    public static void sendOrder(int id) throws CustomException {
+    public static void sendOrder(int id) throws CustomException
+    {
         OrderMapper.sendOrder(id);
     }
 }

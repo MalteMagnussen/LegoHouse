@@ -9,7 +9,8 @@ import java.util.Objects;
  *
  * @author Malte
  */
-public class User implements Serializable {
+public class User implements Serializable
+{
 
     /**
      * Fields
@@ -25,7 +26,8 @@ public class User implements Serializable {
      * @param password Users password
      * @param role Users role
      */
-    public User(String email, String password, String role) {
+    public User(String email, String password, String role)
+    {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -34,7 +36,8 @@ public class User implements Serializable {
     /**
      * JavaBean.
      */
-    public User() {
+    public User()
+    {
     }
 
     /**
@@ -42,7 +45,8 @@ public class User implements Serializable {
      *
      * @return List of Orders
      */
-    public List<Order> getOrders() {
+    public List<Order> getOrders()
+    {
         return orders;
     }
 
@@ -51,7 +55,8 @@ public class User implements Serializable {
      *
      * @param orders List of Orders
      */
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Order> orders)
+    {
         this.orders = orders;
     }
 
@@ -60,7 +65,8 @@ public class User implements Serializable {
      *
      * @return the value of id
      */
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
@@ -69,7 +75,8 @@ public class User implements Serializable {
      *
      * @param id new value of id
      */
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
@@ -78,7 +85,8 @@ public class User implements Serializable {
      *
      * @return the value of email
      */
-    public String getEmail() {
+    public String getEmail()
+    {
         return email;
     }
 
@@ -87,7 +95,8 @@ public class User implements Serializable {
      *
      * @param email new value of email
      */
-    public void setEmail(String email) {
+    public void setEmail(String email)
+    {
         this.email = email;
     }
 
@@ -96,7 +105,8 @@ public class User implements Serializable {
      *
      * @return the value of password
      */
-    public String getPassword() {
+    public String getPassword()
+    {
         return password;
     }
 
@@ -105,7 +115,8 @@ public class User implements Serializable {
      *
      * @param password new value of password
      */
-    public void setPassword(String password) {
+    public void setPassword(String password)
+    {
         this.password = password;
     }
 
@@ -114,7 +125,8 @@ public class User implements Serializable {
      *
      * @return the value of role
      */
-    public String getRole() {
+    public String getRole()
+    {
         return role;
     }
 
@@ -123,12 +135,14 @@ public class User implements Serializable {
      *
      * @param role new value of role
      */
-    public void setRole(String role) {
+    public void setRole(String role)
+    {
         this.role = role;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 3;
         hash = 71 * hash + Objects.hashCode(this.password);
         hash = 71 * hash + Objects.hashCode(this.email);
@@ -138,27 +152,35 @@ public class User implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final User other = (User) obj;
-        if (this.id != other.id) {
+        if (this.id != other.id)
+        {
             return false;
         }
-        if (!Objects.equals(this.password, other.password)) {
+        if (!Objects.equals(this.password, other.password))
+        {
             return false;
         }
-        if (!Objects.equals(this.email, other.email)) {
+        if (!Objects.equals(this.email, other.email))
+        {
             return false;
         }
-        if (!Objects.equals(this.role, other.role)) {
+        if (!Objects.equals(this.role, other.role))
+        {
             return false;
         }
         return true;

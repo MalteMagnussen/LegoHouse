@@ -49,7 +49,8 @@
     <body>
         <%
             User user = (User) session.getAttribute("user");
-            if (user != null) {
+            if (user != null)
+            {
         %>
         <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
             <form method="post" action="FrontController" >

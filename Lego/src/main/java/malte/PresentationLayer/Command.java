@@ -5,20 +5,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import malte.FunctionLayer.CustomException;
 
-abstract class Command {
+abstract class Command
+{
 
     private static HashMap<String, Command> commands;
 
-    private static void initCommands() {
+    private static void initCommands()
+    {
         commands = new HashMap<>();
         commands.put("Login", new Login());
         commands.put("Product", new Product());
         commands.put("Redirect", new Redirect());
     }
 
-    static Command from(HttpServletRequest request) {
+    static Command from(HttpServletRequest request)
+    {
         String commandName = request.getParameter("command");
-        if (commands == null) {
+        if (commands == null)
+        {
             initCommands();
         }
         return commands.getOrDefault(commandName, new UnknownCommand());

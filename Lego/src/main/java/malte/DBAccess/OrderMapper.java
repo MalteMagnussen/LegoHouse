@@ -20,7 +20,8 @@ import malte.entities.User;
  *
  * @author Malte
  */
-public class OrderMapper {
+public class OrderMapper
+{
 
     /**
      * Called from LogicFacade createOrder Method.
@@ -30,8 +31,10 @@ public class OrderMapper {
      * @param order
      * @throws CustomException
      */
-    public static void createOrder(Order order) throws CustomException {
-        try {
+    public static void createOrder(Order order) throws CustomException
+    {
+        try
+        {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -44,7 +47,8 @@ public class OrderMapper {
             ids.next();
             int id = ids.getInt(1);
             order.setId(id);
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException ex)
+        {
             throw new CustomException(ex.getMessage());
         }
     }
@@ -56,9 +60,11 @@ public class OrderMapper {
      * @return List of Orders.
      * @throws CustomException
      */
-    public static List<Order> getOrders(User user) throws CustomException {
+    public static List<Order> getOrders(User user) throws CustomException
+    {
         List<Order> orders = new ArrayList<>();
-        try {
+        try
+        {
             Connection con = Connector.connection();
             String SQL = "SELECT `orders`.`sent`,\n"
                     + "    `orders`.`length`,\n"
@@ -70,7 +76,8 @@ public class OrderMapper {
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, user.getId());
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 boolean sent = rs.getBoolean("sent");
                 int length = rs.getInt("length");
                 int width = rs.getInt("width");
@@ -84,7 +91,8 @@ public class OrderMapper {
                 order.setId(id);
                 orders.add(order);
             }
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex)
+        {
             throw new CustomException(ex.getMessage());
         }
 
@@ -98,9 +106,11 @@ public class OrderMapper {
      * @return
      * @throws CustomException
      */
-    public static Order getOrder(int id) throws CustomException {
+    public static Order getOrder(int id) throws CustomException
+    {
         Order order = new Order();
-        try {
+        try
+        {
             Connection con = Connector.connection();
             String SQL = "SELECT `orders`.`sent`,\n"
                     + "    `orders`.`length`,\n"
@@ -111,7 +121,8 @@ public class OrderMapper {
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
+            while (rs.next())
+            {
                 boolean sent = rs.getBoolean("sent");
                 int length = rs.getInt("length");
                 int width = rs.getInt("width");
@@ -122,20 +133,24 @@ public class OrderMapper {
                 order.setSent(sent);
                 order.setId(id);
             }
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex)
+        {
             throw new CustomException(ex.getMessage());
         }
         return order;
     }
 
-    public static void sendOrder(int id) throws CustomException {
-        try {
+    public static void sendOrder(int id) throws CustomException
+    {
+        try
+        {
             Connection con = Connector.connection();
             String SQL = "UPDATE useradmin.orders set sent = true WHERE id = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ps.executeUpdate();
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex)
+        {
             throw new CustomException(ex.getMessage());
         }
     }
