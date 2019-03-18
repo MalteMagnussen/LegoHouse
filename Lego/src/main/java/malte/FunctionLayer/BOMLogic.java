@@ -56,10 +56,9 @@ public class BOMLogic
         side.setHeight(height);
         side.setDoor(hasDoor);
         side.setWindow(hasWindow);
-
-        if (!hasDoor && !hasWindow)
+        for (int i = 3; i < height+3; i++)
         {
-            for (int i = 3; i < length + 3; i++)
+            if (!hasDoor && !hasWindow)
             {
                 Row row;
                 if (i % 2 == 1)
@@ -70,15 +69,28 @@ public class BOMLogic
                     row = getRow(length);
                 }
                 side.add(row);
+
+            } else if (hasDoor)
+            {
+                if (i <= 3)
+                {
+                    int doorlength = length / 2;
+                    if (i % 2 == 1)
+                    {
+                        doorlength = doorlength - 2;
+
+                    } else
+                    {
+                        doorlength = doorlength - 4;
+                    }
+                    Row row = getRow(doorlength);
+                    side.add(row);
+                }
+            } else if (hasWindow)
+            {
+
             }
-        } else if (hasDoor)
-        {
-            
-        } else if (hasWindow)
-        {
-
         }
-
         return side;
     }
 
