@@ -26,7 +26,7 @@ public class Product extends Command
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
     {
-        String origin = (String) request.getParameter("origin");
+        String origin = request.getParameter("origin");
 
         switch (origin)
         {
