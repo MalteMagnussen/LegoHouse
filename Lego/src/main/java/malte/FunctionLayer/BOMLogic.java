@@ -29,26 +29,26 @@ public class BOMLogic
     {
         Row row = new Row();
 
-        /* Fours */
-        int fours = length / 4;
-        row.setFours(fours);
-        length = length % 4;
-
+        if (length >= 4)
+        {
+            /* Fours */
+            int fours = length / 4;
+            row.setFours(fours);
+            length = length % 4;
+        }
         /* Twos */
         if (length >= 2)
         {
             int twos = length / 2;
             row.setTwos(twos);
             length = length % 2;
-
-            /* Ones */
-            if (length >= 1)
-            {
-                int ones = length;
-                row.setOnes(ones);
-            }
         }
-
+        /* Ones */
+        if (length >= 1)
+        {
+            int ones = length;
+            row.setOnes(ones);
+        }
         return row;
     }
 
@@ -150,6 +150,7 @@ public class BOMLogic
 
     /**
      * get Bill of Materials method.
+     *
      * @param length
      * @param width
      * @param height

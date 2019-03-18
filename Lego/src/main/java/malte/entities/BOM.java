@@ -13,8 +13,13 @@ import java.util.List;
  */
 public class BOM
 {
+
     private List<Side> sides;
     private int height;
+
+    public BOM()
+    {
+    }
 
     /**
      * Get the value of height
@@ -44,10 +49,6 @@ public class BOM
     public void setSides(List<Side> sides)
     {
         this.sides = sides;
-    }
-
-    public BOM()
-    {
     }
 
 }
