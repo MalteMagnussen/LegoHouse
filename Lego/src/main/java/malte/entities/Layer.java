@@ -17,6 +17,30 @@ public class Layer
     private Side side3;
     private Side side4;
 
+    public Layer()
+    {
+    }
+
+    public Side getSide1()
+    {
+        return side1;
+    }
+
+    public Side getSide2()
+    {
+        return side2;
+    }
+
+    public Side getSide3()
+    {
+        return side3;
+    }
+
+    public Side getSide4()
+    {
+        return side4;
+    }
+
     
     
 }

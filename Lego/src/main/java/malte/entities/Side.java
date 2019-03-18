@@ -14,6 +14,40 @@ public class Side
     private int four;
     private int two;
     private int one;
+
+    public Side()
+    {
+    }
+
+    public int getFour()
+    {
+        return four;
+    }
+
+    public void setFour(int four)
+    {
+        this.four = four;
+    }
+
+    public int getTwo()
+    {
+        return two;
+    }
+
+    public void setTwo(int two)
+    {
+        this.two = two;
+    }
+
+    public int getOne()
+    {
+        return one;
+    }
+
+    public void setOne(int one)
+    {
+        this.one = one;
+    }
     
     
     

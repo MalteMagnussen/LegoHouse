@@ -15,6 +15,30 @@ public class BOM
 {
     private List<Layer> layers;
     private int height;
+
+    public BOM()
+    {
+    }
+
+    public List<Layer> getLayers()
+    {
+        return layers;
+    }
+
+    public void setLayers(List<Layer> layers)
+    {
+        this.layers = layers;
+    }
+
+    public int getHeight()
+    {
+        return height;
+    }
+
+    public void setHeight(int height)
+    {
+        this.height = height;
+    }
     
     
 }
