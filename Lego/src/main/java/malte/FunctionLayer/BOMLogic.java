@@ -19,7 +19,6 @@ public class BOMLogic
      * Makes a single Row of bricks. A side consists of Height X Rows of bricks.
      * A House consists of 4 sides.
      *
-     *
      * @param length Has to be at least 8. Maybe 10. We'll see.
      * @return
      */
@@ -67,7 +66,7 @@ public class BOMLogic
             {
                 if (i <= 5) // If we're at the door part.
                 {
-                    doorOrWindowRow(length, i, side);
+                    doorOrWindowRow(i, length, side);
                 } else // If we're above the door
                 {
                     normalrow(i, length, side);
@@ -77,7 +76,7 @@ public class BOMLogic
             {
                 if (i == 4 || i == 5)
                 {
-                    doorOrWindowRow(length, i, side);
+                    doorOrWindowRow(i, length, side);
                 } else // If we're above or below the window.
                 {
                     normalrow(i, length, side);
@@ -87,7 +86,7 @@ public class BOMLogic
         return side;
     }
 
-    private void doorOrWindowRow(int length, int i, Side side)
+    private void doorOrWindowRow(int i, int length, Side side)
     {
         for (int y = 0; y < 2; y++) // We need bricks on both side of the element.
         {
