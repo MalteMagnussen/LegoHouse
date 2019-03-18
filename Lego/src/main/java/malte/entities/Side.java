@@ -11,5 +11,11 @@ package malte.entities;
  */
 public class Side
 {
+    private int four;
+    private int two;
+    private int one;
+    
+    
+    
     
 }

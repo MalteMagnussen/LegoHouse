@@ -5,11 +5,16 @@
  */
 package malte.entities;
 
+import java.util.List;
+
 /**
  *
  * @author Malte
  */
 public class BOM
 {
-
+    private List<Layer> layers;
+    private int height;
+    
+    
 }
