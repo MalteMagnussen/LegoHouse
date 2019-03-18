@@ -15,7 +15,10 @@ import malte.entities.Order;
 import malte.entities.User;
 
 /**
- *
+ * Product class.
+ * Contains methods to do with the orders.
+ * Add Product, Order, Show all orders, Send an order.
+ * 
  * @author Malte
  */
 public class Product extends Command {

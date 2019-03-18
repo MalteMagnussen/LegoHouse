@@ -71,8 +71,11 @@ public class LogicFacade {
     }
 
     /**
-     *
-     * @param user
+     * Get all the users. 
+     * Used by an employee.
+     * 
+     * @param user The User who is logged in. 
+     * Requires an Employee User for it to work.
      * @return
      * @throws CustomException
      */
@@ -84,10 +87,24 @@ public class LogicFacade {
         }
     }
 
+    /**
+     * Get an Order by its ID.
+     * 
+     * @param id of the order.
+     * @return
+     * @throws CustomException
+     */
     public static Order getOrder(int id) throws CustomException {
         return OrderMapper.getOrder(id);
     }
 
+    /**
+     * Send an order to the customer by its ID.
+     * Used by an employee.
+     * 
+     * @param id of the order.
+     * @throws CustomException
+     */
     public static void sendOrder(int id) throws CustomException {
         OrderMapper.sendOrder(id);
     }

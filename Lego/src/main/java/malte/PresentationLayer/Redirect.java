@@ -12,7 +12,7 @@ import malte.FunctionLayer.CustomException;
 import malte.entities.User;
 
 /**
- *
+ * Simply Redirects.
  * @author Malte
  */
 public class Redirect extends Command {

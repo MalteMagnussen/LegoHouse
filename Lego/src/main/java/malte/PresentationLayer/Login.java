@@ -8,7 +8,10 @@ import malte.FunctionLayer.CustomException;
 import malte.entities.User;
 
 /**
- *
+ * Login Class.
+ * Contains Login methods.
+ * Login, Register, Logout.
+ * 
  * @author Malte
  */
 public class Login extends Command {
