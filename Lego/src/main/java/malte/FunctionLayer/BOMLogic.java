@@ -5,6 +5,9 @@
  */
 package malte.FunctionLayer;
 
+import java.util.ArrayList;
+import java.util.List;
+import malte.entities.BOM;
 import malte.entities.Row;
 import malte.entities.Side;
 
@@ -49,6 +52,15 @@ public class BOMLogic
         return row;
     }
 
+    /**
+     * Makes a single side of a house.
+     *
+     * @param height
+     * @param length
+     * @param hasDoor
+     * @param hasWindow
+     * @return
+     */
     private Side getSide(int height, int length, boolean hasDoor, boolean hasWindow)
     {
         Side side = new Side();
@@ -86,6 +98,13 @@ public class BOMLogic
         return side;
     }
 
+    /**
+     * Help Method for getSide.
+     *
+     * @param i
+     * @param length
+     * @param side
+     */
     private void doorOrWindowRow(int i, int length, Side side)
     {
         for (int y = 0; y < 2; y++) // We need bricks on both side of the element.
@@ -104,6 +123,13 @@ public class BOMLogic
         }
     }
 
+    /**
+     * Help method for getSide.
+     *
+     * @param i
+     * @param length
+     * @param side
+     */
     private void normalrow(int i, int length, Side side)
     {
         Row row;
@@ -120,6 +146,29 @@ public class BOMLogic
 
     public BOMLogic()
     {
+    }
+
+    /**
+     * get Bill of Materials method.
+     * @param length
+     * @param width
+     * @param height
+     * @return
+     */
+    public BOM getBOM(int length, int width, int height)
+    {
+        BOM bom = new BOM();
+        Side side1 = getSide(height, width, false, false);
+        Side side2 = getSide(height, length, true, false);
+        Side side3 = getSide(height, width, false, false);
+        Side side4 = getSide(height, length, false, true);
+        List<Side> sides = new ArrayList<>();
+        sides.add(side1);
+        sides.add(side2);
+        sides.add(side3);
+        sides.add(side4);
+        bom.setSides(sides);
+        return bom;
     }
 
 }
