@@ -13,14 +13,24 @@ import java.util.List;
  */
 public class BOM
 {
-    private int height;
     private List<Side> sides;
+    private int height;
 
+    /**
+     * Get the value of height
+     *
+     * @return the value of height
+     */
     public int getHeight()
     {
         return height;
     }
 
+    /**
+     * Set the value of height
+     *
+     * @param height new value of height
+     */
     public void setHeight(int height)
     {
         this.height = height;
@@ -39,6 +49,5 @@ public class BOM
     public BOM()
     {
     }
-    
-    
+
 }
