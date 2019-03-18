@@ -13,7 +13,13 @@ import malte.entities.Row;
  */
 public class BOMLogic
 {
-    
+    /**
+     * Makes a single Row of bricks.
+     * A side consists of Height X Rows of bricks.
+     * A House consists of 4 sides.
+     * @param length
+     * @return 
+     */
     public static Row getRow(int length)
     {
         Row row = new Row();
