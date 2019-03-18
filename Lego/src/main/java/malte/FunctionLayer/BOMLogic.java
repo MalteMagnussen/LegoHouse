@@ -22,7 +22,7 @@ public class BOMLogic
      * @param length Has to be at least 8. Maybe 10. We'll see.
      * @return 
      */
-    public static Row getRow(int length)
+    public Row getRow(int length)
     {
         Row row = new Row();
         
@@ -48,5 +48,11 @@ public class BOMLogic
         
         return row;
     }
+
+    public BOMLogic()
+    {
+    }
+    
+    
     
 }
