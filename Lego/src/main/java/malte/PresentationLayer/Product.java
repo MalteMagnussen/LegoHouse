@@ -78,6 +78,11 @@ public class Product extends Command
         String tempHeight = request.getParameter("height");
         int height = Integer.parseInt(tempHeight);
 
+        if (height < 4 || width < 5 || length < 8)
+        {
+            throw new CustomException("Too low width, height or length. Try again.");
+        }
+
         HttpSession session = request.getSession();
 
         Order order = LogicFacade.createOrder(id, length, width, height);
