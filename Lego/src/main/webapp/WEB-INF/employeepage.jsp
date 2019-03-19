@@ -1,3 +1,4 @@
+<%@page import="malte.entities.BOM"%>
 <%@page import="malte.entities.Order"%>
 <%@page import="java.util.List"%>
 <%@page import="malte.entities.User"%>
@@ -42,15 +43,15 @@
             /**
              * Shows selected Order.
              */
-            Order order = (Order) session.getAttribute("order");
-            if (order != null)
+            BOM bom = (BOM) session.getAttribute("BOM");
+            if (bom != null)
             {
-                if (order.isSent() == false)
+                if (bom.isSent() == false)
                 {
                     out.println("<form method=\"post\" action=\"FrontController\">\n"
                             + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
                             + "            <input type=\"hidden\" name=\"origin\" value=\"sendOrder\">\n"
-                            + "            <input type=\"hidden\" name=\"id\" value=\"" + order.getId() + "\">\n"
+                            + "            <input type=\"hidden\" name=\"id\" value=\"" + bom.getId() + "\">\n"
                             + "            <input type=\"submit\" value=\"Send order\"/>\n"
                             + "        </form>");
                 }
@@ -66,24 +67,73 @@
         <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
             <thead>
                 <tr>
-                    <th>Sent</th>
-                    <th>length</th>
-                    <th>width</th>
-                    <th>height</th>
-                    <th>id/<th>
+                    <th>Type</th>
+                    <th>Side m. dør.</th>
+                    <th>Bredside</th>
+                    <th>Side m. vindue</th>
+                    <th>ialt<th>
+                    <th>ialt x højde<th>
                 </tr>
             </thead>
             <tbody>
                 <%
                     out.println("<tr>");
 
-                    out.println("<td>" + order.isSent() + "</td>");
-                    out.println("<td>" + order.getLength() + "</td>");
-                    out.println("<td>" + order.getWidth() + "$</td>");
-                    out.println("<td>" + order.getHeight() + "</td>");
-                    out.println("<td>" + order.getId() + "</td>");
+                    out.println("<td> 2x4 </td>");
+                    out.println("<td> 2x2 </td>");
+                    out.println("<td> 1x2 </td>");
 
                     out.println("</tr>");
+                    
+                    out.println("<tr>");
+
+                    out.println("<td> 2x4 </td>");
+                    out.println("<td> 2x2 </td>");
+                    out.println("<td> 1x2 </td>");
+
+                    out.println("</tr>");
+                    
+                    out.println("<tr>");
+
+                    out.println("<td> 2x4 </td>");
+                    out.println("<td> 2x2 </td>");
+                    out.println("<td> 1x2 </td>");
+
+                    out.println("</tr>");
+                    
+                    out.println("<tr>");
+
+                    out.println("<td> 2x4 </td>");
+                    out.println("<td> 2x2 </td>");
+                    out.println("<td> 1x2 </td>");
+
+                    out.println("</tr>");
+                    
+                    out.println("<tr>");
+
+                    out.println("<td> 2x4 </td>");
+                    out.println("<td> 2x2 </td>");
+                    out.println("<td> 1x2 </td>");
+
+                    out.println("</tr>");
+                    
+                    out.println("<tr>");
+
+                    out.println("<td> 2x4 </td>");
+                    out.println("<td> 2x2 </td>");
+                    out.println("<td> 1x2 </td>");
+
+                    out.println("</tr>");
+                    
+                    out.println("<tr>");
+
+                    out.println("<td> 2x4 </td>");
+                    out.println("<td> 2x2 </td>");
+                    out.println("<td> 1x2 </td>");
+
+                    out.println("</tr>");
+                    
+                    
                 %>
             </tbody>
         </table>
