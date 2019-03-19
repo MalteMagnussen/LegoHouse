@@ -27,14 +27,19 @@
                     font-size: 3.5rem;
                 }
             }
+            
+            
+ 
+
+            
         </style>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link type="text/css" rel="stylesheet" href="css/cssone.css">
         <link href="floating-labels.css" rel="stylesheet">
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-
+        <link rel="stylesheet" type="text/css" href="DataTables/css/datatables.min.css"/>
+        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <!-- Jquery -->
@@ -44,7 +49,7 @@
         <!-- Bootstrap -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- Datatables -->
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="DataTables/js/datatables.min.js"></script>
     </head>
     <body>
         <%
