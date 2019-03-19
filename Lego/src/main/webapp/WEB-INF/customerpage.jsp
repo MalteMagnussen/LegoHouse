@@ -50,7 +50,7 @@
     <!-- Form end -->
 </form>
 
-<div class="row">
+<div class="row" style="margin: auto; ">
     <div class="col-sm-6">
         <%
             /**
