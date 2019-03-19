@@ -109,18 +109,18 @@
                     out.println("<td> 2x2 </td>");
                     out.println("<td>"+door.getTwos()+"</td>");
                     out.println("<td>"+wide1.getTwos()+"</td>");
-                    out.println("<td>"+window.getOnes()+"</td>");
-                    out.println("<td>"+wide2.getOnes()+"</td>");
-                    out.println("<td>"+bom.getTotalOnes()+"</td>");
+                    out.println("<td>"+window.getTwos()+"</td>");
+                    out.println("<td>"+wide2.getTwos()+"</td>");
+                    out.println("<td>"+bom.getTotalTwos()+"</td>");
                     out.println("</tr>");
                     
                     out.println("<tr>");
                     out.println("<td> 1x2 </td>");
                     out.println("<td>"+door.getOnes()+"</td>");
                     out.println("<td>"+wide1.getOnes()+"</td>");
-                    out.println("<td>"+window.getTwos()+"</td>");
-                    out.println("<td>"+wide2.getTwos()+"</td>");
-                    out.println("<td>"+bom.getTotalTwos()+"</td>");
+                    out.println("<td>"+window.getOnes()+"</td>");
+                    out.println("<td>"+wide2.getOnes()+"</td>");
+                    out.println("<td>"+bom.getTotalOnes()+"</td>");
                     out.println("</tr>");
 
                 %>
