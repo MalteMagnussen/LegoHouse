@@ -69,7 +69,7 @@
                             /* Where to in the Product switch */
                             + "            <input type=\"hidden\" name=\"origin\" value=\"order\">\n"
                             + "            <input type=\"hidden\" name=\"id\" value=\"" + id + "\">\n"
-                            + "            <input type=\"submit\" value=\"Lego: " + id + "\"/>\n"
+                            + "            <input type=\"submit\" value=\"Lego Order: " + id + " Sent: "+order.isSent()+"\"/>\n"
                             + "        </form>");
                 }
             }

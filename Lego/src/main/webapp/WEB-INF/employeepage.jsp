@@ -6,7 +6,7 @@
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
     <h1> All invoices </h1>
-    <div class="row">
+    <div class="row" style="margin: auto;">
         <div class="col-sm-6">
 
         <%
@@ -30,7 +30,7 @@
                                 + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
                                 + "            <input type=\"hidden\" name=\"origin\" value=\"employeeorders\">\n"
                                 + "            <input type=\"hidden\" name=\"id\" value=\"" + id + "\">\n"
-                                + "            <input type=\"submit\" value=\"Id of order: " + id + "\"/>\n"
+                                + "            <input type=\"submit\" value=\"Id of order: " + id + " Sent: "+order.isSent()+"\"/>\n"
                                 + "        </form>");
                     }
                 }
