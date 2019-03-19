@@ -22,30 +22,51 @@ public class BOM
     {
     }
 
-    public int getTotalFours(){
+    /**
+     * Get the amount of 4x2 bricks for this Bill of Materials.
+     *
+     * @return
+     */
+    public int getTotalFours()
+    {
         int fours = 0;
-        for (Side side: sides){
+        for (Side side : sides)
+        {
             fours += side.getFours();
         }
         return fours;
     }
-    
-    public int getTotalTwos(){
+
+    /**
+     * Get the amount of 2x2 bricks for this Bill of Materials.
+     *
+     * @return
+     */
+    public int getTotalTwos()
+    {
         int twos = 0;
-        for (Side side: sides){
+        for (Side side : sides)
+        {
             twos += side.getTwos();
         }
         return twos;
     }
-    
-    public int getTotalOnes(){
+
+    /**
+     * Get the amount of 1x2 bricks for this Bill of Materials.
+     *
+     * @return
+     */
+    public int getTotalOnes()
+    {
         int ones = 0;
-        for (Side side: sides){
+        for (Side side : sides)
+        {
             ones += side.getOnes();
         }
         return ones;
     }
-    
+
     /**
      * Get the value of height
      *
