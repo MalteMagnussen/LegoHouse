@@ -98,7 +98,15 @@ public class BOMLogic
         }
         return side;
     }
-    
+
+    /**
+     * Door or window normal row. Door or window are on the length. So its the
+     * opposite side that has to be short, compared to the width sides.
+     *
+     * @param i
+     * @param length
+     * @param side
+     */
     private void dwnormalrow(int i, int length, Side side)
     {
         Row row;
@@ -139,7 +147,7 @@ public class BOMLogic
     }
 
     /**
-     * Help method for getSide.
+     * Help method for getSide. For width sides.
      *
      * @param i
      * @param length
