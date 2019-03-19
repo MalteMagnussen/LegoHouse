@@ -24,9 +24,9 @@
         <!-- Headers of the table -->
         <thead>
             <tr>
-                <th>Length</th>
-                <th>Width</th>
-                <th>Height</th>
+                <th>Length - minimum 8</th>
+                <th>Width - minimum 5</th>
+                <th>Height - minimum 4</th>
                 <th></th>
             </tr>
         </thead>
