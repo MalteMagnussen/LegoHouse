@@ -18,6 +18,30 @@ public class Side
     private boolean window;
     private boolean door;
     private int height;
+    
+    public int getFours(){
+        int fours = 0;
+        for (Row row: rows){
+            fours += row.getFours();
+        }
+        return fours;
+    }
+    
+    public int getTwos(){
+        int twos = 0;
+        for (Row row: rows){
+            twos += row.getTwos();
+        }
+        return twos;
+    }
+    
+    public int getOnes(){
+        int ones = 0;
+        for (Row row: rows){
+            ones += row.getOnes();
+        }
+        return ones;
+    }
 
     /**
      * Get the value of height

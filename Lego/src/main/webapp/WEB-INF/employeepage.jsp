@@ -90,8 +90,8 @@
                     <th>Side m. dør.</th>
                     <th>Bredside</th>
                     <th>Side m. vindue</th>
+                    <th>Bredside</th>
                     <th>ialt<th>
-                    <th>ialt x højde<th>
                 </tr>
             </thead>
             <tbody>
@@ -108,36 +108,36 @@
                     /* Side m. dør */
                     out.println("<tr>");
 
-                    out.println("<td>"+door.toString()+"</td>");
-                    out.println("<td> 2x2 </td>");
-                    out.println("<td> 1x2 </td>");
+                    out.println("<td>"+door.getFours()+"</td>");
+                    out.println("<td>"+door.getTwos()+"</td>");
+                    out.println("<td>"+door.getOnes()+"</td>");
 
                     out.println("</tr>");
                     
                     /* bredside */
                     out.println("<tr>");
 
-                    out.println("<td> 2x4 </td>");
-                    out.println("<td> 2x2 </td>");
-                    out.println("<td> 1x2 </td>");
+                    out.println("<td>"+wide1.getFours()+"</td>");
+                    out.println("<td>"+wide1.getTwos()+"</td>");
+                    out.println("<td>"+wide1.getOnes()+"</td>");
 
                     out.println("</tr>");
                     
                     /* Side m. vindue */
                     out.println("<tr>");
 
-                    out.println("<td> 2x4 </td>");
-                    out.println("<td> 2x2 </td>");
-                    out.println("<td> 1x2 </td>");
+                    out.println("<td>"+window.getFours()+"</td>");
+                    out.println("<td>"+window.getTwos()+"</td>");
+                    out.println("<td>"+window.getOnes()+"</td>");
 
                     out.println("</tr>");
                     
                     /* bredside */
                     out.println("<tr>");
 
-                    out.println("<td> 2x4 </td>");
-                    out.println("<td> 2x2 </td>");
-                    out.println("<td> 1x2 </td>");
+                    out.println("<td>"+wide1.getFours()+"</td>");
+                    out.println("<td>"+wide1.getTwos()+"</td>");
+                    out.println("<td>"+wide1.getOnes()+"</td>");
 
                     out.println("</tr>");
                     

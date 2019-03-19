@@ -21,6 +21,30 @@ public class BOM
     {
     }
 
+    public int getTotalFours(){
+        int fours = 0;
+        for (Side side: sides){
+            fours += side.getFours();
+        }
+        return fours;
+    }
+    
+    public int getTotalTwos(){
+        int twos = 0;
+        for (Side side: sides){
+            twos += side.getTwos();
+        }
+        return twos;
+    }
+    
+    public int getTotalOnes(){
+        int ones = 0;
+        for (Side side: sides){
+            ones += side.getOnes();
+        }
+        return ones;
+    }
+    
     /**
      * Get the value of height
      *
