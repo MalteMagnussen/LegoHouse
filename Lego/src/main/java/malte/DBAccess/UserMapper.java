@@ -12,6 +12,11 @@ import java.util.logging.Logger;
 import malte.FunctionLayer.CustomException;
 import malte.entities.User;
 
+/**
+ * UserDAO
+ *
+ * @author Malte
+ */
 public class UserMapper
 {
 

@@ -17,6 +17,7 @@ import malte.entities.Order;
 import malte.entities.User;
 
 /**
+ * OrderDAO
  *
  * @author Malte
  */
