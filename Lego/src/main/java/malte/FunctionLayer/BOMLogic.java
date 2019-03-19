@@ -172,11 +172,11 @@ public class BOMLogic
         bom.setSides(sides);
         return bom;
     }
-    
+
     public BOM getBOM(Order order)
     {
         int height = order.getHeight();
-        int width  = order.getWidth();
+        int width = order.getWidth();
         int length = order.getLength();
         BOM bom = new BOM();
         Side side1 = getSide(height, width, false, false);
