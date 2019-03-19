@@ -8,6 +8,7 @@ package malte.FunctionLayer;
 import java.util.ArrayList;
 import java.util.List;
 import malte.entities.BOM;
+import malte.entities.Order;
 import malte.entities.Row;
 import malte.entities.Side;
 
@@ -158,6 +159,25 @@ public class BOMLogic
      */
     public BOM getBOM(int length, int width, int height)
     {
+        BOM bom = new BOM();
+        Side side1 = getSide(height, width, false, false);
+        Side side2 = getSide(height, length, true, false);
+        Side side3 = getSide(height, width, false, false);
+        Side side4 = getSide(height, length, false, true);
+        List<Side> sides = new ArrayList<>();
+        sides.add(side1);
+        sides.add(side2);
+        sides.add(side3);
+        sides.add(side4);
+        bom.setSides(sides);
+        return bom;
+    }
+    
+    public BOM getBOM(Order order)
+    {
+        int height = order.getHeight();
+        int width  = order.getWidth();
+        int length = order.getLength();
         BOM bom = new BOM();
         Side side1 = getSide(height, width, false, false);
         Side side2 = getSide(height, length, true, false);
