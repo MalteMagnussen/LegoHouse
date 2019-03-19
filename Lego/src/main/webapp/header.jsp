@@ -5,7 +5,7 @@
 <html lang = "en">
     <head>
 
-        <title>Lego House</title>
+        <title>LegoHouse</title>
 
         <base href="${pageContext.request.contextPath}/" />
         <!-- Required meta tags -->

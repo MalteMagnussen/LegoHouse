@@ -5,6 +5,7 @@
  */
 package malte.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
 public class BOM
 {
 
-    private List<Side> sides;
+    private List<Side> sides = new ArrayList<>();
     private int height;
 
     public BOM()

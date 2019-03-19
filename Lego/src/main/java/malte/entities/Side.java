@@ -5,6 +5,7 @@
  */
 package malte.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
 public class Side
 {
 
-    private List<Row> rows;
+    private List<Row> rows = new ArrayList<>();
     private boolean window;
     private boolean door;
     private int height;
