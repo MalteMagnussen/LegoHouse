@@ -24,8 +24,7 @@ import malte.FunctionLayer.CustomException;
 })
 public class FrontController extends HttpServlet
 {
-    // What is this?
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
