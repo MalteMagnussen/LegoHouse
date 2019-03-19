@@ -82,7 +82,7 @@ public class BOMLogic
                     doorOrWindowRow(i, length, side);
                 } else // If we're above the door
                 {
-                    normalrow(i, length, side);
+                    dwnormalrow(i, length, side);
                 }
 
             } else if (hasWindow)
@@ -92,11 +92,25 @@ public class BOMLogic
                     doorOrWindowRow(i, length, side);
                 } else // If we're above or below the window.
                 {
-                    normalrow(i, length, side);
+                    dwnormalrow(i, length, side);
                 }
             }
         }
         return side;
+    }
+    
+    private void dwnormalrow(int i, int length, Side side)
+    {
+        Row row;
+        // If its an uneven row.
+        if (i % 2 == 1)
+        {
+            row = getRow(length);
+        } else // If its an even row.
+        {
+            row = getRow(length - 4);
+        }
+        side.add(row);
     }
 
     /**
