@@ -5,6 +5,7 @@
  */
 package malte.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +13,16 @@ import java.util.List;
  *
  * @author Malte
  */
-public class BOM
+public class BOM  implements Serializable
 {
 
+    // Fields
     private List<Side> sides = new ArrayList<>();
     private int height;
 
+    /**
+     * Constructor.
+     */
     public BOM()
     {
     }

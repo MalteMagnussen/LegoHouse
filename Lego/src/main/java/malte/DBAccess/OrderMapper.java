@@ -140,6 +140,12 @@ public class OrderMapper
         return order;
     }
 
+    /**
+     * Mark order as being sent to customer. Usable by employee.
+     *
+     * @param id
+     * @throws CustomException
+     */
     public static void sendOrder(int id) throws CustomException
     {
         try

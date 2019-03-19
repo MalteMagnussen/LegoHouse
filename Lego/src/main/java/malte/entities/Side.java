@@ -5,6 +5,7 @@
  */
 package malte.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author Malte
  */
-public class Side
+public class Side implements Serializable
 {
 
     // Fields

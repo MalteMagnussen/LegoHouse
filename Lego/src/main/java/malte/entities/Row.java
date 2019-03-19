@@ -5,12 +5,14 @@
  */
 package malte.entities;
 
+import java.io.Serializable;
+
 /**
  * Row entity class. Should fulfill bean standards.
  *
  * @author Malte
  */
-public class Row
+public class Row implements Serializable
 {
 
     // Fields
