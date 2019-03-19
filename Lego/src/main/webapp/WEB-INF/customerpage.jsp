@@ -50,7 +50,7 @@
     <!-- Form end -->
 </form>
 
-<div class="row" style="margin: auto; ">
+<div class="row" style="margin: auto;">
     <div class="col-sm-6">
         <%
             /**
@@ -75,7 +75,7 @@
             }
         %>
     </div>
-        <div class="col-sm-6">
+    <div class="col-sm-6">
 
         <%
             /**
@@ -84,23 +84,27 @@
             BOM bom = (BOM) session.getAttribute("BOM");
             if (bom != null)
             {
-            List<Side> sides = bom.getSides();
-            Side door = null;
-            Side window = null;
-            Side wide1 = null;
-            Side wide2 = null;
-            for (Side side: sides){
-                if (side.hasDoor()){
-                    door = side;
+                List<Side> sides = bom.getSides();
+                Side door = null;
+                Side window = null;
+                Side wide1 = null;
+                Side wide2 = null;
+                for (Side side : sides)
+                {
+                    if (side.hasDoor())
+                    {
+                        door = side;
+                    }
+                    if (side.hasWindow())
+                    {
+                        window = side;
+                    }
+                    if (!side.hasDoor() && !side.hasWindow())
+                    {
+                        wide1 = side;
+                        wide2 = side;
+                    }
                 }
-                if (side.hasWindow()) {
-                    window = side;
-                }
-                if (!side.hasDoor() && !side.hasWindow()){
-                    wide1 = side;
-                    wide2 = side;
-                }
-            }
         %>
         <!--  Below is the Script for Sorting.   -->
         <script>
@@ -125,37 +129,36 @@
                 <%
                     out.println("<tr>");
                     out.println("<td> 2x4 </td>");
-                    out.println("<td>"+door.getFours()+"</td>");
-                    out.println("<td>"+wide1.getFours()+"</td>");
-                    out.println("<td>"+window.getFours()+"</td>");
-                    out.println("<td>"+wide2.getFours()+"</td>");
-                    out.println("<td>"+bom.getTotalFours()+"</td>");
+                    out.println("<td>" + door.getFours() + "</td>");
+                    out.println("<td>" + wide1.getFours() + "</td>");
+                    out.println("<td>" + window.getFours() + "</td>");
+                    out.println("<td>" + wide2.getFours() + "</td>");
+                    out.println("<td>" + bom.getTotalFours() + "</td>");
                     out.println("</tr>");
-                    
+
                     out.println("<tr>");
                     out.println("<td> 2x2 </td>");
-                    out.println("<td>"+door.getTwos()+"</td>");
-                    out.println("<td>"+wide1.getTwos()+"</td>");
-                    out.println("<td>"+window.getTwos()+"</td>");
-                    out.println("<td>"+wide2.getTwos()+"</td>");
-                    out.println("<td>"+bom.getTotalTwos()+"</td>");
+                    out.println("<td>" + door.getTwos() + "</td>");
+                    out.println("<td>" + wide1.getTwos() + "</td>");
+                    out.println("<td>" + window.getTwos() + "</td>");
+                    out.println("<td>" + wide2.getTwos() + "</td>");
+                    out.println("<td>" + bom.getTotalTwos() + "</td>");
                     out.println("</tr>");
-                    
+
                     out.println("<tr>");
                     out.println("<td> 1x2 </td>");
-                    out.println("<td>"+door.getOnes()+"</td>");
-                    out.println("<td>"+wide1.getOnes()+"</td>");
-                    out.println("<td>"+window.getOnes()+"</td>");
-                    out.println("<td>"+wide2.getOnes()+"</td>");
-                    out.println("<td>"+bom.getTotalOnes()+"</td>");
+                    out.println("<td>" + door.getOnes() + "</td>");
+                    out.println("<td>" + wide1.getOnes() + "</td>");
+                    out.println("<td>" + window.getOnes() + "</td>");
+                    out.println("<td>" + wide2.getOnes() + "</td>");
+                    out.println("<td>" + bom.getTotalOnes() + "</td>");
                     out.println("</tr>");
 
                 %>
             </tbody>
         </table>
 
-        <%
-            }
+        <%            }
         %>
     </div>
 </div>
