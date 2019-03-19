@@ -87,11 +87,21 @@ public class BOM
         this.height = height;
     }
 
+    /**
+     * Returns the 4 sides of the building.
+     *
+     * @return
+     */
     public List<Side> getSides()
     {
         return sides;
     }
 
+    /**
+     * Set the 4 sides of the building.
+     *
+     * @param sides
+     */
     public void setSides(List<Side> sides)
     {
         this.sides = sides;
