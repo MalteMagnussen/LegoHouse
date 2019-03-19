@@ -135,30 +135,21 @@
                     /* bredside */
                     out.println("<tr>");
 
-                    out.println("<td>"+wide1.getFours()+"</td>");
-                    out.println("<td>"+wide1.getTwos()+"</td>");
-                    out.println("<td>"+wide1.getOnes()+"</td>");
+                    out.println("<td>"+wide2.getFours()+"</td>");
+                    out.println("<td>"+wide2.getTwos()+"</td>");
+                    out.println("<td>"+wide2.getOnes()+"</td>");
 
                     out.println("</tr>");
                     
                     /* i alt */ 
                     out.println("<tr>");
 
-                    out.println("<td> 2x4 </td>");
-                    out.println("<td> 2x2 </td>");
-                    out.println("<td> 1x2 </td>");
+                    out.println("<td>"+bom.getTotalFours()+"</td>");
+                    out.println("<td>"+bom.getTotalTwos()+"</td>");
+                    out.println("<td>"+bom.getTotalOnes()+"</td>");
 
                     out.println("</tr>");
-                    
-                    /* i alt x højde */ 
-                    out.println("<tr>");
 
-                    out.println("<td> 2x4 </td>");
-                    out.println("<td> 2x2 </td>");
-                    out.println("<td> 1x2 </td>");
-
-                    out.println("</tr>");
-                    
                 %>
             </tbody>
         </table>
