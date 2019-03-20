@@ -59,29 +59,29 @@
                 <tbody>
                     <tr>
                         <td> 2x4 </td>
-                        <td>door.getFours()</td>
-                        <td>wide1.getFours()</td>
-                        <td>window.getFours()</td>
-                        <td>wide2.getFours()</td>
-                        <td>bom.getTotalFours()</td>
+                        <td>${order.door.fours}</td>
+                        <td>${order.wide.fours}</td>
+                        <td>${order.window.fours}</td>
+                        <td>${order.wide.fours}</td>
+                        <td>${bom.totalfours}</td>
                     </tr>
 
                     <tr>
                         <td> 2x2 </td>
-                        <td>door.getTwos()</td>
-                        <td>wide1.getTwos()</td>
-                        <td>window.getTwos()</td>
-                        <td>wide2.getTwos()</td>
-                        <td>bom.getTotalTwos()</td>
+                        <td>${order.door.twos}</td>
+                        <td>${order.wide.twos}</td>
+                        <td>${order.window.twos}</td>
+                        <td>${order.wide.twos}</td>
+                        <td>${bom.totaltwos}</td>
                     </tr>
 
                     <tr>
                         <td> 1x2 </td>
-                        <td>door.getOnes()</td>
-                        <td>wide1.getOnes()</td>
-                        <td>window.getOnes()</td>
-                        <td>wide2.getOnes()</td>
-                        <td>bom.getTotalOnes()</td>
+                        <td>${order.door.ones}</td>
+                        <td>${order.wide.ones}</td>
+                        <td>${order.window.ones}</td>
+                        <td>${order.wide.ones}</td>
+                        <td>${bom.totalones}</td>
                     </tr>
 
 

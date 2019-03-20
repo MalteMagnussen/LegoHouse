@@ -19,6 +19,7 @@ public class BOM implements Serializable
     // Fields
     private Side door;
     private List<Side> sides = new ArrayList<>();
+    private int height, totalones, totaltwos, totalfours;
 
     /**
      * Get the value of door
@@ -84,8 +85,6 @@ public class BOM implements Serializable
         this.wide = wide;
     }
 
-    private int height;
-
     /**
      * Constructor.
      */
@@ -96,46 +95,37 @@ public class BOM implements Serializable
     /**
      * Get the amount of 4x2 bricks for this Bill of Materials.
      *
-     * @return
      */
-    public int getTotalFours()
+    public void setTotalFours()
     {
-        int fours = 0;
         for (Side side : sides)
         {
-            fours += side.getFours();
+            totalfours += side.getFours();
         }
-        return fours;
     }
 
     /**
      * Get the amount of 2x2 bricks for this Bill of Materials.
      *
-     * @return
      */
-    public int getTotalTwos()
+    public void setTotalTwos()
     {
-        int twos = 0;
         for (Side side : sides)
         {
-            twos += side.getTwos();
+            totaltwos += side.getTwos();
         }
-        return twos;
     }
 
     /**
      * Get the amount of 1x2 bricks for this Bill of Materials.
      *
-     * @return
      */
-    public int getTotalOnes()
+    public void setTotalOnes()
     {
-        int ones = 0;
         for (Side side : sides)
         {
-            ones += side.getOnes();
+            totalones += side.getOnes();
         }
-        return ones;
     }
 
     /**

@@ -197,6 +197,9 @@ class BOMLogic
         bom.setWide(wide);
         bom.setWindow(window);
         bom.setSides(sides);
+        bom.setTotalFours();
+        bom.setTotalOnes();
+        bom.setTotalTwos();
         return bom;
     }
     
