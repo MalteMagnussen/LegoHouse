@@ -22,9 +22,6 @@ class BOMLogic
     /**
      * get Bill of Materials method.
      *
-     * @param length
-     * @param width
-     * @param height
      * @return
      */
     BOM getBOM(Order order)
