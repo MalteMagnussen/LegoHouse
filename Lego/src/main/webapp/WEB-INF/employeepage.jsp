@@ -12,14 +12,14 @@
                     <ul>
                         <c:forEach var="order" items="${user.orders}">
                             <li>
-                                
+
                                 <form method="post" action="FrontController">
-                                            <input type="hidden" name="command" value="Product">
-                                            <input type="hidden" name="origin" value="employeeorders">
-                                            <input type="hidden" name="id" value="${order.id}">
-                                            <input type="submit" value="Id of order: ${order.id} - Sent: ${order.sent}">
-                                        </form>
-                                
+                                    <input type="hidden" name="command" value="Product">
+                                    <input type="hidden" name="origin" value="employeeorders">
+                                    <input type="hidden" name="id" value="${order.id}">
+                                    <input type="submit" value="Id of order: ${order.id} - Sent: ${order.sent}">
+                                </form>
+
                             </li>
                         </c:forEach>
                     </ul>

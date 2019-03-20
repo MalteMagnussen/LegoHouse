@@ -16,7 +16,7 @@ import malte.entities.Side;
  *
  * @author Malte
  */
- class BOMLogic
+class BOMLogic
 {
 
     /**
@@ -29,7 +29,7 @@ import malte.entities.Side;
     private Row getRow(int length)
     {
         Row row = new Row();
-
+        
         if (length >= 4)
         {
             /* Fours */
@@ -74,7 +74,7 @@ import malte.entities.Side;
             if (!hasDoor && !hasWindow) // If its the wide side
             {
                 normalrow(i, length, side);
-
+                
             } else if (hasDoor) // If its the Door-side
             {
                 if (i <= 5) // If we're at the door part.
@@ -84,7 +84,7 @@ import malte.entities.Side;
                 {
                     dwnormalrow(i, length, side);
                 }
-
+                
             } else if (hasWindow)
             {
                 if (i == 4 || i == 5)
@@ -136,7 +136,7 @@ import malte.entities.Side;
             if (i % 2 == 1) // If its an uneven row
             {
                 doorlength = doorlength - 2;
-
+                
             } else // It its an even row.
             {
                 doorlength = doorlength - 4;
@@ -166,7 +166,7 @@ import malte.entities.Side;
         }
         side.add(row);
     }
-
+    
     BOMLogic()
     {
     }
@@ -179,39 +179,25 @@ import malte.entities.Side;
      * @param height
      * @return
      */
-    BOM getBOM(int length, int width, int height)
-    {
-        BOM bom = new BOM();
-        Side side1 = getSide(height, width, false, false);
-        Side side2 = getSide(height, length, true, false);
-        Side side3 = getSide(height, width, false, false);
-        Side side4 = getSide(height, length, false, true);
-        List<Side> sides = new ArrayList<>();
-        sides.add(side1);
-        sides.add(side2);
-        sides.add(side3);
-        sides.add(side4);
-        bom.setSides(sides);
-        return bom;
-    }
-
     BOM getBOM(Order order)
     {
         int height = order.getHeight();
         int width = order.getWidth();
         int length = order.getLength();
         BOM bom = new BOM();
-        Side side1 = getSide(height, width, false, false);
-        Side side2 = getSide(height, length, true, false);
-        Side side3 = getSide(height, width, false, false);
-        Side side4 = getSide(height, length, false, true);
+        Side door = getSide(height, length, true, false);
+        Side wide = getSide(height, width, false, false);
+        Side window = getSide(height, length, false, true);
         List<Side> sides = new ArrayList<>();
-        sides.add(side1);
-        sides.add(side2);
-        sides.add(side3);
-        sides.add(side4);
+        sides.add(wide);
+        sides.add(wide);
+        sides.add(door);
+        sides.add(window);
+        bom.setDoor(door);
+        bom.setWide(wide);
+        bom.setWindow(window);
         bom.setSides(sides);
         return bom;
     }
-
+    
 }
