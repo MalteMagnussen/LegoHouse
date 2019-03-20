@@ -15,7 +15,7 @@ public class BOM implements Serializable
 {
 
     // Fields
-    private Side door;
+    private Side door, window, wide;
     private int height, totalones, totaltwos, totalfours;
 
     /**
@@ -68,8 +68,6 @@ public class BOM implements Serializable
         this.door = door;
     }
 
-    private Side window;
-
     /**
      * Get the value of window
      *
@@ -89,8 +87,6 @@ public class BOM implements Serializable
     {
         this.window = window;
     }
-
-    private Side wide;
 
     /**
      * Get the value of wide
@@ -119,16 +115,31 @@ public class BOM implements Serializable
     {
     }
 
+    /**
+     * Set the value of totalones.
+     *
+     * @param totalones the value of totalones
+     */
     public void setTotalones(int totalones)
     {
         this.totalones = totalones;
     }
 
+    /**
+     * Set the value of totaltwos.
+     *
+     * @param totaltwos the value of totalones
+     */
     public void setTotaltwos(int totaltwos)
     {
         this.totaltwos = totaltwos;
     }
 
+    /**
+     * Set the value of totalfours.
+     *
+     * @param totalfours the value of totalfours
+     */
     public void setTotalfours(int totalfours)
     {
         this.totalfours = totalfours;
@@ -153,6 +164,5 @@ public class BOM implements Serializable
     {
         this.height = height;
     }
-
 
 }

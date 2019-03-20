@@ -59,29 +59,29 @@
                 <tbody>
                     <tr>
                         <td> 2x4 </td>
-                        <td>${order.door.fours}</td>
-                        <td>${order.wide.fours}</td>
-                        <td>${order.window.fours}</td>
-                        <td>${order.wide.fours}</td>
-                        <td>${bom.totalfours}</td>
+                        <td>${BOM.door.fours}</td>
+                        <td>${BOM.wide.fours}</td>
+                        <td>${BOM.window.fours}</td>
+                        <td>${BOM.wide.fours}</td>
+                        <td>${BOM.totalfours}</td>
                     </tr>
 
                     <tr>
                         <td> 2x2 </td>
-                        <td>${order.door.twos}</td>
-                        <td>${order.wide.twos}</td>
-                        <td>${order.window.twos}</td>
-                        <td>${order.wide.twos}</td>
-                        <td>${bom.totaltwos}</td>
+                        <td>${BOM.door.twos}</td>
+                        <td>${BOM.wide.twos}</td>
+                        <td>${BOM.window.twos}</td>
+                        <td>${BOM.wide.twos}</td>
+                        <td>${BOM.totaltwos}</td>
                     </tr>
 
                     <tr>
                         <td> 1x2 </td>
-                        <td>${order.door.ones}</td>
-                        <td>${order.wide.ones}</td>
-                        <td>${order.window.ones}</td>
-                        <td>${order.wide.ones}</td>
-                        <td>${bom.totalones}</td>
+                        <td>${BOM.door.ones}</td>
+                        <td>${BOM.wide.ones}</td>
+                        <td>${BOM.window.ones}</td>
+                        <td>${BOM.wide.ones}</td>
+                        <td>${BOM.totalones}</td>
                     </tr>
 
 

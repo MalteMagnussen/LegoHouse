@@ -20,52 +20,39 @@ public class Side implements Serializable
     private List<Row> rows = new ArrayList<>();
     private boolean window;
     private boolean door;
-    private int height;
+    private int height, ones, twos, fours;
 
-    /**
-     * Get the number of 4x2 bricks used for this side.
-     *
-     * @return
-     */
-    public int getFours()
+    public int getOnes()
     {
-        int fours = 0;
-        for (Row row : rows)
-        {
-            fours += row.getFours();
-        }
-        return fours;
+        return ones;
     }
 
-    /**
-     * Get the number of 2x2 bricks used for this side.
-     *
-     * @return
-     */
+    public void setOnes(int ones)
+    {
+        this.ones = ones;
+    }
+
     public int getTwos()
     {
-        int twos = 0;
-        for (Row row : rows)
-        {
-            twos += row.getTwos();
-        }
         return twos;
     }
 
-    /**
-     * Get the number of 1x2 bricks used for this side.
-     *
-     * @return
-     */
-    public int getOnes()
+    public void setTwos(int twos)
     {
-        int ones = 0;
-        for (Row row : rows)
-        {
-            ones += row.getOnes();
-        }
-        return ones;
+        this.twos = twos;
     }
+
+    public int getFours()
+    {
+        return fours;
+    }
+
+    public void setFours(int fours)
+    {
+        this.fours = fours;
+    }
+
+    
 
     /**
      * Get the value of height

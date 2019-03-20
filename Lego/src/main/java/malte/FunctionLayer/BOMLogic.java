@@ -20,6 +20,37 @@ class BOMLogic
 {
 
     /**
+     * get Bill of Materials method.
+     *
+     * @param length
+     * @param width
+     * @param height
+     * @return
+     */
+    BOM getBOM(Order order)
+    {
+        BOM bom = makeBOM(order);
+        return bom;
+    }
+
+    /**
+     * Makes a single side of a house.
+     *
+     * @param height
+     * @param length
+     * @param hasDoor
+     * @param hasWindow
+     * @return
+     */
+    private Side getSide(int height, int length, boolean hasDoor, boolean hasWindow)
+    {
+        Side side = setside(height, hasDoor, hasWindow);
+        makerows(height, hasDoor, hasWindow, length, side);
+        setbricks(side);
+        return side;
+    }
+
+    /**
      * Makes a single Row of bricks. A side consists of Height X Rows of bricks.
      * A House consists of 4 sides.
      *
@@ -29,7 +60,7 @@ class BOMLogic
     private Row getRow(int length)
     {
         Row row = new Row();
-        
+
         if (length >= 4)
         {
             /* Fours */
@@ -53,50 +84,71 @@ class BOMLogic
         return row;
     }
 
-    /**
-     * Makes a single side of a house.
-     *
-     * @param height
-     * @param length
-     * @param hasDoor
-     * @param hasWindow
-     * @return
-     */
-    private Side getSide(int height, int length, boolean hasDoor, boolean hasWindow)
+    private void makerows(int height, boolean hasDoor, boolean hasWindow, int length, Side side)
     {
-        Side side = new Side();
-        side.setHeight(height);
-        side.setDoor(hasDoor);
-        side.setWindow(hasWindow);
         // We need to add as many rows as there is height to a side.
         for (int i = 3; i < height + 3; i++)
         {
             if (!hasDoor && !hasWindow) // If its the wide side
             {
                 normalrow(i, length, side);
-                
+
             } else if (hasDoor) // If its the Door-side
             {
-                if (i <= 5) // If we're at the door part.
-                {
-                    doorOrWindowRow(i, length, side);
-                } else // If we're above the door
-                {
-                    dwnormalrow(i, length, side);
-                }
-                
+                door(i, length, side);
+
             } else if (hasWindow)
             {
-                if (i == 4 || i == 5)
-                {
-                    doorOrWindowRow(i, length, side);
-                } else // If we're above or below the window.
-                {
-                    dwnormalrow(i, length, side);
-                }
+                window(i, length, side);
             }
         }
+    }
+
+    private Side setside(int height, boolean hasDoor, boolean hasWindow)
+    {
+        Side side = new Side();
+        side.setHeight(height);
+        side.setDoor(hasDoor);
+        side.setWindow(hasWindow);
         return side;
+    }
+
+    private void door(int i, int length, Side side)
+    {
+        if (i <= 5) // If we're at the door part.
+        {
+            doorOrWindowRow(i, length, side);
+        } else // If we're above the door
+        {
+            dwnormalrow(i, length, side);
+        }
+    }
+
+    private void window(int i, int length, Side side)
+    {
+        if (i == 4 || i == 5)
+        {
+            doorOrWindowRow(i, length, side);
+        } else // If we're above or below the window.
+        {
+            dwnormalrow(i, length, side);
+        }
+    }
+
+    private void setbricks(Side side)
+    {
+        int ones = 0;
+        int twos = 0;
+        int fours = 0;
+        for (Row row : side.getRows())
+        {
+            ones += row.getOnes();
+            twos += row.getTwos();
+            fours += row.getFours();
+        }
+        side.setOnes(ones);
+        side.setTwos(twos);
+        side.setFours(fours);
     }
 
     /**
@@ -136,7 +188,7 @@ class BOMLogic
             if (i % 2 == 1) // If its an uneven row
             {
                 doorlength = doorlength - 2;
-                
+
             } else // It its an even row.
             {
                 doorlength = doorlength - 4;
@@ -166,23 +218,9 @@ class BOMLogic
         }
         side.add(row);
     }
-    
+
     BOMLogic()
     {
-    }
-
-    /**
-     * get Bill of Materials method.
-     *
-     * @param length
-     * @param width
-     * @param height
-     * @return
-     */
-    BOM getBOM(Order order)
-    {
-        BOM bom = makeBOM(order);
-        return bom;
     }
 
     private BOM makeBOM(Order order)
@@ -216,5 +254,5 @@ class BOMLogic
         bom.setTotalfours(totalfours);
         return bom;
     }
-    
+
 }
