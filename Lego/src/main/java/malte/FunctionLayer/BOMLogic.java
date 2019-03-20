@@ -181,6 +181,12 @@ class BOMLogic
      */
     BOM getBOM(Order order)
     {
+        BOM bom = makeBOM(order);
+        return bom;
+    }
+
+    private BOM makeBOM(Order order)
+    {
         int height = order.getHeight();
         int width = order.getWidth();
         int length = order.getLength();
@@ -189,17 +195,25 @@ class BOMLogic
         Side wide = getSide(height, width, false, false);
         Side window = getSide(height, length, false, true);
         List<Side> sides = new ArrayList<>();
-        sides.add(wide);
-        sides.add(wide);
         sides.add(door);
+        sides.add(wide);
+        sides.add(wide);
         sides.add(window);
+        int totalones = 0;
+        int totaltwos = 0;
+        int totalfours = 0;
+        for (Side side : sides)
+        {
+            totalones += side.getOnes();
+            totaltwos += side.getTwos();
+            totalfours += side.getFours();
+        }
         bom.setDoor(door);
         bom.setWide(wide);
         bom.setWindow(window);
-        bom.setSides(sides);
-        bom.setTotalFours();
-        bom.setTotalOnes();
-        bom.setTotalTwos();
+        bom.setTotalones(totalones);
+        bom.setTotaltwos(totaltwos);
+        bom.setTotalfours(totalfours);
         return bom;
     }
     

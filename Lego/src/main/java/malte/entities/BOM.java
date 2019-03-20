@@ -6,8 +6,6 @@
 package malte.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -18,7 +16,6 @@ public class BOM implements Serializable
 
     // Fields
     private Side door;
-    private List<Side> sides = new ArrayList<>();
     private int height, totalones, totaltwos, totalfours;
 
     /**
@@ -51,8 +48,6 @@ public class BOM implements Serializable
         return totalfours;
     }
 
-    
-    
     /**
      * Get the value of door
      *
@@ -124,40 +119,19 @@ public class BOM implements Serializable
     {
     }
 
-    /**
-     * Get the amount of 4x2 bricks for this Bill of Materials.
-     *
-     */
-    public void setTotalFours()
+    public void setTotalones(int totalones)
     {
-        for (Side side : sides)
-        {
-            totalfours += side.getFours();
-        }
+        this.totalones = totalones;
     }
 
-    /**
-     * Get the amount of 2x2 bricks for this Bill of Materials.
-     *
-     */
-    public void setTotalTwos()
+    public void setTotaltwos(int totaltwos)
     {
-        for (Side side : sides)
-        {
-            totaltwos += side.getTwos();
-        }
+        this.totaltwos = totaltwos;
     }
 
-    /**
-     * Get the amount of 1x2 bricks for this Bill of Materials.
-     *
-     */
-    public void setTotalOnes()
+    public void setTotalfours(int totalfours)
     {
-        for (Side side : sides)
-        {
-            totalones += side.getOnes();
-        }
+        this.totalfours = totalfours;
     }
 
     /**
@@ -180,24 +154,5 @@ public class BOM implements Serializable
         this.height = height;
     }
 
-    /**
-     * Returns the 4 sides of the building.
-     *
-     * @return
-     */
-    public List<Side> getSides()
-    {
-        return sides;
-    }
-
-    /**
-     * Set the 4 sides of the building.
-     *
-     * @param sides
-     */
-    public void setSides(List<Side> sides)
-    {
-        this.sides = sides;
-    }
 
 }
