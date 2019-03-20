@@ -47,28 +47,21 @@
 
 <div class="row" style="margin: auto;">
     <div class="col-sm-6">
-        <%
-            /**
-             * List of all orders from a user. Puts selected order in session as
-             * "order".
-             */
-            List<Order> orders = user.getOrders();
-            if (orders != null && !orders.isEmpty())
-            {
-                for (Order order : orders)
-                {
-                    int id = order.getId();
-                    out.println("<form method=\"post\" action=\"FrontController\">\n"
-                            /* Where to in the Command map */
-                            + "            <input type=\"hidden\" name=\"command\" value=\"Product\">\n"
-                            /* Where to in the Product switch */
-                            + "            <input type=\"hidden\" name=\"origin\" value=\"order\">\n"
-                            + "            <input type=\"hidden\" name=\"id\" value=\"" + id + "\">\n"
-                            + "            <input type=\"submit\" value=\"Lego Order: " + id + " Sent: " + order.isSent() + "\"/>\n"
-                            + "        </form>");
-                }
-            }
-        %>
+        <h5> Orders for: ${user.email}</h5>
+                    <ul>
+                        <c:forEach var="order" items="${user.orders}">
+                            <li>
+
+                                <form method="post" action="FrontController">
+                                    <input type="hidden" name="command" value="Product">
+                                    <input type="hidden" name="origin" value="order">
+                                    <input type="hidden" name="id" value="${order.id}">
+                                    <input type="submit" value="Id of order: ${order.id} - Sent: ${order.sent}">
+                                </form>
+
+                            </li>
+                        </c:forEach>
+                    </ul>
     </div>
     <div class="col-sm-6">
 
