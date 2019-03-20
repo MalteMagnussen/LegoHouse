@@ -55,14 +55,11 @@ public class LogicFacade
      */
     public static Order createOrder(int id, int length, int width, int height) throws CustomException
     {
-        Order order = new Order();
-        order.setIdorders(id);
-        order.setLength(length);
-        order.setWidth(width);
-        order.setHeight(height);
-        OrderMapper.createOrder(order);
-        return order;
+        return new OrderLogic().order(id, length, width, height);
+        
     }
+
+    
 
     /**
      * Get a List of all Orders for one User.
