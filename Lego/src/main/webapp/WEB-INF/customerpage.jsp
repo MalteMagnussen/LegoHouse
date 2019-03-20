@@ -1,14 +1,9 @@
-<%@page import="malte.entities.Side"%>
-<%@page import="malte.entities.BOM"%>
-<%@page import="java.util.List"%>
-<%@page import="malte.entities.Order"%>
-<%@page import="malte.entities.User"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
-<% User user = (User) session.getAttribute("user");
-    int userid = user.getId();%>
+
 <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-    Logged in as: <%= user.getEmail()%> </h1>
+    Logged in as: ${user.email} </h1>
 
 <!-- Form start -->
 <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
@@ -17,7 +12,7 @@
     <!-- Hidden input: &origin=addProduct -->
     <input type="hidden" name="origin" value="addProduct">
     <!-- Hidden input: &id=User.getID() -->
-    <input type="hidden" name="id" value="<% out.print(userid); %>">
+    <input type="hidden" name="id" value="${user.id}">
     <!-- Table start. Table makes sure it's all organized neatly -->
     <table class="table table-striped">
 

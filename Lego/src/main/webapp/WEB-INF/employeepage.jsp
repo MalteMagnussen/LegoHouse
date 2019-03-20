@@ -8,7 +8,7 @@
             <ul>
             <c:forEach var="user" items="${users}">
                 <br>
-                <li> <h5> Orders for: ${user.name}</h5>
+                <li> <h5> Orders for: ${user.email}</h5>
                     <ul>
                         <c:forEach var="order" items="${user.orders}">
                             <li>
