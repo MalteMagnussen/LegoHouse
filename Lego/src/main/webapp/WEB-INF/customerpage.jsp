@@ -69,14 +69,13 @@
                             /* Where to in the Product switch */
                             + "            <input type=\"hidden\" name=\"origin\" value=\"order\">\n"
                             + "            <input type=\"hidden\" name=\"id\" value=\"" + id + "\">\n"
-                            + "            <input type=\"submit\" value=\"Lego Order: " + id + " Sent: "+order.isSent()+"\"/>\n"
+                            + "            <input type=\"submit\" value=\"Lego Order: " + id + " Sent: " + order.isSent() + "\"/>\n"
                             + "        </form>");
                 }
             }
         %>
     </div>
-     <div class="col-sm-6">
-
+    <div class="col-sm-6">
 
         <c:if test="${not empty BOM}">
             <c:if test="${not order.sent}">
@@ -89,7 +88,6 @@
                 </form>
 
             </c:if>
-
 
             <!--  Below is the Table for an Invoice  -->
             <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
