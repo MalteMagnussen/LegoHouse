@@ -4,7 +4,7 @@
 
 <!-- Author: Malte -->
 
-<c:if var="error" test="${not empty error}">
+<c:if test="${not empty error}">
     <H2>Message: ${error} </h2>
     </c:if>
 
