@@ -1,4 +1,5 @@
-<%@page import="malte.entities.User"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!-- Author: Malte -->
@@ -27,18 +28,18 @@
                     font-size: 3.5rem;
                 }
             }
-            
-            
- 
 
-            
+
+
+
+
         </style>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link type="text/css" rel="stylesheet" href="css/cssone.css">
         <link href="floating-labels.css" rel="stylesheet">
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
-        
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <!-- Jquery -->
@@ -50,25 +51,19 @@
 
     </head>
     <body>
-        <%
-            User user = (User) session.getAttribute("user");
-            if (user != null)
-            {
-        %>
-        <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-            <form method="post" action="FrontController" >
-                <input type="hidden" name="command" value="Login">
-                <input type="hidden" name="origin" value="logout">
-                <input type="submit" value="Log Out"/>
-            </form>
+        <c:if test="${user == null}">
+            <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                <form method="post" action="FrontController" >
+                    <input type="hidden" name="command" value="Login">
+                    <input type="hidden" name="origin" value="logout">
+                    <input type="submit" value="Log Out"/>
+                </form>
 
-            <form method="post" action="FrontController" >
-                <input type="hidden" name="command" value="Redirect">
-                <input type="submit" value="Shop"/>
-            </form>
+                <form method="post" action="FrontController" >
+                    <input type="hidden" name="command" value="Redirect">
+                    <input type="submit" value="Shop"/>
+                </form>
 
-            <a href="index.jsp">Index</a>
-        </div>
-        <%
-            }
-        %>
+                <a href="index.jsp">Index</a>
+            </div>
+        </c:if>
