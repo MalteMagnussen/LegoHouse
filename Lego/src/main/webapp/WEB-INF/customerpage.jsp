@@ -2,8 +2,8 @@
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
 
-<h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-    Logged in as: ${user.email} </h1>
+    <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+        Logged in as: ${user.email} </h1>
 
 <!-- Form start -->
 <form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
@@ -48,20 +48,20 @@
 <div class="row" style="margin: auto;">
     <div class="col-sm-6">
         <h5> Orders for: ${user.email}</h5>
-                    <ul>
-                        <c:forEach var="order" items="${user.orders}">
-                            <li>
+        <ul>
+            <c:forEach var="order" items="${user.orders}">
+                <li>
 
-                                <form method="post" action="FrontController">
-                                    <input type="hidden" name="command" value="Product">
-                                    <input type="hidden" name="origin" value="order">
-                                    <input type="hidden" name="id" value="${order.id}">
-                                    <input type="submit" value="Id of order: ${order.id} - Sent: ${order.sent}">
-                                </form>
+                    <form method="post" action="FrontController">
+                        <input type="hidden" name="command" value="Product">
+                        <input type="hidden" name="origin" value="order">
+                        <input type="hidden" name="id" value="${order.id}">
+                        <input type="submit" value="Id of order: ${order.id} - Sent: ${order.sent}">
+                    </form>
 
-                            </li>
-                        </c:forEach>
-                    </ul>
+                </li>
+            </c:forEach>
+        </ul>
     </div>
     <div class="col-sm-6">
 
