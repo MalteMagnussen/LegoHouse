@@ -31,12 +31,12 @@ public class Product extends Command
 
         switch (origin)
         {
-            // Adds an Order to the SQL.
+            // Adds an Order to the SQL - From customerpage.jsp
             case "addProduct":
             {
                 return addProduct(request);
             }
-            // Get one order.
+            // Get one order - From customerpage.jsp
             case "order":
             {
                 return order(request);
@@ -48,6 +48,7 @@ public class Product extends Command
             }
             case "sendOrder":
             {
+            // Mark an order as sent - From employeepage.jsp
                 return sendOrder(request);
             }
 
