@@ -22,6 +22,38 @@ public class BOM implements Serializable
     private int height, totalones, totaltwos, totalfours;
 
     /**
+     * Get the number of ones
+     *
+     * @return the number of ones
+     */
+    public int getTotalones()
+    {
+        return totalones;
+    }
+
+    /**
+     * Get the number of twos
+     *
+     * @return the number of twos
+     */
+    public int getTotaltwos()
+    {
+        return totaltwos;
+    }
+
+    /**
+     * Get the number of fours
+     *
+     * @return the number of fours
+     */
+    public int getTotalfours()
+    {
+        return totalfours;
+    }
+
+    
+    
+    /**
      * Get the value of door
      *
      * @return the value of door
