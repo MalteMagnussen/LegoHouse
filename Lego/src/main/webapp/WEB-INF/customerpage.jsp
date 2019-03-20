@@ -75,85 +75,66 @@
             }
         %>
     </div>
-    <div class="col-sm-6">
+     <div class="col-sm-6">
 
-        <%
-            /**
-             * Shows selected Order.
-             */
-            BOM bom = (BOM) session.getAttribute("BOM");
-            if (bom != null)
-            {
-                List<Side> sides = bom.getSides();
-                Side door = null;
-                Side window = null;
-                Side wide1 = null;
-                Side wide2 = null;
-                for (Side side : sides)
-                {
-                    if (side.hasDoor())
-                    {
-                        door = side;
-                    }
-                    if (side.hasWindow())
-                    {
-                        window = side;
-                    }
-                    if (!side.hasDoor() && !side.hasWindow())
-                    {
-                        wide1 = side;
-                        wide2 = side;
-                    }
-                }
-        %>
-        
-        <!--  Below is the Table for an Invoice  -->
-        <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Side m. dør.</th>
-                    <th>Bredside</th>
-                    <th>Side m. vindue</th>
-                    <th>Bredside</th>
-                    <th>ialt<th>
-                </tr>
-            </thead>
-            <tbody>
-                <%
-                    out.println("<tr>");
-                    out.println("<td> 2x4 </td>");
-                    out.println("<td>" + door.getFours() + "</td>");
-                    out.println("<td>" + wide1.getFours() + "</td>");
-                    out.println("<td>" + window.getFours() + "</td>");
-                    out.println("<td>" + wide2.getFours() + "</td>");
-                    out.println("<td>" + bom.getTotalFours() + "</td>");
-                    out.println("</tr>");
 
-                    out.println("<tr>");
-                    out.println("<td> 2x2 </td>");
-                    out.println("<td>" + door.getTwos() + "</td>");
-                    out.println("<td>" + wide1.getTwos() + "</td>");
-                    out.println("<td>" + window.getTwos() + "</td>");
-                    out.println("<td>" + wide2.getTwos() + "</td>");
-                    out.println("<td>" + bom.getTotalTwos() + "</td>");
-                    out.println("</tr>");
+        <c:if test="${not empty BOM}">
+            <c:if test="${not order.sent}">
 
-                    out.println("<tr>");
-                    out.println("<td> 1x2 </td>");
-                    out.println("<td>" + door.getOnes() + "</td>");
-                    out.println("<td>" + wide1.getOnes() + "</td>");
-                    out.println("<td>" + window.getOnes() + "</td>");
-                    out.println("<td>" + wide2.getOnes() + "</td>");
-                    out.println("<td>" + bom.getTotalOnes() + "</td>");
-                    out.println("</tr>");
+                <form method="post" action="FrontController">
+                    <input type="hidden" name="command" value="Product">
+                    <input type="hidden" name="origin" value="sendOrder">
+                    <input type="hidden" name="id" value="${order.id}">
+                    <input type="submit" value="Send order"/>
+                </form>
 
-                %>
-            </tbody>
-        </table>
+            </c:if>
 
-        <%            }
-        %>
+
+            <!--  Below is the Table for an Invoice  -->
+            <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Side m. dør.</th>
+                        <th>Bredside</th>
+                        <th>Side m. vindue</th>
+                        <th>Bredside</th>
+                        <th>ialt<th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 2x4 </td>
+                        <td>${BOM.door.fours}</td>
+                        <td>${BOM.wide.fours}</td>
+                        <td>${BOM.window.fours}</td>
+                        <td>${BOM.wide.fours}</td>
+                        <td>${BOM.totalfours}</td>
+                    </tr>
+
+                    <tr>
+                        <td> 2x2 </td>
+                        <td>${BOM.door.twos}</td>
+                        <td>${BOM.wide.twos}</td>
+                        <td>${BOM.window.twos}</td>
+                        <td>${BOM.wide.twos}</td>
+                        <td>${BOM.totaltwos}</td>
+                    </tr>
+
+                    <tr>
+                        <td> 1x2 </td>
+                        <td>${BOM.door.ones}</td>
+                        <td>${BOM.wide.ones}</td>
+                        <td>${BOM.window.ones}</td>
+                        <td>${BOM.wide.ones}</td>
+                        <td>${BOM.totalones}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </c:if>
     </div>
 </div>
 
