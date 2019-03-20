@@ -77,7 +77,10 @@ public class UserMapper
                 int id = rs.getInt("id");
                 User user = new User(email, password, role);
                 user.setId(id);
-                user.setOrders(OrderMapper.getOrders(user));
+                if (user.getRole().equals("customer"))
+                {
+                    user.setOrders(OrderMapper.getOrders(user));
+                }
                 return user;
             } else
             {
