@@ -106,13 +106,7 @@
                     }
                 }
         %>
-        <!--  Below is the Script for Sorting.   -->
-        <script>
-            $(document).ready(function () {
-                $('#order').DataTable();
-            });
-        </script>
-
+        
         <!--  Below is the Table for an Invoice  -->
         <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
             <thead>
