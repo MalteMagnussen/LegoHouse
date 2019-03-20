@@ -1,13 +1,13 @@
-<jsp:include page='header.jsp'></jsp:include>
-    <!-- Author: Malte -->
 
-<% String error = (String) request.getAttribute("error");
-    if (error != null)
-    {
-        out.println("<H2>Message: </h2>");
-        out.println(error);
-    }
-%>
+<jsp:include page='header.jsp'></jsp:include>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!-- Author: Malte -->
+
+<c:if var="error" test="${not empty error}">
+    <H2>Message: ${error} </h2>
+    </c:if>
+
 
 <div class="row">
     <div class="col-sm-6">
