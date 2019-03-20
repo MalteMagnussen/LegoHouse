@@ -12,7 +12,7 @@
                     <ul>
                         <c:forEach var="order" items="${user.orders}">
                             <li>
-
+                                <!--  Button to show an order with.  -->
                                 <form method="post" action="FrontController">
                                     <input type="hidden" name="command" value="Product">
                                     <input type="hidden" name="origin" value="employeeorders">
@@ -32,6 +32,8 @@
 
 
         <c:if test="${not empty BOM}">
+            
+            <!--  Button to send an order with  -->
             <c:if test="${not order.sent}">
 
                 <form method="post" action="FrontController">
@@ -43,8 +45,7 @@
 
             </c:if>
 
-
-            <!--  Below is the Table for an Invoice  -->
+            <!--  Below is the Table for a Bill of Materials  -->
             <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
 
                 <thead>
