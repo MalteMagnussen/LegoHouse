@@ -2,9 +2,10 @@ package malte.FunctionLayer;
 
 import java.util.List;
 import malte.DBAccess.OrderMapper;
-import malte.entities.User;
 import malte.DBAccess.UserMapper;
+import malte.entities.BOM;
 import malte.entities.Order;
+import malte.entities.User;
 
 /**
  * Facade Class.
@@ -115,5 +116,17 @@ public class LogicFacade
     public static void sendOrder(int id) throws CustomException
     {
         OrderMapper.sendOrder(id);
+    }
+
+    /**
+     * Get a Bill of Materials from an Order.
+     *
+     * @param order
+     * @return
+     */
+    public static BOM getBOM(Order order)
+    {
+        BOMLogic logic = new BOMLogic();
+        return logic.getBOM(order);
     }
 }

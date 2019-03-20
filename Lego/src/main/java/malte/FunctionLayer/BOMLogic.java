@@ -16,7 +16,7 @@ import malte.entities.Side;
  *
  * @author Malte
  */
-public class BOMLogic
+ class BOMLogic
 {
 
     /**
@@ -167,7 +167,7 @@ public class BOMLogic
         side.add(row);
     }
 
-    public BOMLogic()
+    BOMLogic()
     {
     }
 
@@ -179,7 +179,7 @@ public class BOMLogic
      * @param height
      * @return
      */
-    public BOM getBOM(int length, int width, int height)
+    BOM getBOM(int length, int width, int height)
     {
         BOM bom = new BOM();
         Side side1 = getSide(height, width, false, false);
@@ -195,7 +195,7 @@ public class BOMLogic
         return bom;
     }
 
-    public BOM getBOM(Order order)
+    BOM getBOM(Order order)
     {
         int height = order.getHeight();
         int width = order.getWidth();

@@ -9,9 +9,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.FunctionLayer.BOMLogic;
-import malte.FunctionLayer.LogicFacade;
 import malte.FunctionLayer.CustomException;
+import malte.FunctionLayer.LogicFacade;
 import malte.entities.BOM;
 import malte.entities.Order;
 import malte.entities.User;
@@ -120,8 +119,7 @@ public class Product extends Command
             if (order.getId() == id)
             {
                 session.setAttribute("order", order);
-                BOMLogic bomlogic = new BOMLogic();
-                BOM bom = bomlogic.getBOM(order);
+                BOM bom = LogicFacade.getBOM(order);
                 session.setAttribute("BOM", bom);
             }
         }
@@ -146,8 +144,7 @@ public class Product extends Command
         Order order = LogicFacade.getOrder(id);
 
         session.setAttribute("order", order);
-        BOMLogic bomlogic = new BOMLogic();
-        BOM bom = bomlogic.getBOM(order);
+        BOM bom = LogicFacade.getBOM(order);
         session.setAttribute("BOM", bom);
 
         return user.getRole() + "page";
