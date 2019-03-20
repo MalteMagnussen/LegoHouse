@@ -126,7 +126,6 @@ public class LogicFacade
      */
     public static BOM getBOM(Order order)
     {
-        BOMLogic logic = new BOMLogic();
-        return logic.getBOM(order);
+        return new BOMLogic().getBOM(order);
     }
 }
