@@ -24,6 +24,9 @@ public class Order implements Serializable
 
     /**
      * Fields.
+     * IDorders is the ID of the User whose Order it is. Bad naming, I know.
+     * id is the ID of the order.
+     * Sorry.
      */
     private int length, width, height, idorders, id;
     private boolean sent;
