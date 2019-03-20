@@ -59,8 +59,6 @@ public class LogicFacade
         
     }
 
-    
-
     /**
      * Get a List of all Orders for one User.
      *
