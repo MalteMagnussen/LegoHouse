@@ -46,6 +46,7 @@
 
             <!--  Below is the Table for an Invoice  -->
             <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
+
                 <thead>
                     <tr>
                         <th>Type</th>
@@ -56,7 +57,9 @@
                         <th>ialt<th>
                     </tr>
                 </thead>
+
                 <tbody>
+
                     <tr>
                         <td> 2x4 </td>
                         <td>${BOM.door.fours}</td>
@@ -84,10 +87,12 @@
                         <td>${BOM.totalones}</td>
                     </tr>
 
-
                 </tbody>
+
             </table>
+
         </c:if>
+
     </div>
 </div>       
 <jsp:include page='/footer.jsp'></jsp:include>
