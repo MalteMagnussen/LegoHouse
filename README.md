@@ -3,12 +3,6 @@ https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html by Malte H
 
 [JavaDocs](https://maltemagnussen.github.io/LegoHouse/)
 
-SQL is only ever accessed from DBAccess folder.
+# TO DO
 
-DBAccess folder is only ever accessed from LogicFacade.java.
-
-LogicFacade.java is only ever accessed from FrontController+Command.
-
-FrontController is only ever accessed from .jsp pages with requests.
-
-.jsp Request -> FrontController -> Command -> LogicFacade -> DataMapper -> SQL.
+* Make the sent state change properly after you press the button. The Order gets marked as sent in the Database, but not always in the GUI.
