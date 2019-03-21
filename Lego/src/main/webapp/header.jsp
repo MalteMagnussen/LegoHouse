@@ -46,7 +46,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     </head>
+    
     <body>
+        
+        <div id="everything">
         <c:if test="${not empty user}">
             <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
                 <form method="post" action="FrontController" >
