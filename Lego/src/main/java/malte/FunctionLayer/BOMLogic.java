@@ -26,8 +26,7 @@ class BOMLogic
      */
     BOM getBOM(Order order)
     {
-        BOM bom = makeBOM(order);
-        return bom;
+        return makeBOM(order);
     }
 
     /**
