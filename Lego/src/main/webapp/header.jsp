@@ -37,6 +37,7 @@
         <link href="floating-labels.css" rel="stylesheet">
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
         <link type="text/css" rel="stylesheet" href="css/backgroundimage.css">
+        <link type="text/css" rel="stylesheet" href="css/stickyfooter.css">
 
 
     </head>
@@ -83,10 +84,10 @@
                 </nav>
 
             </c:if>
-<div class="container">
-  <div class="card border-0 shadow my-5">
-    <div class="card-body p-5">
-            <!-- Show errormessage to the User --> 
-            <c:if test="${not empty error}">
-                <H2>Message: ${error} </h2>
-                </c:if>
+            <div class="container">
+                <div class="card border-0 shadow my-5">
+                    <div class="card-body p-5">
+                        <!-- Show errormessage to the User --> 
+                        <c:if test="${not empty error}">
+                            <H2>Message: ${error} </h2>
+                            </c:if>
