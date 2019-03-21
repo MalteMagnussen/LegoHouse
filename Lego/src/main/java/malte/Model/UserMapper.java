@@ -1,4 +1,4 @@
-package malte.DBAccess;
+package malte.Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import malte.FunctionLayer.CustomException;
-import malte.entities.User;
+import malte.Controller.CustomException;
+import malte.Model.entities.User;
 
 /**
  * UserDAO

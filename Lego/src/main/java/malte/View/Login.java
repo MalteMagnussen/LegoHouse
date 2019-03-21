@@ -1,11 +1,11 @@
-package malte.PresentationLayer;
+package malte.View;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.FunctionLayer.LogicFacade;
-import malte.FunctionLayer.CustomException;
-import malte.entities.User;
+import malte.Controller.LogicFacade;
+import malte.Controller.CustomException;
+import malte.Model.entities.User;
 
 /**
  * Login Class. Contains Login methods. Login, Register, Logout.

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.DBAccess;
+package malte.Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,9 +12,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import malte.FunctionLayer.CustomException;
-import malte.entities.Order;
-import malte.entities.User;
+import malte.Controller.CustomException;
+import malte.Model.entities.Order;
+import malte.Model.entities.User;
 
 /**
  * OrderDAO
@@ -27,8 +27,8 @@ public class OrderMapper
     /**
      * Called from LogicFacade createOrder Method.
      *
-     * @see malte.FunctionLayer.LogicFacade
-     * @see malte.entities.Order
+     * @see malte.Controller.LogicFacade
+     * @see malte.Model.entities.Order
      * @param order
      * @throws CustomException
      */

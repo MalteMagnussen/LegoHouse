@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.FunctionLayer;
+package malte.Controller;
 
-import malte.DBAccess.OrderMapper;
-import malte.entities.Order;
+import malte.Model.OrderMapper;
+import malte.Model.entities.Order;
 
 /**
  *

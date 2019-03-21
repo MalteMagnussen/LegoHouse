@@ -1,4 +1,4 @@
-package malte.entities;
+package malte.Model.entities;
 
 import java.io.Serializable;
 import java.util.List;

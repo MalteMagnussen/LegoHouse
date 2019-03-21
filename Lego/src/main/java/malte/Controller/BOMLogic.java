@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.FunctionLayer;
+package malte.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import malte.entities.BOM;
-import malte.entities.Order;
-import malte.entities.Row;
-import malte.entities.Side;
+import malte.Model.entities.BOM;
+import malte.Model.entities.Order;
+import malte.Model.entities.Row;
+import malte.Model.entities.Side;
 
 /**
  *

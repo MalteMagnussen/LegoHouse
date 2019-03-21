@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.PresentationLayer;
+package malte.View;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.FunctionLayer.CustomException;
-import malte.FunctionLayer.LogicFacade;
-import malte.entities.BOM;
-import malte.entities.Order;
-import malte.entities.User;
+import malte.Controller.CustomException;
+import malte.Controller.LogicFacade;
+import malte.Model.entities.BOM;
+import malte.Model.entities.Order;
+import malte.Model.entities.User;
 
 /**
  * Product class. Contains methods to do with the orders. Add Product, Order,

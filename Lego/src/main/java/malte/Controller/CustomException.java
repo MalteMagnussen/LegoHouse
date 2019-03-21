@@ -1,4 +1,4 @@
-package malte.FunctionLayer;
+package malte.Controller;
 
 /**
  * Custom Exception.

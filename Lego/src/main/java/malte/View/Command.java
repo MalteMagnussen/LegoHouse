@@ -1,9 +1,9 @@
-package malte.PresentationLayer;
+package malte.View;
 
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.FunctionLayer.CustomException;
+import malte.Controller.CustomException;
 
 abstract class Command
 {

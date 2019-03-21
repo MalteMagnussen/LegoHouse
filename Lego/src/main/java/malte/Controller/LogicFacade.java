@@ -1,11 +1,11 @@
-package malte.FunctionLayer;
+package malte.Controller;
 
 import java.util.List;
-import malte.DBAccess.OrderMapper;
-import malte.DBAccess.UserMapper;
-import malte.entities.BOM;
-import malte.entities.Order;
-import malte.entities.User;
+import malte.Model.OrderMapper;
+import malte.Model.UserMapper;
+import malte.Model.entities.BOM;
+import malte.Model.entities.Order;
+import malte.Model.entities.User;
 
 /**
  * Facade Class.
