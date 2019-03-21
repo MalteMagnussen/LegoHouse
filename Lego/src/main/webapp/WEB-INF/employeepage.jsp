@@ -18,7 +18,7 @@
                                     <input type="hidden" name="command" value="Product">
                                     <input type="hidden" name="origin" value="employeeorders">
                                     <input type="hidden" name="id" value="${looporder.id}">
-                                    <button type="submit" class="list-group-item list-group-item-action">
+                                    <button type="submit" class="list-group-item list-group-item-action active">
                                         Id of order: ${looporder.id} - Sent: ${looporder.sent}
                                     </button>
                                 </form>
