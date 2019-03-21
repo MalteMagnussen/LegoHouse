@@ -47,7 +47,7 @@
                     <input type="hidden" name="command" value="Product">
                     <input type="hidden" name="origin" value="sendOrder">
                     <input type="hidden" name="id" value="${order.id}">
-                    <input type="submit" value="Send order"/>
+                    <button type="submit" class="btn btn-success">Send the Order to the customer</button>
                 </form>
 
             </c:if>

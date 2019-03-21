@@ -174,7 +174,7 @@ public class Product extends Command
     {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
+        session.setAttribute("users", LogicFacade.getUsers(user));
         int id = Integer.parseInt(request.getParameter("id"));
 
         LogicFacade.sendOrder(id);
