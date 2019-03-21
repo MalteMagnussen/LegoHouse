@@ -2,43 +2,31 @@
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
 
-<!-- Form start -->
-<form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 100%">
-    <!-- Hidden input: &command=Product -->
-    <input type="hidden" name="command" value="Product">
-    <!-- Hidden input: &origin=addProduct -->
-    <input type="hidden" name="origin" value="addProduct">
-    <!-- Hidden input: &id=User.getID() -->
-    <input type="hidden" name="id" value="${user.id}">
-    <!-- Table start. Table makes sure it's all organized neatly -->
-    <table class="table table-striped">
-
-        <!-- Headers of the table -->
-        <thead>
-            <tr>
-                <th>Length - minimum 8</th>
-                <th>Width - minimum 5</th>
-                <th>Height - minimum 4</th>
-                <th></th>
-            </tr>
-        </thead>
-
-        <!-- Table body start -->
-        <tbody>
-            <tr>
-                <!-- Length -->
-                <td><input type="number" name="length" placeholder="Length" id="qtyInput"></td>
-                <!-- Width -->
-                <td><input type="number" name="width" placeholder="Width" id="qtyInput"></td>
-                <!-- Height -->
-                <td><input type="number" name="height" placeholder="Height" id="qtyInput"></td>
-                <!-- Add to cart button -->
-                <td><input type="submit" name="submit" value="Order"></td>
-            </tr>
-            <!-- Table Body end -->
-        </tbody>
-        <!-- Table end -->    
-    </table>
+    <!-- Form start -->
+    <form action="FrontController" method="post">
+        <!-- Hidden input: &command=Product -->
+        <input type="hidden" name="command" value="Product">
+        <!-- Hidden input: &origin=addProduct -->
+        <input type="hidden" name="origin" value="addProduct">
+        <!-- Hidden input: &id=User.getID() -->
+        <input type="hidden" name="id" value="${user.id}">
+    <!-- Length -->
+    <div class="form-group">
+        <label for="lengthinput">Length - Minimum 8</label>
+        <input type="number" id="lengthinput" name="length" placeholder="Length" id="qtyInput">
+    </div>
+    <!-- Width -->
+    <div class="form-group">
+        <label for="widthinput">Width - minimum 5</label>
+        <input type="number" id="widthinput" name="width" placeholder="Width" id="qtyInput">
+    </div>
+    <!-- Height -->
+    <div class="form-group">
+        <label for="heightinput">Height - minimum 4</label>
+        <input type="number" id="heightinput" name="height" placeholder="Height" id="qtyInput">
+    </div>
+    <!-- Add to cart button -->
+    <button type="submit" name="submit" class="btn btn-primary">Order</button>
     <!-- Form end -->
 </form>
 
