@@ -85,21 +85,21 @@ public class Product extends Command
             throw new ShopException("Too low width, height or length. Try again.");
         }
 
-        HttpSession session = request.getSession();
-
-        Order order = LogicFacade.createOrder(id, length, width, height);
-
-        User user = (User) session.getAttribute("user");
-
-        List<Order> orders = user.getOrders();
-
-        orders.add(order);
-
-        user.setOrders(orders);
-
-        session.setAttribute("orders", orders);
+        User user = putOrderOnUser(request, id, length, width, height);
 
         return user.getRole() + "page";
+    }
+
+    private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException
+    {
+        HttpSession session = request.getSession();
+        Order order = LogicFacade.createOrder(id, length, width, height);
+        User user = (User) session.getAttribute("user");
+        List<Order> orders = user.getOrders();
+        orders.add(order);
+        user.setOrders(orders);
+        session.setAttribute("orders", orders);
+        return user;
     }
 
     /**
