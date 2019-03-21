@@ -6,13 +6,14 @@
 package malte.View;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import malte.Controller.LogicFacade;
 import malte.Controller.LoginException;
 import malte.Controller.ShopException;
-import malte.Controller.LogicFacade;
 import malte.Model.entities.BOM;
 import malte.Model.entities.Order;
 import malte.Model.entities.User;
@@ -116,7 +117,9 @@ public class Product extends Command
         int id = Integer.parseInt(tempid);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
-
+        if (orders == null){
+            orders = new ArrayList<>();
+        }
         for (Order order : orders)
         {
             if (order.getId() == id)
