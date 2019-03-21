@@ -2,7 +2,7 @@ package malte.View;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
 
 /**
  * Unknown Command. Throws Exception.
@@ -13,10 +13,10 @@ public class UnknownCommand extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException
     {
         String msg = "Unknown command. Contact IT";
-        throw new CustomException(msg);
+        throw new LoginException(msg);
     }
 
 }

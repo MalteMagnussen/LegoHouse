@@ -21,9 +21,9 @@ public class LogicFacade
      * @param email Users email.
      * @param password Users password.
      * @return User entity.
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static User login(String email, String password) throws CustomException
+    public static User login(String email, String password) throws LoginException
     {
         return UserMapper.login(email, password);
     }
@@ -34,9 +34,9 @@ public class LogicFacade
      * @param email Users email.
      * @param password Users password.
      * @return User entity.
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static User createUser(String email, String password) throws CustomException
+    public static User createUser(String email, String password) throws LoginException
     {
         User user = new User(email, password, "customer");
         UserMapper.createUser(user);
@@ -51,9 +51,9 @@ public class LogicFacade
      * @param width LegoHouse Width
      * @param height LegoHouse Height
      * @return Order entity.
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static Order createOrder(int id, int length, int width, int height) throws CustomException
+    public static Order createOrder(int id, int length, int width, int height) throws LoginException
     {
         return new OrderLogic().order(id, length, width, height);
         
@@ -64,9 +64,9 @@ public class LogicFacade
      *
      * @param user
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static List<Order> getOrders(User user) throws CustomException
+    public static List<Order> getOrders(User user) throws LoginException
     {
         return OrderMapper.getOrders(user);
     }
@@ -77,16 +77,16 @@ public class LogicFacade
      * @param user The User who is logged in. Requires an Employee User for it
      * to work.
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static List<User> getUsers(User user) throws CustomException
+    public static List<User> getUsers(User user) throws LoginException
     {
         if (user.getRole().equals("employee"))
         {
             return UserMapper.getUsers();
         } else
         {
-            throw new CustomException("Can't do this. You're not an employee.");
+            throw new LoginException("Can't do this. You're not an employee.");
         }
     }
 
@@ -95,9 +95,9 @@ public class LogicFacade
      *
      * @param id of the order.
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static Order getOrder(int id) throws CustomException
+    public static Order getOrder(int id) throws LoginException
     {
         return OrderMapper.getOrder(id);
     }
@@ -106,9 +106,9 @@ public class LogicFacade
      * Send an order to the customer by its ID. Used by an employee.
      *
      * @param id of the order.
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static void sendOrder(int id) throws CustomException
+    public static void sendOrder(int id) throws LoginException
     {
         OrderMapper.sendOrder(id);
     }

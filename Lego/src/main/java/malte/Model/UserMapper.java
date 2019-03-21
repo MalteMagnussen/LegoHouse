@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
 import malte.Model.entities.User;
 
 /**
@@ -26,9 +26,9 @@ public class UserMapper
      * Inputs a User into the SQL database.
      *
      * @param user Entity
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static void createUser(User user) throws CustomException
+    public static void createUser(User user) throws LoginException
     {
         try
         {
@@ -45,7 +45,7 @@ public class UserMapper
             user.setId(id);
         } catch (SQLException | ClassNotFoundException ex)
         {
-            throw new CustomException(ex.getMessage());
+            throw new LoginException(ex.getMessage());
         }
     }
 
@@ -58,9 +58,9 @@ public class UserMapper
      * @param email Users email
      * @param password Users password
      * @return User entity
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static User login(String email, String password) throws CustomException
+    public static User login(String email, String password) throws LoginException
     {
         try
         {
@@ -84,11 +84,11 @@ public class UserMapper
                 return user;
             } else
             {
-                throw new CustomException("Could not validate user");
+                throw new LoginException("Could not validate user");
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new CustomException(ex.getMessage());
+            throw new LoginException(ex.getMessage());
         }
     }
 
@@ -96,9 +96,9 @@ public class UserMapper
      * Get all Users
      *
      * @return List of all Users.
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static List<User> getUsers() throws CustomException
+    public static List<User> getUsers() throws LoginException
     {
         List<User> users = new ArrayList<>();
         try

@@ -8,7 +8,7 @@ package malte.View;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
 import malte.Model.entities.User;
 
 /**
@@ -20,7 +20,7 @@ public class Redirect extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException
     {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");

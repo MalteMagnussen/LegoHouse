@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
 import malte.Model.entities.Order;
 import malte.Model.entities.User;
 
@@ -30,9 +30,9 @@ public class OrderMapper
      * @see malte.Controller.LogicFacade
      * @see malte.Model.entities.Order
      * @param order
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static void createOrder(Order order) throws CustomException
+    public static void createOrder(Order order) throws LoginException
     {
         try
         {
@@ -50,7 +50,7 @@ public class OrderMapper
             order.setId(id);
         } catch (SQLException | ClassNotFoundException ex)
         {
-            throw new CustomException(ex.getMessage());
+            throw new LoginException(ex.getMessage());
         }
     }
 
@@ -59,9 +59,9 @@ public class OrderMapper
      *
      * @param user
      * @return List of Orders.
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static List<Order> getOrders(User user) throws CustomException
+    public static List<Order> getOrders(User user) throws LoginException
     {
         List<Order> orders = new ArrayList<>();
         try
@@ -94,7 +94,7 @@ public class OrderMapper
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new CustomException(ex.getMessage());
+            throw new LoginException(ex.getMessage());
         }
 
         return orders;
@@ -105,9 +105,9 @@ public class OrderMapper
      *
      * @param id
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static Order getOrder(int id) throws CustomException
+    public static Order getOrder(int id) throws LoginException
     {
         Order order = new Order();
         try
@@ -136,7 +136,7 @@ public class OrderMapper
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new CustomException(ex.getMessage());
+            throw new LoginException(ex.getMessage());
         }
         return order;
     }
@@ -145,9 +145,9 @@ public class OrderMapper
      * Mark order as being sent to customer. Usable by employee.
      *
      * @param id
-     * @throws CustomException
+     * @throws LoginException
      */
-    public static void sendOrder(int id) throws CustomException
+    public static void sendOrder(int id) throws LoginException
     {
         try
         {
@@ -158,7 +158,7 @@ public class OrderMapper
             ps.executeUpdate();
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new CustomException(ex.getMessage());
+            throw new LoginException(ex.getMessage());
         }
     }
 

@@ -11,7 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
+import malte.Controller.ShopException;
 
 /**
  * Front Controller.
@@ -34,10 +35,14 @@ public class FrontController extends HttpServlet
             Command action = Command.from(request);
             String view = action.execute(request, response);
             request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
-        } catch (CustomException ex)
+        } catch (LoginException ex)
         {
             request.setAttribute("error", ex.getMessage());
             request.getRequestDispatcher("index.jsp").forward(request, response);
+        } catch (ShopException ex)  
+        {
+            request.setAttribute("error", ex.getMessage());
+            request.getRequestDispatcher("/WEB-INF/customerpage.jsp").forward(request, response);
         }
     }
 

@@ -3,7 +3,8 @@ package malte.View;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
+import malte.Controller.ShopException;
 
 abstract class Command
 {
@@ -29,6 +30,6 @@ abstract class Command
     }
 
     abstract String execute(HttpServletRequest request, HttpServletResponse response)
-            throws CustomException;
+            throws LoginException, ShopException;
 
 }

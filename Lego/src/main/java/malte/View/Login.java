@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import malte.Controller.LogicFacade;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
 import malte.Model.entities.User;
 
 /**
@@ -16,7 +16,7 @@ public class Login extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException
     {
 
         String origin = request.getParameter("origin");
@@ -49,9 +49,9 @@ public class Login extends Command
      *
      * @param request
      * @return View String.
-     * @throws CustomException
+     * @throws LoginException
      */
-    private String Login(HttpServletRequest request) throws CustomException
+    private String Login(HttpServletRequest request) throws LoginException
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -75,9 +75,9 @@ public class Login extends Command
      *
      * @param request
      * @return View String.
-     * @throws CustomException
+     * @throws LoginException
      */
-    private String Registration(HttpServletRequest request) throws CustomException
+    private String Registration(HttpServletRequest request) throws LoginException
     {
         String email = request.getParameter("email");
         String password1 = request.getParameter("password1");
@@ -91,7 +91,7 @@ public class Login extends Command
             return user.getRole() + "page";
         } else
         {
-            throw new CustomException("the two passwords did not match");
+            throw new LoginException("the two passwords did not match");
         }
     }
 
@@ -100,13 +100,13 @@ public class Login extends Command
      *
      * @param request
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    private String Logout(HttpServletRequest request) throws CustomException
+    private String Logout(HttpServletRequest request) throws LoginException
     {
         HttpSession session = request.getSession();
         session.invalidate();
-        throw new CustomException("Logged out");
+        throw new LoginException("Logged out");
     }
 
 }

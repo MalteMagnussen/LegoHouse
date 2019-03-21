@@ -5,11 +5,13 @@
  */
 package malte.View;
 
+
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Controller.CustomException;
+import malte.Controller.LoginException;
+import malte.Controller.ShopException;
 import malte.Controller.LogicFacade;
 import malte.Model.entities.BOM;
 import malte.Model.entities.Order;
@@ -25,7 +27,7 @@ public class Product extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException, ShopException
     {
         String origin = request.getParameter("origin");
 
@@ -53,7 +55,7 @@ public class Product extends Command
             }
 
         }
-        throw new CustomException("Something went wrong in Product.java");
+        throw new LoginException("Something went wrong in Product.java");
 
     }
 
@@ -62,9 +64,9 @@ public class Product extends Command
      *
      * @param request
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    private String addProduct(HttpServletRequest request) throws CustomException
+    private String addProduct(HttpServletRequest request) throws LoginException, ShopException
     {
         String tempid = request.getParameter("id");
         int id = Integer.parseInt(tempid);
@@ -80,7 +82,7 @@ public class Product extends Command
 
         if (height < 4 || width < 5 || length < 8)
         {
-            throw new CustomException("Too low width, height or length. Try again.");
+            throw new ShopException("Too low width, height or length. Try again.");
         }
 
         HttpSession session = request.getSession();
@@ -133,9 +135,9 @@ public class Product extends Command
      *
      * @param request
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    private String employeeorder(HttpServletRequest request) throws CustomException
+    private String employeeorder(HttpServletRequest request) throws LoginException
     {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
@@ -157,9 +159,9 @@ public class Product extends Command
      *
      * @param request
      * @return
-     * @throws CustomException
+     * @throws LoginException
      */
-    private String sendOrder(HttpServletRequest request) throws CustomException
+    private String sendOrder(HttpServletRequest request) throws LoginException
     {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
