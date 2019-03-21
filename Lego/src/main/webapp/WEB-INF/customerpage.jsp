@@ -66,17 +66,6 @@
     <div class="col-sm-6">
 
         <c:if test="${not empty BOM}">
-            <c:if test="${not order.sent}">
-
-                <form method="post" action="FrontController">
-                    <input type="hidden" name="command" value="Product">
-                    <input type="hidden" name="origin" value="sendOrder">
-                    <input type="hidden" name="id" value="${order.id}">
-                    <input type="submit" value="Send order"/>
-                </form>
-
-            </c:if>
-
             <!--  Below is the Table for an Invoice  -->
             <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">
                 <thead>
