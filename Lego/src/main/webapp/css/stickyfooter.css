@@ -8,10 +8,7 @@ and open the template in the editor.
     Author     : Malte
 */
 
-html,
-body {
-  height: 100%;
-}
+
 
 #page-content {
   flex: 1 0 auto;
@@ -19,11 +16,7 @@ body {
 
 #sticky-footer {
   flex-shrink: none;
-}
-
-/* Other Classes for Page Styling */
-
-body {
+  
   background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF);
 }

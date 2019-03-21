@@ -17,7 +17,7 @@
                                     <input type="hidden" name="command" value="Product">
                                     <input type="hidden" name="origin" value="employeeorders">
                                     <input type="hidden" name="id" value="${order.id}">
-                                    <button type="submit" class="btn btn-dark">Id of order: ${order.id} - Sent: ${order.sent}</button>
+                                    <button type="submit" class="list-group-item list-group-item-action active">Id of order: ${order.id} - Sent: ${order.sent}</button>
                                 </form>
 
                             </li>
