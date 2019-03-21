@@ -91,7 +91,7 @@ public class Product extends Command
         return user.getRole() + "page";
     }
 
-    private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException
+    private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException, ShopException
     {
         HttpSession session = request.getSession();
         Order order = LogicFacade.createOrder(id, length, width, height);
@@ -146,7 +146,7 @@ public class Product extends Command
      * @return
      * @throws LoginException
      */
-    private String employeeorder(HttpServletRequest request) throws LoginException
+    private String employeeorder(HttpServletRequest request) throws LoginException, ShopException
     {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
@@ -172,7 +172,7 @@ public class Product extends Command
      * @return
      * @throws LoginException
      */
-    private String sendOrder(HttpServletRequest request) throws LoginException
+    private String sendOrder(HttpServletRequest request) throws LoginException, ShopException
     {
         HttpSession session = request.getSession();
         int id = Integer.parseInt(request.getParameter("id"));

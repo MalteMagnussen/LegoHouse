@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import malte.Controller.LogicFacade;
 import malte.Controller.LoginException;
+import malte.Controller.ShopException;
 import malte.Model.entities.User;
 
 /**
@@ -16,7 +17,7 @@ public class Login extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginException, ShopException
     {
 
         String origin = request.getParameter("origin");
@@ -51,7 +52,7 @@ public class Login extends Command
      * @return View String.
      * @throws LoginException
      */
-    private String Login(HttpServletRequest request) throws LoginException
+    private String Login(HttpServletRequest request) throws LoginException, ShopException
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
