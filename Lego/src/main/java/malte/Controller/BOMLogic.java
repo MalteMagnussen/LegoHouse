@@ -183,11 +183,11 @@ class BOMLogic
             int doorlength = length / 2;
             if (i % 2 == 1) // If its an uneven row
             {
-                doorlength = doorlength - 2;
+                doorlength -= 2;
 
             } else // It its an even row.
             {
-                doorlength = doorlength - 4;
+                doorlength -= 4;
             }
             Row row = getRow(doorlength);
             side.add(row);
