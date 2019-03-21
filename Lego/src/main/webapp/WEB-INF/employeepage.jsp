@@ -5,19 +5,19 @@
     <div class="row" style="margin: auto;">
         <div class="col-sm-6">
 
-            <ul>
+            <ul class="list-group">
             <c:forEach var="user" items="${users}">
                 <br>
-                <li> <h5> Orders for: ${user.email}</h5>
-                    <ul>
+                <li class="list-group-item"> <h5> Orders for: ${user.email}</h5>
+                    <ul class="list-group">
                         <c:forEach var="order" items="${user.orders}">
-                            <li>
+                            <li class="list-group-item">
                                 <!--  Button to show an order with.  -->
                                 <form method="post" action="FrontController">
                                     <input type="hidden" name="command" value="Product">
                                     <input type="hidden" name="origin" value="employeeorders">
                                     <input type="hidden" name="id" value="${order.id}">
-                                    <input type="submit" value="Id of order: ${order.id} - Sent: ${order.sent}">
+                                    <button type="submit" class="btn btn-dark">Id of order: ${order.id} - Sent: ${order.sent}</button>
                                 </form>
 
                             </li>
