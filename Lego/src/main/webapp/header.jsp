@@ -38,6 +38,10 @@
         <link href="floating-labels.css" rel="stylesheet">
         <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
 
+
+    </head>
+
+    <body>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <!-- Jquery -->
@@ -47,31 +51,26 @@
         <!-- Bootstrap -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    </head>
 
-    <body>
-
-        <div id="everything">
-            
-            
-            
-            <c:if test="${not empty user}">
-                <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-                    <form method="post" action="FrontController" >
-                        <input type="hidden" name="command" value="Login">
-                        <input type="hidden" name="origin" value="logout">
-                        <input type="submit" value="Log Out"/>
-                    </form>
-                    <br>
-                    <form method="post" action="FrontController" >
-                        <input type="hidden" name="command" value="Redirect">
-                        <input type="submit" value="Shop"/>
-                    </form>
-                    <br>
-                    <a href="index.jsp">Index</a>
-                </div>
-            </c:if>
-
+        <div id="everything" >
+            <div id="sitemenus" >
+                <c:if test="${not empty user}">
+                    <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                        <form method="post" action="FrontController" >
+                            <input type="hidden" name="command" value="Login">
+                            <input type="hidden" name="origin" value="logout">
+                            <input type="submit" value="Log Out"/>
+                        </form>
+                        <br>
+                        <form method="post" action="FrontController" >
+                            <input type="hidden" name="command" value="Redirect">
+                            <input type="submit" value="Shop"/>
+                        </form>
+                        <br>
+                        <a href="index.jsp">Index</a>
+                    </div>
+                </c:if>
+            </div>
             <c:if test="${not empty error}">
                 <H2>Message: ${error} </h2>
-            </c:if>
+                </c:if>
