@@ -158,6 +158,8 @@ public class Product extends Command
         session.setAttribute("order", order);
         BOM bom = LogicFacade.getBOM(order);
         session.setAttribute("BOM", bom);
+        
+        session.setAttribute("users", LogicFacade.getUsers(user));
 
         return user.getRole() + "page";
     }
@@ -176,14 +178,14 @@ public class Product extends Command
         int id = Integer.parseInt(request.getParameter("id"));
         LogicFacade.sendOrder(id);
         
-        User user = (User) session.getAttribute("user");
-        session.setAttribute("users", LogicFacade.getUsers(user));
-        
         Order order = LogicFacade.getOrder(id);
         order.setSent(true);
         session.setAttribute("order", order);
         BOM bom = LogicFacade.getBOM(order);
         session.setAttribute("BOM", bom);
+        
+        User user = (User) session.getAttribute("user");
+        session.setAttribute("users", LogicFacade.getUsers(user));
 
         return user.getRole() + "page";
     }
