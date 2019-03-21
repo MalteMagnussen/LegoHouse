@@ -62,14 +62,14 @@ class BOMLogic
             /* Fours */
             int fours = length / 4;
             row.setFours(fours);
-            length = length % 4;
+            length %= 4;
         }
         /* Twos */
         if (length >= 2)
         {
             int twos = length / 2;
             row.setTwos(twos);
-            length = length % 2;
+            length %= 2;
         }
         /* Ones */
         if (length >= 1)
