@@ -4,11 +4,6 @@
 
 <!-- Author: Malte -->
 
-<c:if test="${not empty error}">
-    <H2>Message: ${error} </h2>
-    </c:if>
-
-
 <div class="row">
     <div class="col-sm-6">
         <!--  Below is the form for logging in. -->
