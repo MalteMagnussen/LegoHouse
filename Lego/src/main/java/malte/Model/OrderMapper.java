@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import malte.Controller.LoginException;
+import malte.Controller.ShopException;
 import malte.Model.entities.Order;
 import malte.Model.entities.User;
 
@@ -27,12 +27,12 @@ public class OrderMapper
     /**
      * Called from LogicFacade createOrder Method.
      *
+     * @throws malte.Controller.ShopException
      * @see malte.Controller.LogicFacade
      * @see malte.Model.entities.Order
      * @param order
-     * @throws LoginException
      */
-    public static void createOrder(Order order) throws LoginException
+    public static void createOrder(Order order) throws ShopException
     {
         try
         {
@@ -50,7 +50,7 @@ public class OrderMapper
             order.setId(id);
         } catch (SQLException | ClassNotFoundException ex)
         {
-            throw new LoginException(ex.getMessage());
+            throw new ShopException(ex.getMessage());
         }
     }
 
@@ -59,9 +59,9 @@ public class OrderMapper
      *
      * @param user
      * @return List of Orders.
-     * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
-    public static List<Order> getOrders(User user) throws LoginException
+    public static List<Order> getOrders(User user) throws ShopException
     {
         List<Order> orders = new ArrayList<>();
         try
@@ -94,7 +94,7 @@ public class OrderMapper
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new LoginException(ex.getMessage());
+            throw new ShopException(ex.getMessage());
         }
 
         return orders;
@@ -105,9 +105,9 @@ public class OrderMapper
      *
      * @param id
      * @return
-     * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
-    public static Order getOrder(int id) throws LoginException
+    public static Order getOrder(int id) throws ShopException
     {
         Order order = new Order();
         try
@@ -136,7 +136,7 @@ public class OrderMapper
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new LoginException(ex.getMessage());
+            throw new ShopException(ex.getMessage());
         }
         return order;
     }
@@ -145,9 +145,9 @@ public class OrderMapper
      * Mark order as being sent to customer. Usable by employee.
      *
      * @param id
-     * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
-    public static void sendOrder(int id) throws LoginException
+    public static void sendOrder(int id) throws ShopException
     {
         try
         {
@@ -158,7 +158,7 @@ public class OrderMapper
             ps.executeUpdate();
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new LoginException(ex.getMessage());
+            throw new ShopException(ex.getMessage());
         }
     }
 
