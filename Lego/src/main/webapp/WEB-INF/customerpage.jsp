@@ -2,11 +2,8 @@
 <jsp:include page='/header.jsp'></jsp:include>
     <!-- Author: Malte -->
 
-    <h1 style="margin: 15px; float: top; display: flex; flex-direction: column; justify-content: center; text-align: center;">
-        Logged in as: ${user.email} </h1>
-
 <!-- Form start -->
-<form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 90%">
+<form action="FrontController" method="post" id="sitemenus" style="margin: auto; display: table; width: 100%">
     <!-- Hidden input: &command=Product -->
     <input type="hidden" name="command" value="Product">
     <!-- Hidden input: &origin=addProduct -->
