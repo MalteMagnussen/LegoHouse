@@ -178,6 +178,11 @@ public class Product extends Command
         int id = Integer.parseInt(request.getParameter("id"));
 
         LogicFacade.sendOrder(id);
+        Order order = LogicFacade.getOrder(id);
+        order.setSent(true);
+        session.setAttribute("order", order);
+        BOM bom = LogicFacade.getBOM(order);
+        session.setAttribute("BOM", bom);
 
         return user.getRole() + "page";
     }
