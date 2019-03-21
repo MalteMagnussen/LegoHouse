@@ -116,6 +116,14 @@ public class Product extends Command
         String tempid = request.getParameter("id");
         int id = Integer.parseInt(tempid);
         User user = (User) session.getAttribute("user");
+        
+        orderlogic(user, id, session);
+
+        return user.getRole() + "page";
+    }
+
+    private void orderlogic(User user, int id, HttpSession session)
+    {
         List<Order> orders = user.getOrders();
         if (orders == null){
             orders = new ArrayList<>();
@@ -129,8 +137,6 @@ public class Product extends Command
                 session.setAttribute("BOM", bom);
             }
         }
-
-        return user.getRole() + "page";
     }
 
     /**
