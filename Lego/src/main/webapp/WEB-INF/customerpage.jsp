@@ -65,6 +65,12 @@
     </div>
     <div class="col-sm-6">
 
+        <script>
+            $(document).ready(function () {
+                $('#order').DataTable();
+            });
+        </script>
+
         <c:if test="${not empty BOM}">
             <!--  Below is the Table for an Invoice  -->
             <table border="3" width="2" cellspacing="2" cellpadding="2" id="order" class="display">

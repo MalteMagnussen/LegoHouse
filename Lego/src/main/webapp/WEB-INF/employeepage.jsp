@@ -30,9 +30,14 @@
     </div>
     <div class="col-sm-6">
 
+        <script>
+            $(document).ready(function () {
+                $('#order').DataTable();
+            });
+        </script>
 
         <c:if test="${not empty BOM}">
-            
+
             <!--  Button to send an order with  -->
             <c:if test="${not order.sent}">
 
