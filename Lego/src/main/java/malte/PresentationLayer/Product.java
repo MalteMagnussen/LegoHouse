@@ -46,9 +46,9 @@ public class Product extends Command
             {
                 return employeeorder(request);
             }
+            // Mark an order as sent - From employeepage.jsp
             case "sendOrder":
             {
-            // Mark an order as sent - From employeepage.jsp
                 return sendOrder(request);
             }
 
