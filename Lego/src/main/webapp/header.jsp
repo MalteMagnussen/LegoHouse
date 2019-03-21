@@ -71,6 +71,7 @@
                     </div>
                 </c:if>
             
+            <!-- Show errormessage to the User --> 
             <c:if test="${not empty error}">
                 <H2>Message: ${error} </h2>
                 </c:if>
