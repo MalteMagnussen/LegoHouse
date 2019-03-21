@@ -60,7 +60,7 @@
                         <th>Bredside</th>
                         <th>Side m. vindue</th>
                         <th>Bredside</th>
-                        <th>ialt<th>
+                        <th>ialt</th>
                     </tr>
                 </thead>
 
