@@ -173,11 +173,12 @@ public class Product extends Command
     private String sendOrder(HttpServletRequest request) throws LoginException
     {
         HttpSession session = request.getSession();
+        int id = Integer.parseInt(request.getParameter("id"));
+        LogicFacade.sendOrder(id);
+        
         User user = (User) session.getAttribute("user");
         session.setAttribute("users", LogicFacade.getUsers(user));
-        int id = Integer.parseInt(request.getParameter("id"));
-
-        LogicFacade.sendOrder(id);
+        
         Order order = LogicFacade.getOrder(id);
         order.setSent(true);
         session.setAttribute("order", order);
