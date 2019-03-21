@@ -7,9 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import malte.Controller.LoginException;
+import malte.Controller.ShopException;
 import malte.Model.entities.User;
 
 /**
@@ -59,8 +58,9 @@ public class UserMapper
      * @param password Users password
      * @return User entity
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
-    public static User login(String email, String password) throws LoginException
+    public static User login(String email, String password) throws LoginException, ShopException
     {
         try
         {
@@ -97,8 +97,9 @@ public class UserMapper
      *
      * @return List of all Users.
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
-    public static List<User> getUsers() throws LoginException
+    public static List<User> getUsers() throws ShopException
     {
         List<User> users = new ArrayList<>();
         try
@@ -125,7 +126,7 @@ public class UserMapper
 
         } catch (ClassNotFoundException | SQLException ex)
         {
-            Logger.getLogger(UserMapper.class.getName()).log(Level.SEVERE, null, ex);
+            throw new ShopException(ex.getMessage());
         }
         return users;
     }

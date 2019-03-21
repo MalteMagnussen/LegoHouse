@@ -19,7 +19,7 @@ class OrderLogic
     {
     }
     
-    Order order(int id, int length, int width, int height) throws LoginException
+    Order order(int id, int length, int width, int height) throws LoginException, ShopException
     {
         Order order = new Order();
         order.setIdorders(id);

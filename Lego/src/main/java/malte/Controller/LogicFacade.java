@@ -23,7 +23,7 @@ public class LogicFacade
      * @return User entity.
      * @throws LoginException
      */
-    public static User login(String email, String password) throws LoginException
+    public static User login(String email, String password) throws LoginException, ShopException
     {
         return UserMapper.login(email, password);
     }
@@ -53,7 +53,7 @@ public class LogicFacade
      * @return Order entity.
      * @throws LoginException
      */
-    public static Order createOrder(int id, int length, int width, int height) throws LoginException
+    public static Order createOrder(int id, int length, int width, int height) throws LoginException, ShopException
     {
         return new OrderLogic().order(id, length, width, height);
         
@@ -66,7 +66,7 @@ public class LogicFacade
      * @return
      * @throws LoginException
      */
-    public static List<Order> getOrders(User user) throws LoginException
+    public static List<Order> getOrders(User user) throws LoginException, ShopException
     {
         return OrderMapper.getOrders(user);
     }
@@ -79,7 +79,7 @@ public class LogicFacade
      * @return
      * @throws LoginException
      */
-    public static List<User> getUsers(User user) throws LoginException
+    public static List<User> getUsers(User user) throws LoginException, ShopException
     {
         if (user.getRole().equals("employee"))
         {
@@ -97,7 +97,7 @@ public class LogicFacade
      * @return
      * @throws LoginException
      */
-    public static Order getOrder(int id) throws LoginException
+    public static Order getOrder(int id) throws LoginException, ShopException
     {
         return OrderMapper.getOrder(id);
     }
@@ -108,7 +108,7 @@ public class LogicFacade
      * @param id of the order.
      * @throws LoginException
      */
-    public static void sendOrder(int id) throws LoginException
+    public static void sendOrder(int id) throws LoginException, ShopException
     {
         OrderMapper.sendOrder(id);
     }
