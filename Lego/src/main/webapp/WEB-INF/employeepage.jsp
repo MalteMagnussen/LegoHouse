@@ -10,14 +10,16 @@
                 <br>
                 <li class="list-group-item"> <h5> Orders for: ${user.email}</h5>
                     <ul class="list-group">
-                        <c:forEach var="order" items="${user.orders}">
+                        <c:forEach var="looporder" items="${user.orders}">
                             <li class="list-group-item">
                                 <!--  Button to show an order with.  -->
                                 <form method="post" action="FrontController">
                                     <input type="hidden" name="command" value="Product">
                                     <input type="hidden" name="origin" value="employeeorders">
-                                    <input type="hidden" name="id" value="${order.id}">
-                                    <button type="submit" class="list-group-item list-group-item-action active">Id of order: ${order.id} - Sent: ${order.sent}</button>
+                                    <input type="hidden" name="id" value="${looporder.id}">
+                                    <button type="submit" class="list-group-item list-group-item-action active">
+                                        Id of order: ${looporder.id} - Sent: ${looporder.sent}
+                                    </button>
                                 </form>
 
                             </li>

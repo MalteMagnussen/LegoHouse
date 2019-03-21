@@ -45,15 +45,17 @@
 <div class="row" style="margin: auto;">
     <div class="col-sm-6">
         <h5> Orders for: ${user.email}</h5>
-        <ul>
+        <ul class="list-group">
             <c:forEach var="order" items="${user.orders}">
-                <li>
+                <li class="list-group-item">
 
                     <form method="post" action="FrontController">
                         <input type="hidden" name="command" value="Product">
                         <input type="hidden" name="origin" value="order">
                         <input type="hidden" name="id" value="${order.id}">
-                        <button type="submit" class="btn btn-dark">Id of order: ${order.id} - Sent: ${order.sent}</button>
+                        <button type="submit" class="list-group-item list-group-item-action active">
+                            Id of order: ${order.id} - Sent: ${order.sent}
+                        </button>
                     </form>
 
                 </li>
