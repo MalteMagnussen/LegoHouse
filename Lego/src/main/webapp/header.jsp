@@ -53,7 +53,7 @@
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
         <div id="everything" >
-            <div id="sitemenus" >
+            
                 <c:if test="${not empty user}">
                     <div style="margin: 15px; float: left; display: flex; flex-direction: column; justify-content: center; text-align: center;">
                         <form method="post" action="FrontController" >
@@ -70,7 +70,7 @@
                         <a href="index.jsp">Index</a>
                     </div>
                 </c:if>
-            </div>
+            
             <c:if test="${not empty error}">
                 <H2>Message: ${error} </h2>
                 </c:if>
