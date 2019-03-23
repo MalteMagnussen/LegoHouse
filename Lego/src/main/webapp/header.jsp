@@ -70,7 +70,7 @@
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Menu
                                     </a>
-                                    <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+                                    
                                     <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="index.jsp">Home</a>
                                         <a class="dropdown-item" href="FrontController?command=Redirect">Shop</a>

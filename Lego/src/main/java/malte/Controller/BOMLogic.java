@@ -224,7 +224,6 @@ class BOMLogic
         int height = order.getHeight();
         int width = order.getWidth();
         int length = order.getLength();
-        BOM bom = new BOM();
         Side door = getSide(height, length, true, false);
         Side wide = getSide(height, width, false, false);
         Side window = getSide(height, length, false, true);
@@ -242,6 +241,13 @@ class BOMLogic
             totaltwos += side.getTwos();
             totalfours += side.getFours();
         }
+        BOM bom = setBom(door, wide, window, totalones, totaltwos, totalfours);
+        return bom;
+    }
+
+    private BOM setBom(Side door, Side wide, Side window, int totalones, int totaltwos, int totalfours)
+    {
+        BOM bom = new BOM();
         bom.setDoor(door);
         bom.setWide(wide);
         bom.setWindow(window);
