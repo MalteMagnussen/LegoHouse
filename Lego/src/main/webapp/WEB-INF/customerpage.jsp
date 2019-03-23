@@ -29,15 +29,13 @@
     <button type="submit" name="submit" class="btn btn-primary">Order</button>
     <!-- Form end -->
 </form>
-    
 <br>
 <div class="row" style="margin: auto;">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <h5> Orders for: ${user.email}</h5>
         <ul class="list-group">
             <c:forEach var="order" items="${user.orders}">
                 <li class="list-group-item">
-
                     <form method="post" action="FrontController">
                         <input type="hidden" name="command" value="Product">
                         <input type="hidden" name="origin" value="order">
@@ -46,16 +44,13 @@
                             Id of order: ${order.id} - Sent: ${order.sent}
                         </button>
                     </form>
-
                 </li>
             </c:forEach>
         </ul>
     </div>
-    <div class="col-sm-6">
-
-
+    <div class="col-sm-8">
         <c:if test="${not empty BOM}">
-           <jsp:include page='/bomtable.jsp'></jsp:include>
+            <jsp:include page='/bomtable.jsp'></jsp:include>
         </c:if>
     </div>
 </div>

@@ -4,7 +4,7 @@
     <h1> All invoices </h1>
 
     <div class="row" style="margin: auto;">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
 
             <ul class="list-group">
             <c:forEach var="user" items="${users}">
@@ -31,7 +31,7 @@
         </ul>
 
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-8">
 
 
 

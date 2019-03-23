@@ -5,7 +5,6 @@
  */
 package malte.View;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -116,7 +115,7 @@ public class Product extends Command
         String tempid = request.getParameter("id");
         int id = Integer.parseInt(tempid);
         User user = (User) session.getAttribute("user");
-        
+
         orderlogic(user, id, session);
 
         return user.getRole() + "page";
@@ -125,7 +124,8 @@ public class Product extends Command
     private void orderlogic(User user, int id, HttpSession session)
     {
         List<Order> orders = user.getOrders();
-        if (orders == null){
+        if (orders == null)
+        {
             orders = new ArrayList<>();
         }
         for (Order order : orders)
@@ -158,7 +158,7 @@ public class Product extends Command
         session.setAttribute("order", order);
         BOM bom = LogicFacade.getBOM(order);
         session.setAttribute("BOM", bom);
-        
+
         return user.getRole() + "page";
     }
 
@@ -175,14 +175,25 @@ public class Product extends Command
         HttpSession session = request.getSession();
         int id = Integer.parseInt(request.getParameter("id"));
         LogicFacade.sendOrder(id);
-        
-        Order order = LogicFacade.getOrder(id);
-        order.setSent(true);
-        session.setAttribute("order", order);
-        
-        User user = (User) session.getAttribute("user");
-        session.setAttribute("users", LogicFacade.getUsers(user));
 
+        List<User> users = (List<User>) session.getAttribute("users");
+        for (User user : users)
+        {
+            if (user.getOrders() != null && !user.getOrders().isEmpty())
+            {
+                for (Order order : user.getOrders())
+                {
+                    if (order.getId() == id)
+                    {
+                        order.setSent(true);
+                        session.setAttribute("order", order);
+                    }
+                }
+            }
+        }
+        session.setAttribute("users", users);
+
+        User user = (User) session.getAttribute("user");
         return user.getRole() + "page";
     }
 
