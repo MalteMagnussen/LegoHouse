@@ -13,7 +13,10 @@ import malte.Model.entities.Row;
 import malte.Model.entities.Side;
 
 /**
- *
+ *  Bill of Materials.
+ *  (Stykliste).
+ * 
+ * 
  * @author Malte
  */
 class BOMLogic
