@@ -26,12 +26,12 @@
         <input type="number" class="form-control" id="heightinput" name="height" placeholder="Height" id="qtyInput">
     </div>
     <!-- Add to cart button -->
-    <button type="submit" name="submit" class="btn btn-primary">Order</button>
+    <button type="submit" name="submit" class="btn btn-dark">Order</button>
     <!-- Form end -->
 </form>
 <br>
 <div class="row" style="margin: auto;">
-    <div class="col-sm-4">
+    <div class="col-sm-5">
         <h5> Orders for: ${user.email}</h5>
         <ul class="list-group">
             <c:forEach var="order" items="${user.orders}">
@@ -40,7 +40,7 @@
                         <input type="hidden" name="command" value="Product">
                         <input type="hidden" name="origin" value="order">
                         <input type="hidden" name="id" value="${order.id}">
-                        <button type="submit" class="list-group-item list-group-item-action active">
+                        <button type="submit" class="btn-dark">
                             Id of order: ${order.id} - Sent: ${order.sent}
                         </button>
                     </form>
@@ -48,7 +48,7 @@
             </c:forEach>
         </ul>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-7">
         <c:if test="${not empty BOM}">
             <jsp:include page='/bomtable.jsp'></jsp:include>
         </c:if>

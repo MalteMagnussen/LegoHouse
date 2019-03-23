@@ -38,7 +38,7 @@
         <c:if test="${not empty BOM}">
             <jsp:include page='/bomtable.jsp'></jsp:include>
 
-            <!--  Button to send an order with  -->
+                <!--  Button to send an order with  -->
             <c:if test="${not order.sent}">
 
                 <form method="post" action="FrontController">

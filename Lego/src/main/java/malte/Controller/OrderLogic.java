@@ -9,7 +9,8 @@ import malte.Model.OrderMapper;
 import malte.Model.entities.Order;
 
 /**
- *
+ * 
+ * 
  * @author Malte
  */
 class OrderLogic

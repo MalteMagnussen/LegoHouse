@@ -30,8 +30,7 @@
             </div>
 
             <!-- BUTTON TO LOGIN -->
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-            <p class="mt-5 mb-3 text-muted text-center"> Malte </p>
+            <button class="btn btn-lg btn-dark btn-block" type="submit">Login</button>
         </form>
 
     </div><div class="col-sm-6">
@@ -66,8 +65,7 @@
             </div>
 
             <!-- Button to register the user into the SQL Database. -->
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-            <p class="mt-5 mb-3 text-muted text-center"> Malte </p>
+            <button class="btn btn-lg btn-dark btn-block" type="submit">Register</button>
         </form>
 
 

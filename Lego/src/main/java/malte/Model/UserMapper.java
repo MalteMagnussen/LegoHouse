@@ -44,7 +44,7 @@ public class UserMapper
             user.setId(id);
         } catch (SQLException | ClassNotFoundException ex)
         {
-            throw new LoginException(ex.getMessage());
+            throw new LoginException("User already exists: " + ex.getMessage());
         }
     }
 
@@ -96,7 +96,6 @@ public class UserMapper
      * Get all Users
      *
      * @return List of all Users.
-     * @throws LoginException
      * @throws malte.Controller.ShopException
      */
     public static List<User> getUsers() throws ShopException
