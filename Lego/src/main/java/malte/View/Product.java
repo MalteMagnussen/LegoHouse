@@ -176,6 +176,14 @@ public class Product extends Command
         int id = Integer.parseInt(request.getParameter("id"));
         LogicFacade.sendOrder(id);
 
+        orderOnSessionSent(session, id);
+
+        User user = (User) session.getAttribute("user");
+        return user.getRole() + "page";
+    }
+
+    private void orderOnSessionSent(HttpSession session, int id)
+    {
         List<User> users = (List<User>) session.getAttribute("users");
         for (User user : users)
         {
@@ -192,9 +200,6 @@ public class Product extends Command
             }
         }
         session.setAttribute("users", users);
-
-        User user = (User) session.getAttribute("user");
-        return user.getRole() + "page";
     }
 
 }

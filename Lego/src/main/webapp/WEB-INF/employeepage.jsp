@@ -4,7 +4,7 @@
     <h1> All invoices </h1>
 
     <div class="row" style="margin: auto;">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
 
             <ul class="list-group">
             <c:forEach var="user" items="${users}">
@@ -18,7 +18,7 @@
                                     <input type="hidden" name="command" value="Product">
                                     <input type="hidden" name="origin" value="employeeorders">
                                     <input type="hidden" name="id" value="${looporder.id}">
-                                    <button type="submit" class="list-group-item list-group-item-action active">
+                                    <button type="submit" class="btn btn-dark">
                                         Id of order: ${looporder.id} - Sent: ${looporder.sent}
                                     </button>
                                 </form>
@@ -31,7 +31,7 @@
         </ul>
 
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-7">
 
 
 
