@@ -96,6 +96,9 @@ public class Product extends Command
         Order order = LogicFacade.createOrder(id, length, width, height);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
+        if (orders == null){
+            orders = new ArrayList<>();
+        }
         orders.add(order);
         user.setOrders(orders);
         session.setAttribute("orders", orders);
