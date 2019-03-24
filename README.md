@@ -19,3 +19,10 @@ by Malte Hviid-Magnussen
 6. Run the project.
 7. Log in as employee with **robin@somewhere.com** as email and **batman** as password.
 8. Or log in as user with **jens@somewhere.com** as email and **jensen** as password. Or just create a new user.
+
+## Resources
+
+* [Used this as my starting off point for the project, and built from there.](https://github.com/DAT2SemKode/Modul3LogInSample)
+* [I used Bootstrap a lot for the Styling](https://getbootstrap.com/)
+* [I used JSTL for my .jsp pages](https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets#expression-language-el-and-java-standard-tag-library-jstl)
+* [I reused certain things from my previous project, Cupcake.](https://github.com/MalteMagnussen/cupcake)
