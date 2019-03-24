@@ -81,8 +81,8 @@ public class ControllerFacadeImpl implements ControllerFacade
     /**
      * Get a List of all Orders for one User.
      *
-     * @param user
-     * @return
+     * @param user you want all orders from.
+     * @return List of all orders from the User.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
@@ -100,7 +100,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      *
      * @param user The User who is logged in. Requires an Employee User for it
      * to work.
-     * @return
+     * @return List of all Users.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
@@ -117,7 +117,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      * Get an Order by its ID.
      *
      * @param id of the order.
-     * @return
+     * @return an Order object.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
@@ -149,8 +149,8 @@ public class ControllerFacadeImpl implements ControllerFacade
     /**
      * Get a Bill of Materials from an Order.
      *
-     * @param order
-     * @return
+     * @param order you want to make a BOM from.
+     * @return the BOM made from your order.
      */
     @Override
     public BOM getBOM(Order order)
