@@ -26,3 +26,10 @@ by Malte Hviid-Magnussen
 * [I used Bootstrap a lot for the Styling](https://getbootstrap.com/)
 * [I used JSTL for my .jsp pages](https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets#expression-language-el-and-java-standard-tag-library-jstl)
 * [I reused certain things from my previous project, Cupcake.](https://github.com/MalteMagnussen/cupcake)
+
+## Views
+
+
+1. Index page. Login and Register. ![Index page. Login and Register.](https://i.imgur.com/wmFzal7.png)
+2. Customer page. When having 1 order and having that order selected and dropdown menu pressed. ![Customer page](https://i.imgur.com/srqSq8r.png)
+3. Employee page. When viewing an un-sent order. ![Employee page](https://i.imgur.com/yKEZfub.png)
