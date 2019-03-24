@@ -22,13 +22,11 @@ by Malte Hviid-Magnussen
 
 ## [Resources](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/#resourcer)
 
-* [Used this as my starting off point for the project, and built from there.](https://github.com/DAT2SemKode/Modul3LogInSample)
-* [I used Bootstrap a lot for the Styling](https://getbootstrap.com/)
-* [I used JSTL for my .jsp pages](https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets#expression-language-el-and-java-standard-tag-library-jstl)
-* [I reused certain things from my previous project, Cupcake.](https://github.com/MalteMagnussen/cupcake)
+* [This was my starting off point for the project.](https://github.com/DAT2SemKode/Modul3LogInSample)
+* [Bootstrap for a lot of the Styling](https://getbootstrap.com/)
+* [JSTL for my .jsp pages](https://github.com/datsoftlyngby/dat2sem2019Spring-module-3-pets#expression-language-el-and-java-standard-tag-library-jstl)
 
 ## Views
-
 
 1. Index page. Login and Register. ![Index page. Login and Register.](https://i.imgur.com/wmFzal7.png)
 2. Customer page. When having 1 order and having that order selected and dropdown menu pressed. ![Customer page](https://i.imgur.com/srqSq8r.png)
