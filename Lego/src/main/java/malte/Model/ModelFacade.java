@@ -22,13 +22,13 @@ public interface ModelFacade
 
     public User login(String email, String password) throws LoginException, ShopException;
 
-    public List<Order> getOrders(User user);
+    public List<Order> getOrders(User user) throws ShopException;
 
-    public Order createOrder(Order order);
+    public void createOrder(Order order) throws ShopException;
 
-    public List<User> getUsers();
+    public List<User> getUsers() throws ShopException;
 
-    public Order getOrder(int id);
+    public Order getOrder(int id) throws ShopException;
 
-    public void sendOrder(int id);
+    public void sendOrder(int id) throws ShopException;
 }

@@ -3,10 +3,8 @@ package malte.Controller;
 import java.util.List;
 import malte.Model.Exceptions.LoginException;
 import malte.Model.Exceptions.ShopException;
-import malte.Model.MapperFacade;
 import malte.Model.ModelFacade;
-import malte.Model.OrderMapper;
-import malte.Model.UserMapper;
+import malte.Model.ModelFacadeImpl;
 import malte.Model.entities.BOM;
 import malte.Model.entities.Order;
 import malte.Model.entities.User;
@@ -34,7 +32,7 @@ public class ControllerFacade
      */
     public User login(String email, String password) throws LoginException, ShopException
     {
-        ModelFacade model = new MapperFacade();
+        ModelFacade model = new ModelFacadeImpl();
         return model.login(email, password);
     }
 
@@ -49,7 +47,7 @@ public class ControllerFacade
     public User createUser(String email, String password) throws LoginException
     {
         User user = new User(email, password, "customer");
-        ModelFacade model = new MapperFacade();
+        ModelFacade model = new ModelFacadeImpl();
         model.createUser(user);
         return user;
     }
@@ -86,7 +84,8 @@ public class ControllerFacade
      */
     public static List<Order> getOrders(User user) throws LoginException, ShopException
     {
-        return OrderMapper.getOrders(user);
+        ModelFacade db = new ModelFacadeImpl();
+        return db.getOrders(user);
     }
 
     /**
@@ -102,7 +101,8 @@ public class ControllerFacade
     {
         if (user.getRole().equals("employee"))
         {
-            return UserMapper.getUsers();
+            ModelFacade db = new ModelFacadeImpl();
+            return db.getUsers();
         } else
         {
             throw new LoginException("Can't do this. You're not an employee.");
@@ -119,7 +119,8 @@ public class ControllerFacade
      */
     public static Order getOrder(int id) throws LoginException, ShopException
     {
-        return OrderMapper.getOrder(id);
+        ModelFacade db = new ModelFacadeImpl();
+        return db.getOrder(id);
     }
 
     /**
@@ -131,7 +132,8 @@ public class ControllerFacade
      */
     public static void sendOrder(int id) throws LoginException, ShopException
     {
-        OrderMapper.sendOrder(id);
+        ModelFacade db = new ModelFacadeImpl();
+        db.sendOrder(id);
     }
 
     /**

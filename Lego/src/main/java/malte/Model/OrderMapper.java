@@ -24,6 +24,10 @@ import malte.Model.entities.User;
 public class OrderMapper
 {
 
+    public OrderMapper()
+    {
+    }
+    
     /**
      * Called from LogicFacade createOrder Method.
      *
@@ -32,7 +36,7 @@ public class OrderMapper
      * @see malte.Model.entities.Order
      * @param order
      */
-    public static void createOrder(Order order) throws ShopException
+    public void createOrder(Order order) throws ShopException
     {
         try
         {
@@ -61,7 +65,7 @@ public class OrderMapper
      * @return List of Orders.
      * @throws malte.Model.Exceptions.ShopException
      */
-    public static List<Order> getOrders(User user) throws ShopException
+    public List<Order> getOrders(User user) throws ShopException
     {
         List<Order> orders = new ArrayList<>();
         try
@@ -107,7 +111,7 @@ public class OrderMapper
      * @return
      * @throws malte.Model.Exceptions.ShopException
      */
-    public static Order getOrder(int id) throws ShopException
+    public Order getOrder(int id) throws ShopException
     {
         Order order = new Order();
         try
@@ -147,7 +151,7 @@ public class OrderMapper
      * @param id
      * @throws malte.Model.Exceptions.ShopException
      */
-    public static void sendOrder(int id) throws ShopException
+    public void sendOrder(int id) throws ShopException
     {
         try
         {

@@ -83,7 +83,8 @@ public class UserMapper
                 user.setId(id);
                 if (user.getRole().equals("customer"))
                 {
-                    user.setOrders(OrderMapper.getOrders(user));
+                    OrderMapper db = new OrderMapper();
+                    user.setOrders(db.getOrders(user));
                 }
                 return user;
             } else
@@ -102,7 +103,7 @@ public class UserMapper
      * @return List of all Users.
      * @throws malte.Model.Exceptions.ShopException
      */
-    public static List<User> getUsers() throws ShopException
+    public List<User> getUsers() throws ShopException
     {
         List<User> users = new ArrayList<>();
         try
@@ -121,7 +122,8 @@ public class UserMapper
 
                 User user = new User(email, password, role);
                 user.setId(id);
-                user.setOrders(OrderMapper.getOrders(user));
+                OrderMapper db = new OrderMapper();
+                user.setOrders(db.getOrders(user));
 
                 users.add(user);
 

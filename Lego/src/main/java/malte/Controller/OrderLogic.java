@@ -2,7 +2,8 @@ package malte.Controller;
 
 import malte.Model.Exceptions.LoginException;
 import malte.Model.Exceptions.ShopException;
-import malte.Model.OrderMapper;
+import malte.Model.ModelFacade;
+import malte.Model.ModelFacadeImpl;
 import malte.Model.entities.Order;
 
 /**
@@ -35,7 +36,8 @@ class OrderLogic
         order.setLength(length);
         order.setWidth(width);
         order.setHeight(height);
-        OrderMapper.createOrder(order);
+        ModelFacade db = new ModelFacadeImpl();
+        db.createOrder(order);
         return order;
     }
 }
