@@ -80,11 +80,6 @@ public class Product extends Command
         String tempHeight = request.getParameter("height");
         int height = Integer.parseInt(tempHeight);
 
-        if (height < 4 || width < 5 || length < 8)
-        {
-            throw new ShopException("Too low width, height or length. Try again.");
-        }
-
         User user = putOrderOnUser(request, id, length, width, height);
 
         return user.getRole() + "page";
@@ -96,7 +91,8 @@ public class Product extends Command
         Order order = LogicFacade.createOrder(id, length, width, height);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
-        if (orders == null){
+        if (orders == null)
+        {
             orders = new ArrayList<>();
         }
         orders.add(order);
@@ -127,10 +123,6 @@ public class Product extends Command
     private void orderlogic(User user, int id, HttpSession session)
     {
         List<Order> orders = user.getOrders();
-        if (orders == null)
-        {
-            orders = new ArrayList<>();
-        }
         for (Order order : orders)
         {
             if (order.getId() == id)
@@ -190,15 +182,12 @@ public class Product extends Command
         List<User> users = (List<User>) session.getAttribute("users");
         for (User user : users)
         {
-            if (user.getOrders() != null && !user.getOrders().isEmpty())
+            for (Order order : user.getOrders())
             {
-                for (Order order : user.getOrders())
+                if (order.getId() == id)
                 {
-                    if (order.getId() == id)
-                    {
-                        order.setSent(true);
-                        session.setAttribute("order", order);
-                    }
+                    order.setSent(true);
+                    session.setAttribute("order", order);
                 }
             }
         }

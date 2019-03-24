@@ -1,6 +1,7 @@
 package malte.Model.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,7 +18,7 @@ public class User implements Serializable
      */
     private String password, email, role;
     private int id;
-    private List<Order> orders;
+    private List<Order> orders = new ArrayList<>();
 
     /**
      * Constructor.
