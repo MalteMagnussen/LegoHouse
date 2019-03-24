@@ -116,7 +116,7 @@ class BOMLogic
      * @param height height of the side.
      * @param hasDoor does the side have a door or not
      * @param hasWindow does the side have a window or not
-     * @return
+     * @return Side object.
      */
     private Side setside(int height, boolean hasDoor, boolean hasWindow)
     {
@@ -296,7 +296,7 @@ class BOMLogic
      * @param totalones amount of 2x1 bricks
      * @param totaltwos amount of 2x2 bricks
      * @param totalfours amount of 2x4 bricks
-     * @return
+     * @return Bill of Materials object.
      */
     private BOM setBom(Side door, Side wide, Side window, int totalones, int totaltwos, int totalfours)
     {

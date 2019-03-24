@@ -23,10 +23,11 @@ public interface ControllerFacade
     /**
      * Login a User.
      *
-     * @param email
-     * @param password
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param email of the User.
+     * @param password of the User.
+     * @return User object.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -35,22 +36,24 @@ public interface ControllerFacade
     /**
      * Create a User.
      *
-     * @param email
-     * @param password
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param email of the User.
+     * @param password of the User.
+     * @return User object.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     User createUser(String email, String password) throws LoginException;
 
     /**
      * Create an Order.
      *
-     * @param id
-     * @param length
-     * @param width
-     * @param height
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param id of the User who made the Order.
+     * @param length of the house.
+     * @param width of the house.
+     * @param height of the house.
+     * @return Order object.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -59,20 +62,24 @@ public interface ControllerFacade
     /**
      * Get all Orders from this User.
      *
-     * @param user
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param user whose Orders you want. Usually only the User who is logged
+     * in.
+     * @return A List of all the Users Orders.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
     List<Order> getOrders(User user) throws LoginException, ShopException;
 
     /**
-     * Get all Users.
+     * Get all Users. But only if you're an employee.
      *
-     * @param user
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param user Employee. Checks if User is employee. Throws error if he is
+     * not.
+     * @return List of all Users.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -81,9 +88,10 @@ public interface ControllerFacade
     /**
      * Get an Order by its ID.
      *
-     * @param id
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param id of the Order.
+     * @return the Order.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -92,8 +100,9 @@ public interface ControllerFacade
     /**
      * Mark an Order as sent.
      *
-     * @param id
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param id of the Order you wish to send.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -102,8 +111,8 @@ public interface ControllerFacade
     /**
      * Get a Bill of Materials for an Order.
      *
-     * @param order
-     * @return
+     * @param order you wish to get a Bill of Materials for.
+     * @return A Bill of Materials. (Stykliste)
      */
     BOM getBOM(Order order);
 }
