@@ -18,17 +18,17 @@ import malte.Model.entities.User;
  */
 public interface ModelFacade
 {
-    public void createUser(User user) throws LoginException;
+    void createUser(User user) throws LoginException;
 
-    public User login(String email, String password) throws LoginException, ShopException;
+    User login(String email, String password) throws LoginException, ShopException;
 
-    public List<Order> getOrders(User user) throws ShopException;
+    List<Order> getOrders(User user) throws ShopException;
 
-    public void createOrder(Order order) throws ShopException;
+    void createOrder(Order order) throws ShopException;
 
-    public List<User> getUsers() throws ShopException;
+    List<User> getUsers() throws ShopException;
 
-    public Order getOrder(int id) throws ShopException;
+    Order getOrder(int id) throws ShopException;
 
-    public void sendOrder(int id) throws ShopException;
+    void sendOrder(int id) throws ShopException;
 }

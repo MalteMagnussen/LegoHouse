@@ -3,7 +3,7 @@ package malte.View;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Controller.ControllerFacade;
+import malte.Controller.ControllerFacadeImpl;
 import malte.Model.Exceptions.LoginException;
 import malte.Model.Exceptions.ShopException;
 import malte.Model.entities.User;
@@ -56,14 +56,15 @@ public class Login extends Command
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        ControllerFacade logic = new ControllerFacade();
+        ControllerFacadeImpl logic = new ControllerFacadeImpl();
         User user = logic.login(email, password);
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
         if (user.getRole().equals("employee"))
         {
-            session.setAttribute("users", ControllerFacade.getUsers(user));
+            ControllerFacadeImpl c = new ControllerFacadeImpl();
+            session.setAttribute("users", c.getUsers(user));
             return user.getRole() + "page";
         } else
         {
@@ -86,8 +87,8 @@ public class Login extends Command
         String password2 = request.getParameter("password2");
         if (password1.equals(password2))
         {
-            ControllerFacade logic = new ControllerFacade();
-            User user = logic.createUser(email, password1);
+            ControllerFacadeImpl c = new ControllerFacadeImpl();
+            User user = c.createUser(email, password1);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());
