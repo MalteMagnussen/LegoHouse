@@ -13,24 +13,91 @@ import malte.Model.entities.Order;
 import malte.Model.entities.User;
 
 /**
+ * Controller Facade Interface.
  *
  * @author Malte
  */
 public interface ControllerFacade
 {
+
+    /**
+     * Login a User.
+     *
+     * @param email
+     * @param password
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     User login(String email, String password) throws LoginException, ShopException;
-    
+
+    /**
+     * Create a User.
+     *
+     * @param email
+     * @param password
+     * @return
+     * @throws LoginException
+     */
     User createUser(String email, String password) throws LoginException;
-    
+
+    /**
+     * Create an Order.
+     *
+     * @param id
+     * @param length
+     * @param width
+     * @param height
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     Order createOrder(int id, int length, int width, int height) throws LoginException, ShopException;
-    
+
+    /**
+     * Get all Orders from this User.
+     *
+     * @param user
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     List<Order> getOrders(User user) throws LoginException, ShopException;
-    
+
+    /**
+     * Get all Users.
+     *
+     * @param user
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     List<User> getUsers(User user) throws LoginException, ShopException;
-    
+
+    /**
+     * Get an Order by its ID.
+     *
+     * @param id
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     Order getOrder(int id) throws LoginException, ShopException;
-    
+
+    /**
+     * Mark an Order as sent.
+     *
+     * @param id
+     * @throws LoginException
+     * @throws ShopException
+     */
     void sendOrder(int id) throws LoginException, ShopException;
-    
+
+    /**
+     * Get a Bill of Materials for an Order.
+     *
+     * @param order
+     * @return
+     */
     BOM getBOM(Order order);
 }

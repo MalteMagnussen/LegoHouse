@@ -68,13 +68,11 @@ public class ControllerFacadeImpl implements ControllerFacade
     @Override
     public Order createOrder(int id, int length, int width, int height) throws LoginException, ShopException
     {
-
         if (height < 4 || width < 5 || length < 8)
         {
             throw new ShopException("Too low width, height or length. Try again.");
         }
         return new OrderLogic().order(id, length, width, height);
-
     }
 
     /**

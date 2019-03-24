@@ -16,6 +16,10 @@ import malte.Model.entities.Side;
 class BOMLogic
 {
 
+    BOMLogic()
+    {
+    }
+
     /**
      * get Bill of Materials method.
      *
@@ -77,6 +81,15 @@ class BOMLogic
         return row;
     }
 
+    /**
+     * Make all the Rows for One side of the House.
+     *
+     * @param height
+     * @param hasDoor
+     * @param hasWindow
+     * @param length
+     * @param side
+     */
     private void makerows(int height, boolean hasDoor, boolean hasWindow, int length, Side side)
     {
         // We need to add as many rows as there is height to a side.
@@ -97,6 +110,14 @@ class BOMLogic
         }
     }
 
+    /**
+     * Prepare a side. Sets its values.
+     *
+     * @param height
+     * @param hasDoor
+     * @param hasWindow
+     * @return
+     */
     private Side setside(int height, boolean hasDoor, boolean hasWindow)
     {
         Side side = new Side();
@@ -106,6 +127,13 @@ class BOMLogic
         return side;
     }
 
+    /**
+     * Make the door side.
+     *
+     * @param i
+     * @param length
+     * @param side
+     */
     private void door(int i, int length, Side side)
     {
         if (i <= 5) // If we're at the door part.
@@ -117,6 +145,13 @@ class BOMLogic
         }
     }
 
+    /**
+     * Make the window side.
+     *
+     * @param i
+     * @param length
+     * @param side
+     */
     private void window(int i, int length, Side side)
     {
         if (i == 4 || i == 5)
@@ -128,6 +163,11 @@ class BOMLogic
         }
     }
 
+    /**
+     * Set the bricks on the Row.
+     *
+     * @param side
+     */
     private void setbricks(Side side)
     {
         int ones = 0;
@@ -167,7 +207,8 @@ class BOMLogic
     }
 
     /**
-     * Help Method for getSide.
+     * Help Method for getSide. Make a door or window row and add it to the
+     * side.
      *
      * @param i
      * @param length
@@ -192,7 +233,8 @@ class BOMLogic
     }
 
     /**
-     * Help method for getSide. For width sides.
+     * Help method for getSide. For width sides. Makes a row and adds it to the
+     * side.
      *
      * @param i
      * @param length
@@ -212,10 +254,13 @@ class BOMLogic
         side.add(row);
     }
 
-    BOMLogic()
-    {
-    }
-
+    /**
+     * Makes the BOM itself. Makes the 4 sides and puts them on the BOM and puts
+     * the totals on the BOM.
+     *
+     * @param order
+     * @return
+     */
     private BOM makeBOM(Order order)
     {
         int height = order.getHeight();
@@ -242,6 +287,17 @@ class BOMLogic
         return bom;
     }
 
+    /**
+     * Set all the values of the BOM.
+     *
+     * @param door
+     * @param wide
+     * @param window
+     * @param totalones
+     * @param totaltwos
+     * @param totalfours
+     * @return
+     */
     private BOM setBom(Side door, Side wide, Side window, int totalones, int totaltwos, int totalfours)
     {
         BOM bom = new BOM();

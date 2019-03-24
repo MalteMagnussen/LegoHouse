@@ -30,6 +30,8 @@
     <!-- Form end -->
 </form>
 <br>
+<!-- Shows all the Users Orders as a List with pressable buttons.
+        If you press a button, it will load the BOM for that Order. -->
 <div class="row" style="margin: auto;">
     <div class="col-sm-5">
         <h5> Orders for: ${user.email}</h5>
@@ -48,6 +50,7 @@
             </c:forEach>
         </ul>
     </div>
+        <!-- Show the BOM table if one has been selected. -->
     <div class="col-sm-7">
         <c:if test="${not empty BOM}">
             <jsp:include page='/bomtable.jsp'></jsp:include>

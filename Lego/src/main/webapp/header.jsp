@@ -54,7 +54,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 
         <div id="everything" >
-
+            <!-- The Navbar - Only if logged in. -->
             <c:if test="${not empty user}">
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">

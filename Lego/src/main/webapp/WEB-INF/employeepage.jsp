@@ -5,7 +5,9 @@
 
     <div class="row" style="margin: auto;">
         <div class="col-sm-5">
-
+            <!-- Shows all the Orders for all the users as pressable button.
+                    If a button is pressed, the respective Order is shown as a BOM.
+                    And you get the Option to mark that Order as sent. -->
             <ul class="list-group">
             <c:forEach var="user" items="${users}">
                 <br>
@@ -34,7 +36,7 @@
     <div class="col-sm-7">
 
 
-
+        <!-- Shows the BOM. -->
         <c:if test="${not empty BOM}">
             <jsp:include page='/bomtable.jsp'></jsp:include>
 

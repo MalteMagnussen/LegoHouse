@@ -1,4 +1,4 @@
-
+<!-- Author: Malte -->
 <!--  Below is the Table for a Bill of Materials  -->
 <table border="3" width="2" cellspacing="2" cellpadding="2" class="table">
 

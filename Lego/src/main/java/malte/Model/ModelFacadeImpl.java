@@ -12,8 +12,8 @@ import malte.Model.entities.Order;
 import malte.Model.entities.User;
 
 /**
- * Facade Impl
- * 
+ * Model Facade Impl
+ *
  * @author Malte
  */
 public class ModelFacadeImpl implements ModelFacade
@@ -22,7 +22,13 @@ public class ModelFacadeImpl implements ModelFacade
     public ModelFacadeImpl()
     {
     }
-    
+
+    /**
+     * Create User. Inputs a User into the Database
+     *
+     * @param user
+     * @throws LoginException
+     */
     @Override
     public void createUser(User user) throws LoginException
     {
@@ -30,6 +36,15 @@ public class ModelFacadeImpl implements ModelFacade
         db.createUser(user);
     }
 
+    /**
+     * Login. Log a User into the system.
+     *
+     * @param email
+     * @param password
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     @Override
     public User login(String email, String password) throws LoginException, ShopException
     {
@@ -37,6 +52,13 @@ public class ModelFacadeImpl implements ModelFacade
         return db.login(email, password);
     }
 
+    /**
+     * Get Orders. Get a list of Orders.
+     *
+     * @param user
+     * @return
+     * @throws ShopException
+     */
     @Override
     public List<Order> getOrders(User user) throws ShopException
     {
@@ -44,6 +66,12 @@ public class ModelFacadeImpl implements ModelFacade
         return db.getOrders(user);
     }
 
+    /**
+     * Create an Order in the Database.
+     *
+     * @param order
+     * @throws ShopException
+     */
     @Override
     public void createOrder(Order order) throws ShopException
     {
@@ -51,6 +79,12 @@ public class ModelFacadeImpl implements ModelFacade
         db.createOrder(order);
     }
 
+    /**
+     * Get a List of All Users. Used by Employee.
+     *
+     * @return
+     * @throws ShopException
+     */
     @Override
     public List<User> getUsers() throws ShopException
     {
@@ -58,6 +92,13 @@ public class ModelFacadeImpl implements ModelFacade
         return db.getUsers();
     }
 
+    /**
+     * Get an Order by ID.
+     *
+     * @param id
+     * @return
+     * @throws ShopException
+     */
     @Override
     public Order getOrder(int id) throws ShopException
     {
@@ -65,11 +106,17 @@ public class ModelFacadeImpl implements ModelFacade
         return db.getOrder(id);
     }
 
+    /**
+     * Mark an order as sent in the database.
+     *
+     * @param id
+     * @throws ShopException
+     */
     @Override
     public void sendOrder(int id) throws ShopException
     {
         OrderMapper db = new OrderMapper();
         db.sendOrder(id);
     }
-    
+
 }

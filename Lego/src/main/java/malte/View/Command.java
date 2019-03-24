@@ -11,6 +11,9 @@ abstract class Command
 
     private static HashMap<String, Command> commands;
 
+    /**
+     * If you make new Commands, add them to this map.
+     */
     private static void initCommands()
     {
         commands = new HashMap<>();
