@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import malte.Controller.ShopException;
+import malte.Model.Exceptions.ShopException;
 import malte.Model.entities.Order;
 import malte.Model.entities.User;
 
@@ -27,7 +27,7 @@ public class OrderMapper
     /**
      * Called from LogicFacade createOrder Method.
      *
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      * @see malte.Controller.LogicFacade
      * @see malte.Model.entities.Order
      * @param order
@@ -59,7 +59,7 @@ public class OrderMapper
      *
      * @param user
      * @return List of Orders.
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static List<Order> getOrders(User user) throws ShopException
     {
@@ -105,7 +105,7 @@ public class OrderMapper
      *
      * @param id
      * @return
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static Order getOrder(int id) throws ShopException
     {
@@ -145,7 +145,7 @@ public class OrderMapper
      * Mark order as being sent to customer. Usable by employee.
      *
      * @param id
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static void sendOrder(int id) throws ShopException
     {

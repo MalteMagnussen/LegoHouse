@@ -1,6 +1,8 @@
 package malte.Controller;
 
 import java.util.List;
+import malte.Model.Exceptions.LoginException;
+import malte.Model.Exceptions.ShopException;
 import malte.Model.OrderMapper;
 import malte.Model.UserMapper;
 import malte.Model.entities.BOM;
@@ -22,7 +24,7 @@ public class ControllerFacade
      * @param password Users password.
      * @return User entity.
      * @throws LoginException
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static User login(String email, String password) throws LoginException, ShopException
     {
@@ -53,7 +55,7 @@ public class ControllerFacade
      * @param height LegoHouse Height
      * @return Order entity.
      * @throws LoginException
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static Order createOrder(int id, int length, int width, int height) throws LoginException, ShopException
     {
@@ -72,7 +74,7 @@ public class ControllerFacade
      * @param user
      * @return
      * @throws LoginException
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static List<Order> getOrders(User user) throws LoginException, ShopException
     {
@@ -86,7 +88,7 @@ public class ControllerFacade
      * to work.
      * @return
      * @throws LoginException
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static List<User> getUsers(User user) throws LoginException, ShopException
     {
@@ -105,7 +107,7 @@ public class ControllerFacade
      * @param id of the order.
      * @return
      * @throws LoginException
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static Order getOrder(int id) throws LoginException, ShopException
     {
@@ -117,7 +119,7 @@ public class ControllerFacade
      *
      * @param id of the order.
      * @throws LoginException
-     * @throws malte.Controller.ShopException
+     * @throws malte.Model.Exceptions.ShopException
      */
     public static void sendOrder(int id) throws LoginException, ShopException
     {

@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import malte.Controller.ControllerFacade;
-import malte.Controller.LoginException;
-import malte.Controller.ShopException;
+import malte.Model.Exceptions.LoginException;
+import malte.Model.Exceptions.ShopException;
 import malte.Model.entities.User;
 
 /**

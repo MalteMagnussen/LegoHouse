@@ -1,5 +1,7 @@
 package malte.Controller;
 
+import malte.Model.Exceptions.LoginException;
+import malte.Model.Exceptions.ShopException;
 import malte.Model.OrderMapper;
 import malte.Model.entities.Order;
 

@@ -11,8 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.Controller.LoginException;
-import malte.Controller.ShopException;
+import malte.Model.Exceptions.LoginException;
+import malte.Model.Exceptions.ShopException;
 
 /**
  * Front Controller.
