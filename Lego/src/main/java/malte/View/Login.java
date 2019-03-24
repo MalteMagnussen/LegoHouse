@@ -51,7 +51,8 @@ public class Login extends Command
      *
      * @param request
      * @return View String.
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     private String Login(HttpServletRequest request) throws LoginException, ShopException
     {
@@ -78,7 +79,8 @@ public class Login extends Command
      *
      * @param request
      * @return View String.
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     private String Registration(HttpServletRequest request) throws LoginException
     {
@@ -103,8 +105,9 @@ public class Login extends Command
      * Log Out method.
      *
      * @param request
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @return error.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     private String Logout(HttpServletRequest request) throws LoginException
     {

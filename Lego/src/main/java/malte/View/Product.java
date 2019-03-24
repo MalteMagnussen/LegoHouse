@@ -59,8 +59,9 @@ public class Product extends Command
      * Adds an Order to the SQL.
      *
      * @param request
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @return View String.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     private String addProduct(HttpServletRequest request) throws LoginException, ShopException
     {
@@ -94,12 +95,13 @@ public class Product extends Command
      * Help Method for addProduct.
      *
      * @param request
-     * @param id
-     * @param length
-     * @param width
-     * @param height
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param id of the order.
+     * @param length of the LegoHouse.
+     * @param width of the LegoHouse.
+     * @param height of the LegoHouse.
+     * @return a User object.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -124,7 +126,7 @@ public class Product extends Command
      * Get one Order.
      *
      * @param request
-     * @return
+     * @return view
      */
     private String order(HttpServletRequest request)
     {
@@ -142,8 +144,8 @@ public class Product extends Command
     /**
      * Help method for order.
      *
-     * @param user
-     * @param id
+     * @param user object.
+     * @param id of the order.
      * @param session
      */
     private void orderlogic(User user, int id, HttpSession session)
@@ -165,8 +167,9 @@ public class Product extends Command
      * Used by a logged in Employee to get an order.
      *
      * @param request
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @return view
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     private String employeeorder(HttpServletRequest request) throws LoginException, ShopException
     {
@@ -189,8 +192,9 @@ public class Product extends Command
      * sent.
      *
      * @param request
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @return view
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     private String sendOrder(HttpServletRequest request) throws LoginException, ShopException
     {
@@ -209,7 +213,7 @@ public class Product extends Command
      * Help method for sendOrder.
      *
      * @param session
-     * @param id
+     * @param id of the order.
      */
     private void orderOnSessionSent(HttpSession session, int id)
     {
