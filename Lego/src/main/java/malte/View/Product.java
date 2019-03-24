@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package malte.View;
 
 import java.util.ArrayList;
@@ -94,6 +89,18 @@ public class Product extends Command
         return user.getRole() + "page";
     }
 
+    /**
+     * Help Method for addProduct.
+     *
+     * @param request
+     * @param id
+     * @param length
+     * @param width
+     * @param height
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException, ShopException
     {
         HttpSession session = request.getSession();
@@ -129,6 +136,13 @@ public class Product extends Command
         return user.getRole() + "page";
     }
 
+    /**
+     * Help method for order.
+     *
+     * @param user
+     * @param id
+     * @param session
+     */
     private void orderlogic(User user, int id, HttpSession session)
     {
         List<Order> orders = user.getOrders();
@@ -186,6 +200,12 @@ public class Product extends Command
         return user.getRole() + "page";
     }
 
+    /**
+     * Help method for sendOrder.
+     *
+     * @param session
+     * @param id
+     */
     private void orderOnSessionSent(HttpSession session, int id)
     {
         List<User> users = (List<User>) session.getAttribute("users");

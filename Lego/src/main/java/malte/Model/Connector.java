@@ -8,10 +8,14 @@ import java.util.Properties;
 public class Connector
 {
 
+    /** 
+     * Only change these to fit your personal SQL.
+     */
     private static final String URL = "jdbc:mysql://localhost:3306/useradmin";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
+    // Don't touch anything below this line.
     private static Connection singleton;
 
     public static void setConnection(Connection con)
@@ -23,7 +27,7 @@ public class Connector
     {
         if (singleton == null)
         {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver"); // .newInstance(); maybe.
             Properties props = new Properties();
             props.put("user", USERNAME);
             props.put("password", PASSWORD);

@@ -22,6 +22,7 @@ public class LogicFacade
      * @param password Users password.
      * @return User entity.
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
     public static User login(String email, String password) throws LoginException, ShopException
     {
@@ -52,6 +53,7 @@ public class LogicFacade
      * @param height LegoHouse Height
      * @return Order entity.
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
     public static Order createOrder(int id, int length, int width, int height) throws LoginException, ShopException
     {
@@ -70,6 +72,7 @@ public class LogicFacade
      * @param user
      * @return
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
     public static List<Order> getOrders(User user) throws LoginException, ShopException
     {
@@ -83,6 +86,7 @@ public class LogicFacade
      * to work.
      * @return
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
     public static List<User> getUsers(User user) throws LoginException, ShopException
     {
@@ -101,6 +105,7 @@ public class LogicFacade
      * @param id of the order.
      * @return
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
     public static Order getOrder(int id) throws LoginException, ShopException
     {
@@ -112,6 +117,7 @@ public class LogicFacade
      *
      * @param id of the order.
      * @throws LoginException
+     * @throws malte.Controller.ShopException
      */
     public static void sendOrder(int id) throws LoginException, ShopException
     {

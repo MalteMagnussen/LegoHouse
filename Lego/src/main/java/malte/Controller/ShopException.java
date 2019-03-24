@@ -1,7 +1,8 @@
 package malte.Controller;
 
 /**
- *
+ * Sends User back to their page, and not index.
+ * 
  * @author Malte
  */
 public class ShopException extends Exception

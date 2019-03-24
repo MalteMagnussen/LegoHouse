@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package malte.Model.entities;
 
 import java.io.Serializable;
@@ -20,6 +15,9 @@ public class Row implements Serializable
     private int twos;
     private int ones;
 
+    /**
+     * Constructor.
+     */
     public Row()
     {
     }

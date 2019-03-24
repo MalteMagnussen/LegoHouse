@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package malte.Controller;
 
 import java.util.ArrayList;
@@ -13,10 +8,9 @@ import malte.Model.entities.Row;
 import malte.Model.entities.Side;
 
 /**
- *  Bill of Materials.
- *  (Stykliste).
- * 
- * 
+ * Bill of Materials. (Stykliste).
+ *
+ *
  * @author Malte
  */
 class BOMLogic

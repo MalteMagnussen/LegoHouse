@@ -1,7 +1,7 @@
 package malte.Controller;
 
 /**
- * Custom Exception.
+ * Login Exception, Sends user back to index.
  *
  * @author Malte
  */

@@ -1,16 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package malte.Controller;
 
 import malte.Model.OrderMapper;
 import malte.Model.entities.Order;
 
 /**
- * 
- * 
+ * Order Logic.
+ *
  * @author Malte
  */
 class OrderLogic
@@ -19,7 +14,18 @@ class OrderLogic
     public OrderLogic()
     {
     }
-    
+
+    /**
+     * Make a new Order.
+     *
+     * @param id
+     * @param length
+     * @param width
+     * @param height
+     * @return
+     * @throws LoginException
+     * @throws ShopException
+     */
     Order order(int id, int length, int width, int height) throws LoginException, ShopException
     {
         Order order = new Order();

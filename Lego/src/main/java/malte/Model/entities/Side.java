@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package malte.Model.entities;
 
 import java.io.Serializable;
@@ -10,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Row entity class. Should fulfill bean standards.
  *
  * @author Malte
  */
@@ -51,8 +47,6 @@ public class Side implements Serializable
     {
         this.fours = fours;
     }
-
-    
 
     /**
      * Get the value of height

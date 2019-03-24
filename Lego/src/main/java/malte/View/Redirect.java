@@ -12,7 +12,7 @@ import malte.Controller.LoginException;
 import malte.Model.entities.User;
 
 /**
- * Simply Redirects.
+ * Simply Redirects. Used by Shop Button in the Menu dropdown.
  *
  * @author Malte
  */
