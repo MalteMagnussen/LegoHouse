@@ -19,6 +19,10 @@ import malte.Model.entities.User;
 public class UserMapper
 {
 
+    public UserMapper()
+    {
+    }
+
     /**
      * Create User Method.
      *
@@ -27,7 +31,7 @@ public class UserMapper
      * @param user Entity
      * @throws LoginException
      */
-    public static void createUser(User user) throws LoginException
+    public void createUser(User user) throws LoginException
     {
         try
         {

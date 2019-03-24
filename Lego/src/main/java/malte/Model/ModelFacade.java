@@ -5,12 +5,29 @@
  */
 package malte.Model;
 
+import java.util.List;
+import malte.Model.Exceptions.LoginException;
+import malte.Model.entities.Order;
+import malte.Model.entities.User;
+
 /**
- * Facade Class.
+ * Facade Interface.
  * 
  * @author Malte
  */
-public class ModelFacade
+public interface ModelFacade
 {
-    
+    public void createUser(User user) throws LoginException;
+
+    public User login(String email, String password);
+
+    public List<Order> getOrders(User user);
+
+    public Order createOrder(Order order);
+
+    public List<User> getUsers();
+
+    public Order getOrder(int id);
+
+    public void sendOrder(int id);
 }

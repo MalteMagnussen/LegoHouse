@@ -3,6 +3,8 @@ package malte.Controller;
 import java.util.List;
 import malte.Model.Exceptions.LoginException;
 import malte.Model.Exceptions.ShopException;
+import malte.Model.MapperFacade;
+import malte.Model.ModelFacade;
 import malte.Model.OrderMapper;
 import malte.Model.UserMapper;
 import malte.Model.entities.BOM;
@@ -42,7 +44,8 @@ public class ControllerFacade
     public static User createUser(String email, String password) throws LoginException
     {
         User user = new User(email, password, "customer");
-        UserMapper.createUser(user);
+        ModelFacade model = new MapperFacade();
+        model.createUser(user);
         return user;
     }
 
