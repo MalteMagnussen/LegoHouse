@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import malte.Controller.ControllerFacade;
 import malte.Controller.ControllerFacadeImpl;
 import malte.Model.Exceptions.LoginException;
 import malte.Model.Exceptions.ShopException;
@@ -104,7 +105,7 @@ public class Product extends Command
     private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException, ShopException
     {
         HttpSession session = request.getSession();
-        ControllerFacadeImpl c = new ControllerFacadeImpl();
+        ControllerFacade c = new ControllerFacadeImpl();
         Order order = c.createOrder(id, length, width, height);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
@@ -152,7 +153,7 @@ public class Product extends Command
             if (order.getId() == id)
             {
                 session.setAttribute("order", order);
-                ControllerFacadeImpl c = new ControllerFacadeImpl();
+                ControllerFacade c = new ControllerFacadeImpl();
                 BOM bom = c.getBOM(order);
                 session.setAttribute("BOM", bom);
             }
@@ -172,7 +173,7 @@ public class Product extends Command
         User user = (User) session.getAttribute("user");
 
         int id = Integer.parseInt(request.getParameter("id"));
-        ControllerFacadeImpl c = new ControllerFacadeImpl();
+        ControllerFacade c = new ControllerFacadeImpl();
         Order order = c.getOrder(id);
 
         session.setAttribute("order", order);
@@ -194,7 +195,7 @@ public class Product extends Command
     {
         HttpSession session = request.getSession();
         int id = Integer.parseInt(request.getParameter("id"));
-        ControllerFacadeImpl c = new ControllerFacadeImpl();
+        ControllerFacade c = new ControllerFacadeImpl();
         c.sendOrder(id);
 
         orderOnSessionSent(session, id);

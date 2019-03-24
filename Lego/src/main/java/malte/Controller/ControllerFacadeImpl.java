@@ -104,14 +104,8 @@ public class ControllerFacadeImpl implements ControllerFacade
     @Override
     public List<User> getUsers(User user) throws LoginException, ShopException
     {
-        if (user.getRole().equals("employee"))
-        {
-            ModelFacade db = new ModelFacadeImpl();
-            return db.getUsers();
-        } else
-        {
-            throw new LoginException("Can't do this. You're not an employee.");
-        }
+        ModelFacade db = new ModelFacadeImpl();
+        return db.getUsers();
     }
 
     /**

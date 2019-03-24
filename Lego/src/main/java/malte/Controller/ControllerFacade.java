@@ -16,7 +16,7 @@ import malte.Model.entities.User;
  *
  * @author Malte
  */
-interface ControllerFacade
+public interface ControllerFacade
 {
     User login(String email, String password) throws LoginException, ShopException;
     
