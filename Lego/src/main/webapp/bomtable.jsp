@@ -34,7 +34,7 @@
         </tr>
 
         <tr>
-            <td scope="row"> 1x2 </td>
+            <td scope="row"> 2x1 </td>
             <td>${BOM.door.ones}</td>
             <td>${BOM.wide.ones}</td>
             <td>${BOM.window.ones}</td>
