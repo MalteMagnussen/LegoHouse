@@ -72,13 +72,22 @@ public class Product extends Command
         int id = Integer.parseInt(tempid);
 
         String tempLength = request.getParameter("length");
-        int length = Integer.parseInt(tempLength);
-
         String tempWidth = request.getParameter("width");
-        int width = Integer.parseInt(tempWidth);
-
         String tempHeight = request.getParameter("height");
-        int height = Integer.parseInt(tempHeight);
+
+        int length = 0;
+        int width = 0;
+        int height = 0;
+
+        if (((((tempLength == null || tempWidth == null) || tempHeight == null) || tempLength.isEmpty()) || tempWidth.isEmpty()) || tempHeight.isEmpty())
+        {
+            throw new ShopException("Neither length, width, or height can be empty.");
+        } else
+        {
+            length = Integer.parseInt(tempLength);
+            width = Integer.parseInt(tempWidth);
+            height = Integer.parseInt(tempHeight);
+        }
 
         User user = putOrderOnUser(request, id, length, width, height);
 
