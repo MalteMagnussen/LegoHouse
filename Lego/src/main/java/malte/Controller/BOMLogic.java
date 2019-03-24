@@ -23,7 +23,7 @@ class BOMLogic
     /**
      * get Bill of Materials method.
      *
-     * @return
+     * @return Bill of Materials.
      */
     BOM getBOM(Order order)
     {
@@ -33,10 +33,10 @@ class BOMLogic
     /**
      * Makes a single side of a house.
      *
-     * @param height
-     * @param length
-     * @param hasDoor
-     * @param hasWindow
+     * @param height of Side.
+     * @param length of Side.
+     * @param hasDoor Does it have a door
+     * @param hasWindow Does it have a window
      * @return
      */
     private Side getSide(int height, int length, boolean hasDoor, boolean hasWindow)
@@ -52,7 +52,7 @@ class BOMLogic
      * A House consists of 4 sides.
      *
      * @param length Has to be at least 8. Maybe 10. We'll see.
-     * @return
+     * @return a Row
      */
     private Row getRow(int length)
     {
@@ -84,11 +84,11 @@ class BOMLogic
     /**
      * Make all the Rows for One side of the House.
      *
-     * @param height
-     * @param hasDoor
-     * @param hasWindow
-     * @param length
-     * @param side
+     * @param height of the Rows
+     * @param hasDoor does the side have a door or not
+     * @param hasWindow does the side have a window or not
+     * @param length length of the side
+     * @param side Side object.
      */
     private void makerows(int height, boolean hasDoor, boolean hasWindow, int length, Side side)
     {
@@ -113,9 +113,9 @@ class BOMLogic
     /**
      * Prepare a side. Sets its values.
      *
-     * @param height
-     * @param hasDoor
-     * @param hasWindow
+     * @param height height of the side.
+     * @param hasDoor does the side have a door or not
+     * @param hasWindow does the side have a window or not
      * @return
      */
     private Side setside(int height, boolean hasDoor, boolean hasWindow)
@@ -130,9 +130,9 @@ class BOMLogic
     /**
      * Make the door side.
      *
-     * @param i
-     * @param length
-     * @param side
+     * @param i height
+     * @param length of the door side
+     * @param side the side it is on
      */
     private void door(int i, int length, Side side)
     {
@@ -148,9 +148,9 @@ class BOMLogic
     /**
      * Make the window side.
      *
-     * @param i
-     * @param length
-     * @param side
+     * @param i current height
+     * @param length of the side
+     * @param side that this row is on
      */
     private void window(int i, int length, Side side)
     {
@@ -166,7 +166,7 @@ class BOMLogic
     /**
      * Set the bricks on the Row.
      *
-     * @param side
+     * @param side that this row is on.
      */
     private void setbricks(Side side)
     {
@@ -188,9 +188,9 @@ class BOMLogic
      * Door or window normal row. Door or window are on the length. So its the
      * opposite side that has to be short, compared to the width sides.
      *
-     * @param i
-     * @param length
-     * @param side
+     * @param i height
+     * @param length of the side
+     * @param side it belongs to
      */
     private void dwnormalrow(int i, int length, Side side)
     {
@@ -210,9 +210,9 @@ class BOMLogic
      * Help Method for getSide. Make a door or window row and add it to the
      * side.
      *
-     * @param i
-     * @param length
-     * @param side
+     * @param i height
+     * @param length of the side
+     * @param side it belongs to
      */
     private void doorOrWindowRow(int i, int length, Side side)
     {
@@ -236,9 +236,9 @@ class BOMLogic
      * Help method for getSide. For width sides. Makes a row and adds it to the
      * side.
      *
-     * @param i
-     * @param length
-     * @param side
+     * @param i height
+     * @param length of the side
+     * @param side it belongs to
      */
     private void normalrow(int i, int length, Side side)
     {
@@ -258,8 +258,8 @@ class BOMLogic
      * Makes the BOM itself. Makes the 4 sides and puts them on the BOM and puts
      * the totals on the BOM.
      *
-     * @param order
-     * @return
+     * @param order you want made into a Bill of Materials.
+     * @return Bill of Materials.
      */
     private BOM makeBOM(Order order)
     {
@@ -290,12 +290,12 @@ class BOMLogic
     /**
      * Set all the values of the BOM.
      *
-     * @param door
-     * @param wide
-     * @param window
-     * @param totalones
-     * @param totaltwos
-     * @param totalfours
+     * @param door side
+     * @param wide side
+     * @param window side
+     * @param totalones amount of 2x1 bricks
+     * @param totaltwos amount of 2x2 bricks
+     * @param totalfours amount of 2x4 bricks
      * @return
      */
     private BOM setBom(Side door, Side wide, Side window, int totalones, int totaltwos, int totalfours)
