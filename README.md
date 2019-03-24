@@ -20,7 +20,7 @@ by Malte Hviid-Magnussen
 7. Log in as employee with **robin@somewhere.com** as email and **batman** as password.
 8. Or log in as user with **jens@somewhere.com** as email and **jensen** as password. Or just create a new user.
 
-## Resources
+## [Resources](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/#resourcer)
 
 * [Used this as my starting off point for the project, and built from there.](https://github.com/DAT2SemKode/Modul3LogInSample)
 * [I used Bootstrap a lot for the Styling](https://getbootstrap.com/)
