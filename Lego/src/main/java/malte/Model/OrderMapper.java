@@ -33,9 +33,7 @@ public class OrderMapper
      *
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
-     * @see malte.Controller.LogicFacade
-     * @see malte.Model.entities.Order
-     * @param order
+     * @param order you want to insert into the database.
      */
     public void createOrder(Order order) throws ShopException
     {
@@ -62,7 +60,7 @@ public class OrderMapper
     /**
      * Called from LogicFacade getOrders Method.
      *
-     * @param user
+     * @param user you want to get the orders from.
      * @return List of Orders.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
@@ -109,8 +107,8 @@ public class OrderMapper
     /**
      * Get a single Order from its ID.
      *
-     * @param id
-     * @return
+     * @param id of the order you want to get.
+     * @return the Order of the ID.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
@@ -151,7 +149,7 @@ public class OrderMapper
     /**
      * Mark order as being sent to customer. Usable by employee.
      *
-     * @param id
+     * @param id of the Order you wish to mark as sent.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
