@@ -18,31 +18,61 @@ public class Side implements Serializable
     private boolean door;
     private int height, ones, twos, fours;
 
+    /**
+     * Get number of 1x2 bricks on this side.
+     *
+     * @return total number of 1x2 bricks on this side.
+     */
     public int getOnes()
     {
         return ones;
     }
 
+    /**
+     * Set the number of total 1x2 bricks on this side.
+     *
+     * @param ones number of total 1x2 bricks on this side.
+     */
     public void setOnes(int ones)
     {
         this.ones = ones;
     }
 
+    /**
+     * Get number of 2x2 bricks on this side.
+     *
+     * @return total number of 2x2 bricks on this side.
+     */
     public int getTwos()
     {
         return twos;
     }
 
+    /**
+     * Set the number of total 2x2 bricks on this side.
+     *
+     * @param twos number of total 2x2 bricks on this side.
+     */
     public void setTwos(int twos)
     {
         this.twos = twos;
     }
 
+    /**
+     * Get number of 4x2 bricks on this side.
+     *
+     * @return total number of 4x2 bricks on this side.
+     */
     public int getFours()
     {
         return fours;
     }
 
+    /**
+     * Set the number of total 4x2 bricks on this side.
+     *
+     * @param fours number of total 4x2 bricks on this side.
+     */
     public void setFours(int fours)
     {
         this.fours = fours;
