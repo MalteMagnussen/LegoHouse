@@ -6,7 +6,8 @@
 package malte.Model;
 
 /**
- *
+ * Facade Class.
+ * 
  * @author Malte
  */
 public class ModelFacade
