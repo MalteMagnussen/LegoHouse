@@ -12,8 +12,8 @@ by Malte Hviid-Magnussen
 ## Installation
 
 1. Clone project from GitHub.
-2. Run [SQL script](LegoHouse/SQL scripts/dbInit.sql) in your MySQL workbench.
-3. Make sure the info in the [Connector](LegoHouse/Lego/src/main/java/malte/Model/Connector.java) matches your SQL.
+2. Run [SQL script](/SQL scripts/dbInit.sql) in your MySQL workbench.
+3. Make sure the info in the [Connector](/Lego/src/main/java/malte/Model/Connector.java) matches your SQL.
 4. Open the project in your IDE.
 5. Clean and build, just to be sure.
 6. Run the project.
