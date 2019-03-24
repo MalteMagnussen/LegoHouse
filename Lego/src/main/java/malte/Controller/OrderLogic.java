@@ -21,12 +21,13 @@ class OrderLogic
     /**
      * Make a new Order.
      *
-     * @param id
-     * @param length
-     * @param width
-     * @param height
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param id of the User.
+     * @param length of the LegoHouse.
+     * @param width of the LegoHouse.
+     * @param height of the LegoHouse.
+     * @return an Order.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
