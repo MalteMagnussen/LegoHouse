@@ -22,7 +22,7 @@ public interface ModelFacade
     /**
      * Create a User in the Database table.
      *
-     * @param user
+     * @param user User to create.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
      */
     void createUser(User user) throws LoginException;
@@ -30,9 +30,9 @@ public interface ModelFacade
     /**
      * Login a User.
      *
-     * @param email
-     * @param password
-     * @return
+     * @param email email of user.
+     * @param password password of user.
+     * @return User object.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
@@ -42,8 +42,8 @@ public interface ModelFacade
     /**
      * Get all Orders made by this User.
      *
-     * @param user
-     * @return
+     * @param user User you want orders from.
+     * @return List of Orders from the User.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -71,7 +71,7 @@ public interface ModelFacade
      * Get an Order in the system. By ID.
      *
      * @param id of the order.
-     * @return
+     * @return Order object. With param id.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
