@@ -19,6 +19,10 @@ import malte.Model.entities.User;
 public class ControllerFacade
 {
 
+    public ControllerFacade()
+    {
+    }
+
     /**
      * User Login Facade.
      *
@@ -28,9 +32,10 @@ public class ControllerFacade
      * @throws LoginException
      * @throws malte.Model.Exceptions.ShopException
      */
-    public static User login(String email, String password) throws LoginException, ShopException
+    public User login(String email, String password) throws LoginException, ShopException
     {
-        return UserMapper.login(email, password);
+        ModelFacade model = new MapperFacade();
+        return model.login(email, password);
     }
 
     /**
@@ -41,7 +46,7 @@ public class ControllerFacade
      * @return User entity.
      * @throws LoginException
      */
-    public static User createUser(String email, String password) throws LoginException
+    public User createUser(String email, String password) throws LoginException
     {
         User user = new User(email, password, "customer");
         ModelFacade model = new MapperFacade();
@@ -62,13 +67,13 @@ public class ControllerFacade
      */
     public static Order createOrder(int id, int length, int width, int height) throws LoginException, ShopException
     {
-        
+
         if (height < 4 || width < 5 || length < 8)
         {
             throw new ShopException("Too low width, height or length. Try again.");
         }
         return new OrderLogic().order(id, length, width, height);
-        
+
     }
 
     /**

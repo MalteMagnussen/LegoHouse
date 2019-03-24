@@ -64,7 +64,7 @@ public class UserMapper
      * @throws LoginException
      * @throws malte.Model.Exceptions.ShopException
      */
-    public static User login(String email, String password) throws LoginException, ShopException
+    public User login(String email, String password) throws LoginException, ShopException
     {
         try
         {

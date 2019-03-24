@@ -56,7 +56,8 @@ public class Login extends Command
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        User user = ControllerFacade.login(email, password);
+        ControllerFacade logic = new ControllerFacade();
+        User user = logic.login(email, password);
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
@@ -85,14 +86,15 @@ public class Login extends Command
         String password2 = request.getParameter("password2");
         if (password1.equals(password2))
         {
-            User user = ControllerFacade.createUser(email, password1);
+            ControllerFacade logic = new ControllerFacade();
+            User user = logic.createUser(email, password1);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());
             return user.getRole() + "page";
         } else
         {
-            throw new LoginException("the two passwords did not match");
+            throw new LoginException("The two passwords did not match.");
         }
     }
 

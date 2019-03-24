@@ -7,6 +7,7 @@ package malte.Model;
 
 import java.util.List;
 import malte.Model.Exceptions.LoginException;
+import malte.Model.Exceptions.ShopException;
 import malte.Model.entities.Order;
 import malte.Model.entities.User;
 
@@ -19,7 +20,7 @@ public interface ModelFacade
 {
     public void createUser(User user) throws LoginException;
 
-    public User login(String email, String password);
+    public User login(String email, String password) throws LoginException, ShopException;
 
     public List<Order> getOrders(User user);
 

@@ -7,6 +7,7 @@ package malte.Model;
 
 import java.util.List;
 import malte.Model.Exceptions.LoginException;
+import malte.Model.Exceptions.ShopException;
 import malte.Model.entities.Order;
 import malte.Model.entities.User;
 
@@ -17,6 +18,10 @@ import malte.Model.entities.User;
 public class MapperFacade implements ModelFacade
 {
 
+    public MapperFacade()
+    {
+    }
+    
     @Override
     public void createUser(User user) throws LoginException
     {
@@ -25,9 +30,10 @@ public class MapperFacade implements ModelFacade
     }
 
     @Override
-    public User login(String email, String password)
+    public User login(String email, String password) throws LoginException, ShopException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        UserMapper db = new UserMapper();
+        return db.login(email, password);
     }
 
     @Override
