@@ -100,7 +100,8 @@ public class Product extends Command
      * @param height
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException, ShopException
     {

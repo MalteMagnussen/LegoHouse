@@ -27,7 +27,8 @@ class OrderLogic
      * @param height
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     Order order(int id, int length, int width, int height) throws LoginException, ShopException
     {

@@ -27,7 +27,8 @@ public interface ControllerFacade
      * @param password
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     User login(String email, String password) throws LoginException, ShopException;
 
@@ -50,7 +51,8 @@ public interface ControllerFacade
      * @param height
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     Order createOrder(int id, int length, int width, int height) throws LoginException, ShopException;
 
@@ -60,7 +62,8 @@ public interface ControllerFacade
      * @param user
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     List<Order> getOrders(User user) throws LoginException, ShopException;
 
@@ -70,7 +73,8 @@ public interface ControllerFacade
      * @param user
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     List<User> getUsers(User user) throws LoginException, ShopException;
 
@@ -80,7 +84,8 @@ public interface ControllerFacade
      * @param id
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     Order getOrder(int id) throws LoginException, ShopException;
 
@@ -89,7 +94,8 @@ public interface ControllerFacade
      *
      * @param id
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     void sendOrder(int id) throws LoginException, ShopException;
 

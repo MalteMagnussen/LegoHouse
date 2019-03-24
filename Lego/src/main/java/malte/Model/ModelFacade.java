@@ -34,7 +34,8 @@ public interface ModelFacade
      * @param password
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     User login(String email, String password) throws LoginException, ShopException;
 
@@ -43,40 +44,45 @@ public interface ModelFacade
      *
      * @param user
      * @return
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     List<Order> getOrders(User user) throws ShopException;
 
     /**
      * Create a single Order in the Database.
      *
-     * @param order
-     * @throws ShopException
+     * @param order the one you want in the database.
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     void createOrder(Order order) throws ShopException;
 
     /**
      * Get a list of all the Users in the system.
      *
-     * @return
-     * @throws ShopException
+     * @return a list of all users.
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     List<User> getUsers() throws ShopException;
 
     /**
      * Get an Order in the system. By ID.
      *
-     * @param id
+     * @param id of the order.
      * @return
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     Order getOrder(int id) throws ShopException;
 
     /**
      * Mark an Order as Sent.
      *
-     * @param id
-     * @throws ShopException
+     * @param id of the order.
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     void sendOrder(int id) throws ShopException;
 }

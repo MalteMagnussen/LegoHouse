@@ -43,7 +43,8 @@ public class ModelFacadeImpl implements ModelFacade
      * @param password
      * @return
      * @throws LoginException
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     @Override
     public User login(String email, String password) throws LoginException, ShopException
@@ -57,7 +58,8 @@ public class ModelFacadeImpl implements ModelFacade
      *
      * @param user
      * @return
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     @Override
     public List<Order> getOrders(User user) throws ShopException
@@ -70,7 +72,8 @@ public class ModelFacadeImpl implements ModelFacade
      * Create an Order in the Database.
      *
      * @param order
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     @Override
     public void createOrder(Order order) throws ShopException
@@ -83,7 +86,8 @@ public class ModelFacadeImpl implements ModelFacade
      * Get a List of All Users. Used by Employee.
      *
      * @return
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     @Override
     public List<User> getUsers() throws ShopException
@@ -97,7 +101,8 @@ public class ModelFacadeImpl implements ModelFacade
      *
      * @param id
      * @return
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     @Override
     public Order getOrder(int id) throws ShopException
@@ -110,7 +115,8 @@ public class ModelFacadeImpl implements ModelFacade
      * Mark an order as sent in the database.
      *
      * @param id
-     * @throws ShopException
+     * @throws ShopException Custom Exception. Caught in FrontController. Sends
+     * User back to /WEB-INF/customerpage.jsp
      */
     @Override
     public void sendOrder(int id) throws ShopException
