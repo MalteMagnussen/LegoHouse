@@ -48,7 +48,7 @@
 
             <!-- EMAIL -->
             <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
                 <label for="inputEmail">Email</label>
             </div>
 
