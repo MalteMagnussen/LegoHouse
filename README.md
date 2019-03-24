@@ -7,4 +7,4 @@ by Malte Hviid-Magnussen
 
 ## ER Diagram
 
-![ER Diagram](LegoHouse/SQL scripts/ER Diagram.JPG)
+![ER Diagram](https://i.imgur.com/HI05b2h.png)
