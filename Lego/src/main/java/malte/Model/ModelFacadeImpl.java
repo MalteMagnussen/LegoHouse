@@ -26,8 +26,9 @@ public class ModelFacadeImpl implements ModelFacade
     /**
      * Create User. Inputs a User into the Database
      *
-     * @param user
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param user User you wish to input into SQL database.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     @Override
     public void createUser(User user) throws LoginException
@@ -39,10 +40,11 @@ public class ModelFacadeImpl implements ModelFacade
     /**
      * Login. Log a User into the system.
      *
-     * @param email
-     * @param password
-     * @return
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @param email of the user
+     * @param password of the user
+     * @return User object
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -56,8 +58,8 @@ public class ModelFacadeImpl implements ModelFacade
     /**
      * Get Orders. Get a list of Orders.
      *
-     * @param user
-     * @return
+     * @param user Object
+     * @return List of all the Orders of this user.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -71,7 +73,7 @@ public class ModelFacadeImpl implements ModelFacade
     /**
      * Create an Order in the Database.
      *
-     * @param order
+     * @param order you wish to insert into the database.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -85,7 +87,7 @@ public class ModelFacadeImpl implements ModelFacade
     /**
      * Get a List of All Users. Used by Employee.
      *
-     * @return
+     * @return a List of all users in the system.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -99,8 +101,8 @@ public class ModelFacadeImpl implements ModelFacade
     /**
      * Get an Order by ID.
      *
-     * @param id
-     * @return
+     * @param id of the Order.
+     * @return an order object.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
@@ -114,7 +116,7 @@ public class ModelFacadeImpl implements ModelFacade
     /**
      * Mark an order as sent in the database.
      *
-     * @param id
+     * @param id of the order.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */
