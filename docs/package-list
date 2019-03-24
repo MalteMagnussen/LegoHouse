@@ -1,4 +1,5 @@
 malte.Controller
 malte.Model
+malte.Model.Exceptions
 malte.Model.entities
 malte.View
