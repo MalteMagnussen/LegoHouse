@@ -1,7 +1,7 @@
 # LegoHouse
 by Malte Hviid-Magnussen
 
-[https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html](Project Description)
+[Project Description](https://datsoftlyngby.github.io/dat2sem2019Spring/Modul3/LegoHus.html)
 
 [JavaDocs](https://maltemagnussen.github.io/LegoHouse/)
 
