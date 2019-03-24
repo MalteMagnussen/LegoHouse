@@ -29,7 +29,7 @@ public class UserMapper
      * Inputs a User into the SQL database.
      *
      * @param user Entity
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
      */
     public void createUser(User user) throws LoginException
     {
@@ -61,8 +61,9 @@ public class UserMapper
      * @param email Users email
      * @param password Users password
      * @return User entity
-     * @throws LoginException
-     * @throws malte.Model.Exceptions.ShopException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
+     * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     public User login(String email, String password) throws LoginException, ShopException
     {
@@ -101,7 +102,8 @@ public class UserMapper
      * Get all Users
      *
      * @return List of all Users.
-     * @throws malte.Model.Exceptions.ShopException
+     * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
+     * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     public List<User> getUsers() throws ShopException
     {

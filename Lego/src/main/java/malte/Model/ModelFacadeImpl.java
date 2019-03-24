@@ -27,7 +27,7 @@ public class ModelFacadeImpl implements ModelFacade
      * Create User. Inputs a User into the Database
      *
      * @param user
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
      */
     @Override
     public void createUser(User user) throws LoginException
@@ -42,7 +42,7 @@ public class ModelFacadeImpl implements ModelFacade
      * @param email
      * @param password
      * @return
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
      * @throws ShopException Custom Exception. Caught in FrontController. Sends
      * User back to /WEB-INF/customerpage.jsp
      */

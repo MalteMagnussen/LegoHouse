@@ -63,7 +63,8 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @param width LegoHouse Width
      * @param height LegoHouse Height
      * @return Order entity.
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
@@ -82,7 +83,8 @@ public class ControllerFacadeImpl implements ControllerFacade
      *
      * @param user
      * @return
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
@@ -99,7 +101,8 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @param user The User who is logged in. Requires an Employee User for it
      * to work.
      * @return
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
@@ -115,7 +118,8 @@ public class ControllerFacadeImpl implements ControllerFacade
      *
      * @param id of the order.
      * @return
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
@@ -130,7 +134,8 @@ public class ControllerFacadeImpl implements ControllerFacade
      * Send an order to the customer by its ID. Used by an employee.
      *
      * @param id of the order.
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
