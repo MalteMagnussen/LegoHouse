@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Controller.LogicFacade;
+import malte.Controller.ControllerFacade;
 import malte.Controller.LoginException;
 import malte.Controller.ShopException;
 import malte.Model.entities.BOM;
@@ -104,7 +104,7 @@ public class Product extends Command
     private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException, ShopException
     {
         HttpSession session = request.getSession();
-        Order order = LogicFacade.createOrder(id, length, width, height);
+        Order order = ControllerFacade.createOrder(id, length, width, height);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
         if (orders == null)
@@ -151,7 +151,7 @@ public class Product extends Command
             if (order.getId() == id)
             {
                 session.setAttribute("order", order);
-                BOM bom = LogicFacade.getBOM(order);
+                BOM bom = ControllerFacade.getBOM(order);
                 session.setAttribute("BOM", bom);
             }
         }
@@ -171,10 +171,10 @@ public class Product extends Command
 
         int id = Integer.parseInt(request.getParameter("id"));
 
-        Order order = LogicFacade.getOrder(id);
+        Order order = ControllerFacade.getOrder(id);
 
         session.setAttribute("order", order);
-        BOM bom = LogicFacade.getBOM(order);
+        BOM bom = ControllerFacade.getBOM(order);
         session.setAttribute("BOM", bom);
 
         return user.getRole() + "page";
@@ -192,7 +192,7 @@ public class Product extends Command
     {
         HttpSession session = request.getSession();
         int id = Integer.parseInt(request.getParameter("id"));
-        LogicFacade.sendOrder(id);
+        ControllerFacade.sendOrder(id);
 
         orderOnSessionSent(session, id);
 

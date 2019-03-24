@@ -12,7 +12,7 @@ import malte.Model.entities.User;
  *
  * @author Malte
  */
-public class LogicFacade
+public class ControllerFacade
 {
 
     /**

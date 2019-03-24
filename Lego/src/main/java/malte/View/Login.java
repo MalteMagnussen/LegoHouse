@@ -3,7 +3,7 @@ package malte.View;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Controller.LogicFacade;
+import malte.Controller.ControllerFacade;
 import malte.Controller.LoginException;
 import malte.Controller.ShopException;
 import malte.Model.entities.User;
@@ -56,13 +56,13 @@ public class Login extends Command
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        User user = LogicFacade.login(email, password);
+        User user = ControllerFacade.login(email, password);
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
         if (user.getRole().equals("employee"))
         {
-            session.setAttribute("users", LogicFacade.getUsers(user));
+            session.setAttribute("users", ControllerFacade.getUsers(user));
             return user.getRole() + "page";
         } else
         {
@@ -85,7 +85,7 @@ public class Login extends Command
         String password2 = request.getParameter("password2");
         if (password1.equals(password2))
         {
-            User user = LogicFacade.createUser(email, password1);
+            User user = ControllerFacade.createUser(email, password1);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());
