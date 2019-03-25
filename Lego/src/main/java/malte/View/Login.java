@@ -14,7 +14,7 @@ import malte.Model.entities.User;
  *
  * @author Malte
  */
-public class Login extends Command
+class Login extends Command
 {
 
     @Override

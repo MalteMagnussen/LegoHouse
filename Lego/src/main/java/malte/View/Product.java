@@ -19,7 +19,7 @@ import malte.Model.entities.User;
  *
  * @author Malte
  */
-public class Product extends Command
+class Product extends Command
 {
 
     @Override

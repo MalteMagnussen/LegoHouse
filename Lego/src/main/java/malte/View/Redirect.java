@@ -16,7 +16,7 @@ import malte.Model.entities.User;
  *
  * @author Malte
  */
-public class Redirect extends Command
+class Redirect extends Command
 {
 
     @Override

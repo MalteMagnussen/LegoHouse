@@ -16,10 +16,10 @@ import malte.Model.entities.User;
  *
  * @author Malte
  */
-public class UserMapper
+class UserMapper
 {
 
-    public UserMapper()
+    UserMapper()
     {
     }
 
@@ -31,7 +31,7 @@ public class UserMapper
      * @param user Entity
      * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
      */
-    public void createUser(User user) throws LoginException
+    void createUser(User user) throws LoginException
     {
         try
         {
@@ -65,7 +65,7 @@ public class UserMapper
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
-    public User login(String email, String password) throws LoginException, ShopException
+    User login(String email, String password) throws LoginException, ShopException
     {
         try
         {
@@ -105,7 +105,7 @@ public class UserMapper
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
-    public List<User> getUsers() throws ShopException
+    List<User> getUsers() throws ShopException
     {
         List<User> users = new ArrayList<>();
         try

@@ -9,7 +9,7 @@ import malte.Model.Exceptions.LoginException;
  *
  * @author Malte
  */
-public class UnknownCommand extends Command
+class UnknownCommand extends Command
 {
 
     @Override
