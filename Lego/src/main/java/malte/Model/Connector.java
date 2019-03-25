@@ -9,7 +9,7 @@ import java.util.Properties;
  * Connector Class.
  * 
  */
-public class Connector
+class Connector
 {
 
     /** 

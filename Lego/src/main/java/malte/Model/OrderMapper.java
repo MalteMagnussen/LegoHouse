@@ -21,10 +21,10 @@ import malte.Model.entities.User;
  *
  * @author Malte
  */
-public class OrderMapper
+class OrderMapper
 {
 
-    public OrderMapper()
+    OrderMapper()
     {
     }
 
@@ -35,7 +35,7 @@ public class OrderMapper
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      * @param order you want to insert into the database.
      */
-    public void createOrder(Order order) throws ShopException
+    void createOrder(Order order) throws ShopException
     {
         try
         {
@@ -65,7 +65,7 @@ public class OrderMapper
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
-    public List<Order> getOrders(User user) throws ShopException
+    List<Order> getOrders(User user) throws ShopException
     {
         List<Order> orders = new ArrayList<>();
         try
@@ -112,7 +112,7 @@ public class OrderMapper
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
-    public Order getOrder(int id) throws ShopException
+    Order getOrder(int id) throws ShopException
     {
         Order order = new Order();
         try
@@ -153,7 +153,7 @@ public class OrderMapper
      * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
-    public void sendOrder(int id) throws ShopException
+    void sendOrder(int id) throws ShopException
     {
         try
         {

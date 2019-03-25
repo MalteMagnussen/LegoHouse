@@ -13,17 +13,17 @@
     <!-- Length -->
     <div class="form-group">
         <label for="lengthinput">Length - Minimum 8</label>
-        <input type="number" class="form-control" id="lengthinput" name="length" placeholder="Length" id="qtyInput">
+        <input type="number" class="form-control" id="lengthinput" name="length" placeholder="Length" id="qtyInput" required min="8">
     </div>
     <!-- Width -->
     <div class="form-group">
         <label for="widthinput">Width - minimum 5</label>
-        <input type="number" class="form-control" id="widthinput" name="width" placeholder="Width" id="qtyInput">
+        <input type="number" class="form-control" id="widthinput" name="width" placeholder="Width" id="qtyInput" required min="5">
     </div>
     <!-- Height -->
     <div class="form-group">
         <label for="heightinput">Height - minimum 4</label>
-        <input type="number" class="form-control" id="heightinput" name="height" placeholder="Height" id="qtyInput">
+        <input type="number" class="form-control" id="heightinput" name="height" placeholder="Height" id="qtyInput" required min="4">
     </div>
     <!-- Add to cart button -->
     <button type="submit" name="submit" class="btn btn-dark">Order</button>

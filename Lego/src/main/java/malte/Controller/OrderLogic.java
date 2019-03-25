@@ -14,7 +14,7 @@ import malte.Model.entities.Order;
 class OrderLogic
 {
 
-    public OrderLogic()
+    OrderLogic()
     {
     }
 
