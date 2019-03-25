@@ -6,6 +6,10 @@ by Malte Hviid-Magnussen
 [JavaDocs](https://maltemagnussen.github.io/LegoHouse/)
 
 [Deployment](http://46.101.213.70/Lego/) - Sometimes it starts acting up after a while. If so, please contact me and I'll reload it. Otherwise, please do a manual install, following instructions below.
+### Logins
+![Logins](https://i.imgur.com/kioQEcH.png) 
+
+Or just make your own customer account.
 
 ## ER Diagram
 
