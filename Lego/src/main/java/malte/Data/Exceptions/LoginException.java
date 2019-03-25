@@ -1,4 +1,4 @@
-package malte.Model.Exceptions;
+package malte.Data.Exceptions;
 
 /**
  * Login Exception, Sends user back to index.

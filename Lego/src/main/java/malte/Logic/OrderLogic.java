@@ -1,10 +1,10 @@
-package malte.Controller;
+package malte.Logic;
 
-import malte.Model.Exceptions.LoginException;
-import malte.Model.Exceptions.ShopException;
-import malte.Model.ModelFacade;
-import malte.Model.ModelFacadeImpl;
-import malte.Model.entities.Order;
+import malte.Data.Exceptions.LoginException;
+import malte.Data.Exceptions.ShopException;
+import malte.Data.ModelFacade;
+import malte.Data.ModelFacadeImpl;
+import malte.Data.entities.Order;
 
 /**
  * Order Logic.

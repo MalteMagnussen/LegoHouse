@@ -1,4 +1,4 @@
-package malte.Model;
+package malte.Data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

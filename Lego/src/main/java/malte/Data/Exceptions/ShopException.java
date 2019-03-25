@@ -1,4 +1,4 @@
-package malte.Model.Exceptions;
+package malte.Data.Exceptions;
 
 /**
  * Sends User back to their page, and not index.

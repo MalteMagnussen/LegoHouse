@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.Model;
+package malte.Data;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,9 +12,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import malte.Model.Exceptions.ShopException;
-import malte.Model.entities.Order;
-import malte.Model.entities.User;
+import malte.Data.Exceptions.ShopException;
+import malte.Data.entities.Order;
+import malte.Data.entities.User;
 
 /**
  * OrderDAO
@@ -31,7 +31,7 @@ class OrderMapper
     /**
      * Called from LogicFacade createOrder Method.
      *
-     * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
+     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      * @param order you want to insert into the database.
      */
@@ -62,7 +62,7 @@ class OrderMapper
      *
      * @param user you want to get the orders from.
      * @return List of Orders.
-     * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
+     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     List<Order> getOrders(User user) throws ShopException
@@ -109,7 +109,7 @@ class OrderMapper
      *
      * @param id of the order you want to get.
      * @return the Order of the ID.
-     * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
+     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     Order getOrder(int id) throws ShopException
@@ -150,7 +150,7 @@ class OrderMapper
      * Mark order as being sent to customer. Usable by employee.
      *
      * @param id of the Order you wish to mark as sent.
-     * @throws malte.Model.Exceptions.ShopException Custom Exception. Caught in
+     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     void sendOrder(int id) throws ShopException

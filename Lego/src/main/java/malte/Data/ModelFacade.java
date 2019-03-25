@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.Model;
+package malte.Data;
 
 import java.util.List;
-import malte.Model.Exceptions.LoginException;
-import malte.Model.Exceptions.ShopException;
-import malte.Model.entities.Order;
-import malte.Model.entities.User;
+import malte.Data.Exceptions.LoginException;
+import malte.Data.Exceptions.ShopException;
+import malte.Data.entities.Order;
+import malte.Data.entities.User;
 
 /**
  * Model Facade Interface.

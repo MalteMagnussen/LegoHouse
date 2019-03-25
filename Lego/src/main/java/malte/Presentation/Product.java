@@ -1,17 +1,17 @@
-package malte.View;
+package malte.Presentation;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Controller.ControllerFacade;
-import malte.Controller.ControllerFacadeImpl;
-import malte.Model.Exceptions.LoginException;
-import malte.Model.Exceptions.ShopException;
-import malte.Model.entities.BOM;
-import malte.Model.entities.Order;
-import malte.Model.entities.User;
+import malte.Logic.ControllerFacade;
+import malte.Logic.ControllerFacadeImpl;
+import malte.Data.Exceptions.LoginException;
+import malte.Data.Exceptions.ShopException;
+import malte.Data.entities.BOM;
+import malte.Data.entities.Order;
+import malte.Data.entities.User;
 
 /**
  * Product class. Contains methods to do with the orders. Add Product, Order,
