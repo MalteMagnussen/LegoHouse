@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Connector Class.
@@ -31,17 +33,21 @@ class Connector
     {
         if (singleton == null)
         {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // .newInstance(); maybe.
-            Properties props = new Properties();
-            props.put("user", USERNAME);
-            props.put("password", PASSWORD);
-            props.put("allowMultiQueries", true);
-            props.put("useUnicode", true);
-            props.put("useJDBCCompliantTimezoneShift", true);
-            props.put("useLegacyDatetimeCode", false);
-            props.put("serverTimezone", "CET");
-            singleton = DriverManager.getConnection(URL, props);
-            Connector.setConnection(singleton);
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+                Properties props = new Properties();
+                props.put("user", USERNAME);
+                props.put("password", PASSWORD);
+                props.put("allowMultiQueries", true);
+                props.put("useUnicode", true);
+                props.put("useJDBCCompliantTimezoneShift", true);
+                props.put("useLegacyDatetimeCode", false);
+                props.put("serverTimezone", "CET");
+                singleton = DriverManager.getConnection(URL, props);
+                Connector.setConnection(singleton);
+            } catch (InstantiationException | IllegalAccessException ex) {
+                Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return singleton;
     }
