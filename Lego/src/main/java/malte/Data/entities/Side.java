@@ -148,7 +148,7 @@ public class Side implements Serializable
     /**
      * Get the list of rows of this side.
      *
-     * @return
+     * @return List of rows.
      */
     public List<Row> getRows()
     {
@@ -158,7 +158,7 @@ public class Side implements Serializable
     /**
      * Set all the rows to this list of rows.
      *
-     * @param rows
+     * @param rows A list of rows.
      */
     public void setRows(List<Row> rows)
     {
@@ -168,7 +168,7 @@ public class Side implements Serializable
     /**
      * Add row to the list.
      *
-     * @param row
+     * @param row A single row.
      */
     public void add(Row row)
     {

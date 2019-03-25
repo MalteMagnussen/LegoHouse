@@ -27,7 +27,8 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @param email Users email.
      * @param password Users password.
      * @return User entity.
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
@@ -44,7 +45,8 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @param email Users email.
      * @param password Users password.
      * @return User entity.
-     * @throws LoginException
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     @Override
     public User createUser(String email, String password) throws LoginException
