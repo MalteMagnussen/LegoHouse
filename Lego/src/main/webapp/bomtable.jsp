@@ -16,7 +16,7 @@
     <tbody>
 
         <tr>
-            <th scope="row"> 2x4 </td>
+            <th scope="row"> 2x4 </th>
             <td>${BOM.door.fours}</td>
             <td>${BOM.wide.fours}</td>
             <td>${BOM.window.fours}</td>
@@ -25,7 +25,7 @@
         </tr>
 
         <tr>
-            <th scope="row"> 2x2 </td>
+            <th scope="row"> 2x2 </th>
             <td>${BOM.door.twos}</td>
             <td>${BOM.wide.twos}</td>
             <td>${BOM.window.twos}</td>
@@ -34,7 +34,7 @@
         </tr>
 
         <tr>
-            <th scope="row"> 2x1 </td>
+            <th scope="row"> 2x1 </th>
             <td>${BOM.door.ones}</td>
             <td>${BOM.wide.ones}</td>
             <td>${BOM.window.ones}</td>
