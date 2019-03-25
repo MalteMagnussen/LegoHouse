@@ -37,3 +37,5 @@ Or just make your own customer account.
 1. Index page. Login and Register. ![Index page. Login and Register.](https://i.imgur.com/wmFzal7.png)
 2. Customer page. When having 1 order and having that order selected and dropdown menu pressed. ![Customer page](https://i.imgur.com/srqSq8r.png)
 3. Employee page. When viewing an un-sent order. ![Employee page](https://i.imgur.com/yKEZfub.png)
+
+###### Views are slightly outdated
