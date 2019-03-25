@@ -42,7 +42,7 @@
                         <input type="hidden" name="command" value="Product">
                         <input type="hidden" name="origin" value="order">
                         <input type="hidden" name="id" value="${order.id}">
-                        <button type="submit" class="btn-dark">
+                        <button type="submit" class="btn btn-dark">
                             Id of order: ${order.id} - Sent: ${order.sent}
                         </button>
                     </form>
