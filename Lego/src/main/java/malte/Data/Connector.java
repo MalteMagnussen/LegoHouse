@@ -40,6 +40,7 @@ class Connector
                 props.put("password", PASSWORD);
                 props.put("allowMultiQueries", true);
                 props.put("useUnicode", true);
+                props.put("autoReconnect", true);
                 props.put("useJDBCCompliantTimezoneShift", true);
                 props.put("useLegacyDatetimeCode", false);
                 props.put("serverTimezone", "CET");
