@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import malte.Data.Exceptions.LoginException;
 import malte.Data.Exceptions.ShopException;
 
@@ -32,6 +33,7 @@ public class FrontController extends HttpServlet
     {
         try
         {
+            validateSession(request);
             Command action = Command.from(request);
             String view = action.execute(request, response);
             request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
@@ -39,10 +41,24 @@ public class FrontController extends HttpServlet
         {
             request.setAttribute("error", ex.getMessage());
             request.getRequestDispatcher("index.jsp").forward(request, response);
-        } catch (ShopException ex)  
+        } catch (ShopException ex)
         {
             request.setAttribute("error", ex.getMessage());
             request.getRequestDispatcher("/WEB-INF/customerpage.jsp").forward(request, response);
+        }
+    }
+
+    private void validateSession(HttpServletRequest req) throws LoginException
+    {
+        HttpSession session = req.getSession();
+        if (!(req.getParameter("command").equals("Login")))
+        {
+            if (session == null || session.getAttribute("user") == null)
+            {
+                session.invalidate();
+                throw new LoginException("Logged out because of inactivity.");
+            }
+
         }
     }
 
