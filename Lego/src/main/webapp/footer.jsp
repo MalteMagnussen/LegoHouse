@@ -8,7 +8,7 @@
 </div>
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     <div class="container text-center">
-        <small>Made by Malte Hviid-Magnussen - LegoHouse Project</small>
+        <small>Made by <a href="https://github.com/MalteMagnussen">Malte Hviid-Magnussen</a> - <a href="https://github.com/MalteMagnussen/LegoHouse">LegoHouse Project</a></small>
     </div>
 </footer>
 </body>
