@@ -16,8 +16,15 @@ import malte.Data.entities.Side;
 class BOMLogic
 {
 
-    BOMLogic()
+    private static BOMLogic instance = null;
+
+    public synchronized static BOMLogic getInstance()
     {
+        if (instance == null)
+        {
+            instance = new BOMLogic();
+        }
+        return instance;
     }
 
     /**

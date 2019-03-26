@@ -24,8 +24,15 @@ import malte.Data.entities.User;
 class OrderMapper
 {
 
-    OrderMapper()
+    private static OrderMapper instance = null;
+
+    synchronized static OrderMapper getInstance()
     {
+        if (instance == null)
+        {
+            instance = new OrderMapper();
+        }
+        return instance;
     }
 
     /**

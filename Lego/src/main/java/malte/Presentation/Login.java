@@ -3,11 +3,11 @@ package malte.Presentation;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Logic.ControllerFacade;
-import malte.Logic.ControllerFacadeImpl;
 import malte.Data.Exceptions.LoginException;
 import malte.Data.Exceptions.ShopException;
 import malte.Data.entities.User;
+import malte.Logic.ControllerFacade;
+import malte.Logic.ControllerFacadeImpl;
 
 /**
  * Login Class. Contains Login methods. Login, Register, Logout.
@@ -58,7 +58,7 @@ class Login extends Command
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        ControllerFacade c = new ControllerFacadeImpl();
+        ControllerFacade c = ControllerFacadeImpl.getInstance();
         User user = c.login(email, password);
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
@@ -89,7 +89,7 @@ class Login extends Command
         String password2 = request.getParameter("password2");
         if (password1.equals(password2))
         {
-            ControllerFacade c = new ControllerFacadeImpl();
+            ControllerFacade c = ControllerFacadeImpl.getInstance();
             User user = c.createUser(email, password1);
             HttpSession session = request.getSession();
             session.setAttribute("user", user);

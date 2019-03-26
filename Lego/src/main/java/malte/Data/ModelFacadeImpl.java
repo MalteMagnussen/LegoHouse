@@ -18,9 +18,15 @@ import malte.Data.entities.User;
  */
 public class ModelFacadeImpl implements ModelFacade
 {
+    private static ModelFacadeImpl instance = null;
 
-    public ModelFacadeImpl()
+    public synchronized static ModelFacadeImpl getInstance()
     {
+        if (instance == null)
+        {
+            instance = new ModelFacadeImpl();
+        }
+        return instance;
     }
 
     /**
@@ -33,7 +39,7 @@ public class ModelFacadeImpl implements ModelFacade
     @Override
     public void createUser(User user) throws LoginException
     {
-        UserMapper db = new UserMapper();
+        UserMapper db = UserMapper.getInstance();
         db.createUser(user);
     }
 
@@ -51,7 +57,7 @@ public class ModelFacadeImpl implements ModelFacade
     @Override
     public User login(String email, String password) throws LoginException, ShopException
     {
-        UserMapper db = new UserMapper();
+        UserMapper db = UserMapper.getInstance();
         return db.login(email, password);
     }
 
@@ -66,7 +72,7 @@ public class ModelFacadeImpl implements ModelFacade
     @Override
     public List<Order> getOrders(User user) throws ShopException
     {
-        OrderMapper db = new OrderMapper();
+        OrderMapper db = OrderMapper.getInstance();
         return db.getOrders(user);
     }
 
@@ -80,7 +86,7 @@ public class ModelFacadeImpl implements ModelFacade
     @Override
     public void createOrder(Order order) throws ShopException
     {
-        OrderMapper db = new OrderMapper();
+        OrderMapper db = OrderMapper.getInstance();
         db.createOrder(order);
     }
 
@@ -94,7 +100,7 @@ public class ModelFacadeImpl implements ModelFacade
     @Override
     public List<User> getUsers() throws ShopException
     {
-        UserMapper db = new UserMapper();
+        UserMapper db = UserMapper.getInstance();
         return db.getUsers();
     }
 
@@ -109,7 +115,7 @@ public class ModelFacadeImpl implements ModelFacade
     @Override
     public Order getOrder(int id) throws ShopException
     {
-        OrderMapper db = new OrderMapper();
+        OrderMapper db = OrderMapper.getInstance();
         return db.getOrder(id);
     }
 
@@ -123,7 +129,7 @@ public class ModelFacadeImpl implements ModelFacade
     @Override
     public void sendOrder(int id) throws ShopException
     {
-        OrderMapper db = new OrderMapper();
+        OrderMapper db = OrderMapper.getInstance();
         db.sendOrder(id);
     }
 

@@ -14,8 +14,15 @@ import malte.Data.entities.Order;
 class OrderLogic
 {
 
-    OrderLogic()
+    private static OrderLogic instance = null;
+
+    public synchronized static OrderLogic getInstance()
     {
+        if (instance == null)
+        {
+            instance = new OrderLogic();
+        }
+        return instance;
     }
 
     /**
@@ -38,7 +45,7 @@ class OrderLogic
         order.setLength(length);
         order.setWidth(width);
         order.setHeight(height);
-        ModelFacade db = new ModelFacadeImpl();
+        ModelFacade db = ModelFacadeImpl.getInstance();
         db.createOrder(order);
         return order;
     }

@@ -17,8 +17,15 @@ import malte.Data.entities.User;
 public class ControllerFacadeImpl implements ControllerFacade
 {
 
-    public ControllerFacadeImpl()
+    private static ControllerFacadeImpl instance = null;
+
+    public synchronized static ControllerFacadeImpl getInstance()
     {
+        if (instance == null)
+        {
+            instance = new ControllerFacadeImpl();
+        }
+        return instance;
     }
 
     /**
@@ -35,7 +42,7 @@ public class ControllerFacadeImpl implements ControllerFacade
     @Override
     public User login(String email, String password) throws LoginException, ShopException
     {
-        ModelFacade model = new ModelFacadeImpl();
+        ModelFacade model = ModelFacadeImpl.getInstance();
         return model.login(email, password);
     }
 
@@ -52,7 +59,7 @@ public class ControllerFacadeImpl implements ControllerFacade
     public User createUser(String email, String password) throws LoginException
     {
         User user = new User(email, password, "customer");
-        ModelFacade model = new ModelFacadeImpl();
+        ModelFacade model = ModelFacadeImpl.getInstance();
         model.createUser(user);
         return user;
     }
@@ -77,7 +84,7 @@ public class ControllerFacadeImpl implements ControllerFacade
         {
             throw new ShopException("Too low width, height or length. Try again.");
         }
-        return new OrderLogic().order(id, length, width, height);
+        return OrderLogic.getInstance().order(id, length, width, height);
     }
 
     /**
@@ -93,7 +100,7 @@ public class ControllerFacadeImpl implements ControllerFacade
     @Override
     public List<Order> getOrders(User user) throws LoginException, ShopException
     {
-        ModelFacade db = new ModelFacadeImpl();
+        ModelFacade db = ModelFacadeImpl.getInstance();
         return db.getOrders(user);
     }
 
@@ -111,7 +118,7 @@ public class ControllerFacadeImpl implements ControllerFacade
     @Override
     public List<User> getUsers(User user) throws LoginException, ShopException
     {
-        ModelFacade db = new ModelFacadeImpl();
+        ModelFacade db = ModelFacadeImpl.getInstance();
         return db.getUsers();
     }
 
@@ -128,7 +135,7 @@ public class ControllerFacadeImpl implements ControllerFacade
     @Override
     public Order getOrder(int id) throws LoginException, ShopException
     {
-        ModelFacade db = new ModelFacadeImpl();
+        ModelFacade db = ModelFacadeImpl.getInstance();
         return db.getOrder(id);
     }
 
@@ -144,7 +151,7 @@ public class ControllerFacadeImpl implements ControllerFacade
     @Override
     public void sendOrder(int id) throws LoginException, ShopException
     {
-        ModelFacade db = new ModelFacadeImpl();
+        ModelFacade db = ModelFacadeImpl.getInstance();
         db.sendOrder(id);
     }
 

@@ -19,8 +19,15 @@ import malte.Data.entities.User;
 class UserMapper
 {
 
-    UserMapper()
+    private static UserMapper instance = null;
+
+    synchronized static UserMapper getInstance()
     {
+        if (instance == null)
+        {
+            instance = new UserMapper();
+        }
+        return instance;
     }
 
     /**
@@ -29,7 +36,8 @@ class UserMapper
      * Inputs a User into the SQL database.
      *
      * @param user Entity
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      */
     void createUser(User user) throws LoginException
     {
@@ -61,7 +69,8 @@ class UserMapper
      * @param email Users email
      * @param password Users password
      * @return User entity
-     * @throws LoginException Custom Exception. Caught in FrontController. Sends User back to index.jsp.
+     * @throws LoginException Custom Exception. Caught in FrontController. Sends
+     * User back to index.jsp.
      * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */

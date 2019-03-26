@@ -5,13 +5,13 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Logic.ControllerFacade;
-import malte.Logic.ControllerFacadeImpl;
 import malte.Data.Exceptions.LoginException;
 import malte.Data.Exceptions.ShopException;
 import malte.Data.entities.BOM;
 import malte.Data.entities.Order;
 import malte.Data.entities.User;
+import malte.Logic.ControllerFacade;
+import malte.Logic.ControllerFacadeImpl;
 
 /**
  * Product class. Contains methods to do with the orders. Add Product, Order,
@@ -108,7 +108,7 @@ class Product extends Command
     private User putOrderOnUser(HttpServletRequest request, int id, int length, int width, int height) throws LoginException, ShopException
     {
         HttpSession session = request.getSession();
-        ControllerFacade c = new ControllerFacadeImpl();
+        ControllerFacade c = ControllerFacadeImpl.getInstance();
         Order order = c.createOrder(id, length, width, height);
         User user = (User) session.getAttribute("user");
         List<Order> orders = user.getOrders();
@@ -156,7 +156,7 @@ class Product extends Command
             if (order.getId() == id)
             {
                 session.setAttribute("order", order);
-                ControllerFacade c = new ControllerFacadeImpl();
+                ControllerFacade c = ControllerFacadeImpl.getInstance();
                 BOM bom = c.getBOM(order);
                 session.setAttribute("BOM", bom);
             }
@@ -177,7 +177,7 @@ class Product extends Command
         User user = (User) session.getAttribute("user");
 
         int id = Integer.parseInt(request.getParameter("id"));
-        ControllerFacade c = new ControllerFacadeImpl();
+        ControllerFacade c = ControllerFacadeImpl.getInstance();
         Order order = c.getOrder(id);
 
         session.setAttribute("order", order);
@@ -200,7 +200,7 @@ class Product extends Command
     {
         HttpSession session = request.getSession();
         int id = Integer.parseInt(request.getParameter("id"));
-        ControllerFacade c = new ControllerFacadeImpl();
+        ControllerFacade c = ControllerFacadeImpl.getInstance();
         c.sendOrder(id);
 
         orderOnSessionSent(session, id);
