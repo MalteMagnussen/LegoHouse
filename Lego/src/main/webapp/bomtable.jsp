@@ -1,8 +1,8 @@
 <!-- Author: Malte -->
 <!--  Below is the Table for a Bill of Materials  -->
-<table border="3" width="2" cellspacing="2" cellpadding="2" class="table">
+<table border="3" width="2" cellspacing="2" cellpadding="2" class="table table-bordered table-hover">
 
-    <thead class="thead-dark table-bordered table-hover table-sm">
+    <thead class="thead-dark">
         <tr>
             <th scope="col">Type</th>
             <th scope="col">Side m. dør.</th>
