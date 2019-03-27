@@ -1,5 +1,8 @@
 package Data;
 
+import Data.Entities.User;
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,9 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import Data.Exceptions.LoginException;
-import Data.Exceptions.ShopException;
-import Data.Entities.User;
 
 /**
  * UserDAO
@@ -43,7 +43,7 @@ class UserMapper
     {
         try
         {
-            Connection con = Connector.connection();
+            Connection con = new Connector().getConnection();
             String SQL = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getEmail());
@@ -54,7 +54,7 @@ class UserMapper
             ids.next();
             int id = ids.getInt(1);
             user.setId(id);
-        } catch (SQLException | ClassNotFoundException ex)
+        } catch (SQLException | LoginException ex)
         {
             throw new LoginException("User already exists: " + ex.getMessage());
         }
@@ -78,7 +78,7 @@ class UserMapper
     {
         try
         {
-            Connection con = Connector.connection();
+            Connection con = new Connector().getConnection();
             String SQL = "SELECT id, role FROM users "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement(SQL);
@@ -101,7 +101,7 @@ class UserMapper
             {
                 throw new LoginException("Could not validate user");
             }
-        } catch (ClassNotFoundException | SQLException ex)
+        } catch (SQLException | LoginException ex)
         {
             throw new LoginException(ex.getMessage());
         }
@@ -120,7 +120,7 @@ class UserMapper
         try
         {
 
-            Connection con = Connector.connection();
+            Connection con = new Connector().getConnection();
             String SQL = "SELECT * FROM useradmin.users;";
             ResultSet rs = con.prepareStatement(SQL).executeQuery();
 
@@ -140,10 +140,10 @@ class UserMapper
 
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
+        } catch (SQLException | LoginException ex)
         {
             throw new ShopException(ex.getMessage());
-        }
+        } 
         return users;
     }
 }

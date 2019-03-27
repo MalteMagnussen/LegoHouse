@@ -5,6 +5,10 @@
  */
 package Data;
 
+import Data.Entities.Order;
+import Data.Entities.User;
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,9 +16,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import Data.Exceptions.ShopException;
-import Data.Entities.Order;
-import Data.Entities.User;
 
 /**
  * OrderDAO
@@ -46,7 +47,7 @@ class OrderMapper
     {
         try
         {
-            Connection con = Connector.connection();
+            Connection con = new Connector().getConnection();
             String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, order.getIdorders());
@@ -58,10 +59,10 @@ class OrderMapper
             ids.next();
             int id = ids.getInt(1);
             order.setId(id);
-        } catch (SQLException | ClassNotFoundException ex)
+        } catch (SQLException | LoginException ex)
         {
             throw new ShopException(ex.getMessage());
-        }
+        } 
     }
 
     /**
@@ -77,7 +78,7 @@ class OrderMapper
         List<Order> orders = new ArrayList<>();
         try
         {
-            Connection con = Connector.connection();
+            Connection con = new Connector().getConnection();
             String SQL = "SELECT `orders`.`sent`,\n"
                     + "    `orders`.`length`,\n"
                     + "    `orders`.`width`,\n"
@@ -103,7 +104,7 @@ class OrderMapper
                 order.setId(id);
                 orders.add(order);
             }
-        } catch (ClassNotFoundException | SQLException ex)
+        } catch (SQLException | LoginException ex)
         {
             throw new ShopException(ex.getMessage());
         }
@@ -124,7 +125,7 @@ class OrderMapper
         Order order = new Order();
         try
         {
-            Connection con = Connector.connection();
+            Connection con = new Connector().getConnection();
             String SQL = "SELECT `orders`.`sent`,\n"
                     + "    `orders`.`length`,\n"
                     + "    `orders`.`width`,\n"
@@ -146,7 +147,7 @@ class OrderMapper
                 order.setSent(sent);
                 order.setId(id);
             }
-        } catch (ClassNotFoundException | SQLException ex)
+        } catch (SQLException | LoginException ex)
         {
             throw new ShopException(ex.getMessage());
         }
@@ -164,12 +165,12 @@ class OrderMapper
     {
         try
         {
-            Connection con = Connector.connection();
+            Connection con = new Connector().getConnection();
             String SQL = "UPDATE useradmin.orders set sent = true WHERE id = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
             ps.executeUpdate();
-        } catch (ClassNotFoundException | SQLException ex)
+        } catch (SQLException | LoginException ex)
         {
             throw new ShopException(ex.getMessage());
         }

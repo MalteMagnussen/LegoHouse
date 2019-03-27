@@ -1,11 +1,10 @@
 package Data;
 
+import Data.Exceptions.LoginException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Connector Class.
@@ -22,35 +21,33 @@ class Connector
     private static final String PASSWORD = "root";
 
     // Don't touch anything below this line.
-    private static Connection singleton;
+    private Connection singleton = null;
 
-    public static void setConnection(Connection con)
+    public Connector() throws LoginException
     {
-        singleton = con;
-    }
-
-    public static Connection connection() throws ClassNotFoundException, SQLException
-    {
-        if (singleton == null)
+        try
         {
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-                Properties props = new Properties();
-                props.put("user", USERNAME);
-                props.put("password", PASSWORD);
-                props.put("allowMultiQueries", true);
-                props.put("useUnicode", true);
-                props.put("autoReconnect", true);
-                props.put("useJDBCCompliantTimezoneShift", true);
-                props.put("useLegacyDatetimeCode", false);
-                props.put("serverTimezone", "CET");
-                singleton = DriverManager.getConnection(URL, props);
-                Connector.setConnection(singleton);
-            } catch (InstantiationException | IllegalAccessException ex) {
-                Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return singleton;
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Properties props = new Properties();
+            props.put("user", USERNAME);
+            props.put("password", PASSWORD);
+            props.put("allowMultiQueries", true);
+            props.put("useUnicode", true);
+            props.put("autoReconnect", true);
+            props.put("useJDBCCompliantTimezoneShift", true);
+            props.put("useLegacyDatetimeCode", false);
+            props.put("serverTimezone", "CET");
+            this.singleton = DriverManager.getConnection(URL, props);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException ex)
+        {
+            throw new LoginException("Connector went wrong: " + ex.getMessage());
+        }  
     }
+    
+    public Connection getConnection() {
+        return this.singleton;
+    }
+    
+    
 
 }
