@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.Logic;
+package Logic;
 
 import java.util.List;
-import malte.Data.Exceptions.LoginException;
-import malte.Data.Exceptions.ShopException;
-import malte.Data.entities.BOM;
-import malte.Data.entities.Order;
-import malte.Data.entities.User;
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
+import Data.entities.BOM;
+import Data.entities.Order;
+import Data.entities.User;
 
 /**
  * Controller Facade Interface.

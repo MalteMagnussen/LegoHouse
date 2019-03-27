@@ -1,4 +1,4 @@
-package malte.Data;
+package Data;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import malte.Data.Exceptions.LoginException;
-import malte.Data.Exceptions.ShopException;
-import malte.Data.entities.User;
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
+import Data.entities.User;
 
 /**
  * UserDAO
@@ -71,7 +71,7 @@ class UserMapper
      * @return User entity
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     User login(String email, String password) throws LoginException, ShopException
@@ -111,7 +111,7 @@ class UserMapper
      * Get all Users
      *
      * @return List of all Users.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     List<User> getUsers() throws ShopException

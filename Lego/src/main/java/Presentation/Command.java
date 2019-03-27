@@ -1,10 +1,10 @@
-package malte.Presentation;
+package Presentation;
 
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.Data.Exceptions.LoginException;
-import malte.Data.Exceptions.ShopException;
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
 
 abstract class Command
 {

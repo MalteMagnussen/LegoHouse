@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package malte.Presentation;
+package Presentation;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import malte.Data.Exceptions.LoginException;
-import malte.Data.Exceptions.ShopException;
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
 
 /**
  * Front Controller.

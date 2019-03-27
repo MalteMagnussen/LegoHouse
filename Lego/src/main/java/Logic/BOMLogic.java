@@ -1,11 +1,11 @@
-package malte.Logic;
+package Logic;
 
 import java.util.ArrayList;
 import java.util.List;
-import malte.Data.entities.BOM;
-import malte.Data.entities.Order;
-import malte.Data.entities.Row;
-import malte.Data.entities.Side;
+import Data.entities.BOM;
+import Data.entities.Order;
+import Data.entities.Row;
+import Data.entities.Side;
 
 /**
  * Bill of Materials. (Stykliste).

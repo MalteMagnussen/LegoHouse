@@ -1,13 +1,13 @@
-package malte.Logic;
+package Logic;
 
 import java.util.List;
-import malte.Data.Exceptions.LoginException;
-import malte.Data.Exceptions.ShopException;
-import malte.Data.ModelFacade;
-import malte.Data.ModelFacadeImpl;
-import malte.Data.entities.BOM;
-import malte.Data.entities.Order;
-import malte.Data.entities.User;
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
+import Data.ModelFacade;
+import Data.ModelFacadeImpl;
+import Data.entities.BOM;
+import Data.entities.Order;
+import Data.entities.User;
 
 /**
  * Facade Class.
@@ -36,7 +36,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @return User entity.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     @Override
@@ -74,7 +74,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @return Order entity.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     @Override
@@ -94,7 +94,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @return List of all orders from the User.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     @Override
@@ -112,7 +112,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @return List of all Users.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     @Override
@@ -129,7 +129,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @return an Order object.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     @Override
@@ -145,7 +145,7 @@ public class ControllerFacadeImpl implements ControllerFacade
      * @param id of the order.
      * @throws LoginException Custom Exception. Caught in FrontController. Sends
      * User back to index.jsp.
-     * @throws malte.Data.Exceptions.ShopException Custom Exception. Caught in
+     * @throws Data.Exceptions.ShopException Custom Exception. Caught in
      * FrontController. Sends User back to /WEB-INF/customerpage.jsp
      */
     @Override

@@ -1,8 +1,8 @@
-package malte.Presentation;
+package Presentation;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import malte.Data.Exceptions.LoginException;
+import Data.Exceptions.LoginException;
 
 /**
  * Unknown Command. Throws Exception.
