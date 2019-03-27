@@ -68,7 +68,6 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="index.jsp">Home</a>
                                         <a class="dropdown-item" href="FrontController?command=Redirect">Shop</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="FrontController?command=Login&origin=logout">Log Out</a>
