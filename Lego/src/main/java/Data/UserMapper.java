@@ -41,20 +41,22 @@ class UserMapper
      */
     void createUser(User user) throws LoginException
     {
-        try
+        String SQL = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
+        try (
+                Connection con = new Connector().getConnection();
+                PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);)
         {
-            Connection con = new Connector().getConnection();
-            String SQL = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getEmail());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getRole());
             ps.executeUpdate();
-            ResultSet ids = ps.getGeneratedKeys();
-            ids.next();
-            int id = ids.getInt(1);
-            user.setId(id);
-        } catch (SQLException | LoginException ex)
+            try (ResultSet ids = ps.getGeneratedKeys())
+            {
+                ids.next();
+                int id = ids.getInt(1);
+                user.setId(id);
+            }
+        } catch (SQLException ex)
         {
             throw new LoginException("User already exists: " + ex.getMessage());
         }
@@ -143,7 +145,7 @@ class UserMapper
         } catch (SQLException | LoginException ex)
         {
             throw new ShopException(ex.getMessage());
-        } 
+        }
         return users;
     }
 }
