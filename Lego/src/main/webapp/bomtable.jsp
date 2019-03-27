@@ -8,7 +8,7 @@
             <th scope="col">Side w. door</th>
             <th scope="col">Wideside</th>
             <th scope="col">Side w. window</th>
-            <th scope="col">Widewide</th>
+            <th scope="col">Wideside</th>
             <th scope="col">Total</th>
         </tr>
     </thead>
