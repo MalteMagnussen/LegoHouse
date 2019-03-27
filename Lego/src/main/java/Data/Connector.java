@@ -23,7 +23,6 @@ class Connector
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
-    // Don't touch anything below this line.
     private Connection singleton = null;
 
     public Connector() throws LoginException
@@ -50,7 +49,6 @@ class Connector
     public Connection getConnection() {
         return this.singleton;
     }
-    
     
 
 }

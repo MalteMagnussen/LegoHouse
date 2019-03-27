@@ -45,11 +45,11 @@ class OrderMapper
      */
     void createOrder(Order order) throws ShopException
     {
-        try
+        String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
+        try (Connection con = new Connector().getConnection();
+                PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);)
         {
-            Connection con = new Connector().getConnection();
-            String SQL = "INSERT INTO orders (idorders, length, width, height) VALUES (?, ?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+
             ps.setInt(1, order.getIdorders());
             ps.setInt(2, order.getLength());
             ps.setInt(3, order.getWidth());
@@ -62,7 +62,7 @@ class OrderMapper
         } catch (SQLException | LoginException ex)
         {
             throw new ShopException(ex.getMessage());
-        } 
+        }
     }
 
     /**
@@ -75,18 +75,18 @@ class OrderMapper
      */
     List<Order> getOrders(User user) throws ShopException
     {
+        String SQL = "SELECT `orders`.`sent`,\n"
+                + "    `orders`.`length`,\n"
+                + "    `orders`.`width`,\n"
+                + "    `orders`.`height`,\n"
+                + "    `orders`.`id`\n"
+                + "FROM `useradmin`.`orders`\n"
+                + "WHERE `orders`.`idorders` = ?;";
         List<Order> orders = new ArrayList<>();
-        try
+        try (Connection con = new Connector().getConnection();
+                PreparedStatement ps = con.prepareStatement(SQL);)
         {
-            Connection con = new Connector().getConnection();
-            String SQL = "SELECT `orders`.`sent`,\n"
-                    + "    `orders`.`length`,\n"
-                    + "    `orders`.`width`,\n"
-                    + "    `orders`.`height`,\n"
-                    + "    `orders`.`id`\n"
-                    + "FROM `useradmin`.`orders`\n"
-                    + "WHERE `orders`.`idorders` = ?;";
-            PreparedStatement ps = con.prepareStatement(SQL);
+
             ps.setInt(1, user.getId());
             ResultSet rs = ps.executeQuery();
             while (rs.next())
@@ -122,17 +122,17 @@ class OrderMapper
      */
     Order getOrder(int id) throws ShopException
     {
+        String SQL = "SELECT `orders`.`sent`,\n"
+                + "    `orders`.`length`,\n"
+                + "    `orders`.`width`,\n"
+                + "    `orders`.`height`\n"
+                + "FROM `useradmin`.`orders`\n"
+                + "WHERE `orders`.`id` = ?;";
         Order order = new Order();
-        try
+        try (Connection con = new Connector().getConnection();
+                PreparedStatement ps = con.prepareStatement(SQL);)
         {
-            Connection con = new Connector().getConnection();
-            String SQL = "SELECT `orders`.`sent`,\n"
-                    + "    `orders`.`length`,\n"
-                    + "    `orders`.`width`,\n"
-                    + "    `orders`.`height`\n"
-                    + "FROM `useradmin`.`orders`\n"
-                    + "WHERE `orders`.`id` = ?;";
-            PreparedStatement ps = con.prepareStatement(SQL);
+
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next())
@@ -163,11 +163,11 @@ class OrderMapper
      */
     void sendOrder(int id) throws ShopException
     {
-        try
+        String SQL = "UPDATE useradmin.orders set sent = true WHERE id = ?;";
+        try (Connection con = new Connector().getConnection();
+                PreparedStatement ps = con.prepareStatement(SQL);)
         {
-            Connection con = new Connector().getConnection();
-            String SQL = "UPDATE useradmin.orders set sent = true WHERE id = ?;";
-            PreparedStatement ps = con.prepareStatement(SQL);
+
             ps.setInt(1, id);
             ps.executeUpdate();
         } catch (SQLException | LoginException ex)
