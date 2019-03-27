@@ -78,12 +78,12 @@ class UserMapper
      */
     User login(String email, String password) throws LoginException, ShopException
     {
-        try
+        String SQL = "SELECT id, role FROM users "
+                + "WHERE email=? AND password=?";
+        try (Connection con = new Connector().getConnection();
+                PreparedStatement ps = con.prepareStatement(SQL);)
         {
-            Connection con = new Connector().getConnection();
-            String SQL = "SELECT id, role FROM users "
-                    + "WHERE email=? AND password=?";
-            PreparedStatement ps = con.prepareStatement(SQL);
+
             ps.setString(1, email);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
@@ -118,13 +118,11 @@ class UserMapper
      */
     List<User> getUsers() throws ShopException
     {
+        String SQL = "SELECT * FROM useradmin.users;";
         List<User> users = new ArrayList<>();
-        try
+        try (Connection con = new Connector().getConnection();
+                ResultSet rs = con.prepareStatement(SQL).executeQuery();)
         {
-
-            Connection con = new Connector().getConnection();
-            String SQL = "SELECT * FROM useradmin.users;";
-            ResultSet rs = con.prepareStatement(SQL).executeQuery();
 
             while (rs.next())
             {

@@ -16,7 +16,10 @@ class Connector
     /** 
      * Only change these to fit your personal SQL.
      */
-    private static final String URL = "jdbc:mysql://localhost:3306/useradmin";
+    private static final String DATABASE = "useradmin";
+    private static final String PORT = "3306";
+    private static final String IP = "localhost";
+    private static final String URL = "jdbc:mysql://"+IP+":"+PORT+"/"+DATABASE;
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 
