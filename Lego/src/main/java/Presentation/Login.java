@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import Data.Exceptions.LoginException;
 import Data.Exceptions.ShopException;
-import Data.entities.User;
+import Data.Entities.User;
 import Logic.ControllerFacade;
 import Logic.ControllerFacadeImpl;
 

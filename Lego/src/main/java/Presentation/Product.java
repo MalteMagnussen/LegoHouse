@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import Data.Exceptions.LoginException;
 import Data.Exceptions.ShopException;
-import Data.entities.BOM;
-import Data.entities.Order;
-import Data.entities.User;
+import Data.Entities.BOM;
+import Data.Entities.Order;
+import Data.Entities.User;
 import Logic.ControllerFacade;
 import Logic.ControllerFacadeImpl;
 

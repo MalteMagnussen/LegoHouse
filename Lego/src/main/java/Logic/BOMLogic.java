@@ -2,10 +2,10 @@ package Logic;
 
 import java.util.ArrayList;
 import java.util.List;
-import Data.entities.BOM;
-import Data.entities.Order;
-import Data.entities.Row;
-import Data.entities.Side;
+import Data.Entities.BOM;
+import Data.Entities.Order;
+import Data.Entities.Row;
+import Data.Entities.Side;
 
 /**
  * Bill of Materials. (Stykliste).

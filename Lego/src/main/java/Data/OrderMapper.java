@@ -13,8 +13,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import Data.Exceptions.ShopException;
-import Data.entities.Order;
-import Data.entities.User;
+import Data.Entities.Order;
+import Data.Entities.User;
 
 /**
  * OrderDAO

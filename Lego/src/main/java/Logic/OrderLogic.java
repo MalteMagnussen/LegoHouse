@@ -4,7 +4,7 @@ import Data.Exceptions.LoginException;
 import Data.Exceptions.ShopException;
 import Data.ModelFacade;
 import Data.ModelFacadeImpl;
-import Data.entities.Order;
+import Data.Entities.Order;
 
 /**
  * Order Logic.

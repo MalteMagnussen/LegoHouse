@@ -8,8 +8,8 @@ package Data;
 import java.util.List;
 import Data.Exceptions.LoginException;
 import Data.Exceptions.ShopException;
-import Data.entities.Order;
-import Data.entities.User;
+import Data.Entities.Order;
+import Data.Entities.User;
 
 /**
  * Model Facade Interface.

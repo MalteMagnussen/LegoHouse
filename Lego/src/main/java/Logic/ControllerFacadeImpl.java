@@ -5,9 +5,9 @@ import Data.Exceptions.LoginException;
 import Data.Exceptions.ShopException;
 import Data.ModelFacade;
 import Data.ModelFacadeImpl;
-import Data.entities.BOM;
-import Data.entities.Order;
-import Data.entities.User;
+import Data.Entities.BOM;
+import Data.Entities.Order;
+import Data.Entities.User;
 
 /**
  * Facade Class.

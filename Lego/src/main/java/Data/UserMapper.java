@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Data.Exceptions.LoginException;
 import Data.Exceptions.ShopException;
-import Data.entities.User;
+import Data.Entities.User;
 
 /**
  * UserDAO

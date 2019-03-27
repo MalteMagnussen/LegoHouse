@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import Data.Exceptions.LoginException;
-import Data.entities.User;
+import Data.Entities.User;
 
 /**
  * Simply Redirects. Used by Shop Button in the Menu dropdown.
