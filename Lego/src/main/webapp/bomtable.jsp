@@ -5,11 +5,11 @@
     <thead class="thead-dark">
         <tr>
             <th scope="col">Type</th>
-            <th scope="col">Side m. dør.</th>
-            <th scope="col">Bredside</th>
-            <th scope="col">Side m. vindue</th>
-            <th scope="col">Bredside</th>
-            <th scope="col">ialt</th>
+            <th scope="col">Side w. door</th>
+            <th scope="col">Wideside</th>
+            <th scope="col">Side w. window</th>
+            <th scope="col">Widewide</th>
+            <th scope="col">Total</th>
         </tr>
     </thead>
 

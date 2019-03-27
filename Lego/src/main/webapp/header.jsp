@@ -68,7 +68,14 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="FrontController?command=Redirect">Shop</a>
+                                        <a class="dropdown-item" href="FrontController?command=Redirect">
+                                            <c:if test="${user.role == 'customer'}">
+                                                Shop
+                                            </c:if>    
+                                            <c:if test="${user.role == 'employee'}">
+                                                Invoices
+                                            </c:if>    
+                                        </a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="FrontController?command=Login&origin=logout">Log Out</a>
                                     </div>
