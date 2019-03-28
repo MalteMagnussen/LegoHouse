@@ -36,7 +36,7 @@ public class FrontController extends HttpServlet
             validateSession(request);
             Command action = Command.from(request);
             String view = action.execute(request, response);
-            response.sendRedirect("/WEB-INF/" + view + ".jsp");
+            request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
         } catch (LoginException ex)
         {
             request.setAttribute("error", ex.getMessage());
