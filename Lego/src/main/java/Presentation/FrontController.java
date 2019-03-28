@@ -36,7 +36,7 @@ public class FrontController extends HttpServlet
             validateSession(request);
             Command action = Command.from(request);
             String view = action.execute(request, response);
-            request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
+            response.sendRedirect(view + ".jsp");
         } catch (LoginException ex)
         {
             request.setAttribute("error", ex.getMessage());
@@ -44,7 +44,7 @@ public class FrontController extends HttpServlet
         } catch (ShopException ex)
         {
             request.setAttribute("error", ex.getMessage());
-            request.getRequestDispatcher("/WEB-INF/customerpage.jsp").forward(request, response);
+            request.getRequestDispatcher("customerpage.jsp").forward(request, response);
         }
     }
 
