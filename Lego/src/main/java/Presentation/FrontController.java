@@ -5,6 +5,8 @@
  */
 package Presentation;
 
+import Data.Exceptions.LoginException;
+import Data.Exceptions.ShopException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import Data.Exceptions.LoginException;
-import Data.Exceptions.ShopException;
 
 /**
  * Front Controller.
@@ -36,7 +36,7 @@ public class FrontController extends HttpServlet
             validateSession(request);
             Command action = Command.from(request);
             String view = action.execute(request, response);
-            request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
+            response.sendRedirect("/WEB-INF/" + view + ".jsp");
         } catch (LoginException ex)
         {
             request.setAttribute("error", ex.getMessage());
